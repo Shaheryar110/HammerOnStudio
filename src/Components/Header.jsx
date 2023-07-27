@@ -12,6 +12,7 @@ const HeaderTop = () => {
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "space-between",
+      height: "100px",
     },
     iconStyle: {
       padding: "0.5rem",

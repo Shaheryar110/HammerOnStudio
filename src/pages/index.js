@@ -1,4 +1,5 @@
 import HeaderTop from "@/Components/Header";
+import NavBAr from "@/Components/NavBAr";
 import Head from "next/head";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       </Head>
       <main>
         <HeaderTop />
+        <NavBAr />
       </main>
     </>
   );
