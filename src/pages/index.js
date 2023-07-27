@@ -1,5 +1,6 @@
-import HeaderTop from "@/Components/Header";
-import NavBAr from "@/Components/NavBAr";
+import HeroCarousel from "@/Components/Home/HeroCarousel";
+import RepariAndRenovation from "@/Components/Home/RepariAndRenovation";
+import Layout from "@/Components/Layout";
 import Head from "next/head";
 
 export default function Home() {
@@ -12,8 +13,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <HeaderTop />
-        <NavBAr />
+        <Layout>
+          <HeroCarousel />
+          <RepariAndRenovation />
+        </Layout>
       </main>
     </>
   );

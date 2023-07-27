@@ -71,3 +71,19 @@
 .back:hover {
   background-color: black;
 }
+.img1 {
+  padding: 20px;
+}
+.img2 {
+  position: relative;
+  top: 14rem;
+  width: 39%;
+  height: 18%;
+  left: -14px;
+}
+.img3 {
+  width: 47%;
+  position: relative;
+  left: 40px;
+  height: 210px;
+}
