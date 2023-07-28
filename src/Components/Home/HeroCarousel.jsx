@@ -6,6 +6,7 @@ import slider1 from "../../assets/images/slider-1.jpeg";
 import slider2 from "../../assets/images/blog05.jpg";
 import { Box, Button, Container, Typography } from "@mui/material";
 import responsive from "../../styles/responsive.module.css";
+import { motion, easeIn } from "framer-motion";
 
 function HeroCarousel() {
   const style = {
@@ -71,9 +72,15 @@ function HeroCarousel() {
               <Typography variant="h5" sx={style.welcome}>
                 Welcome To
               </Typography>
-              <Typography variant="h3" sx={style.ComName}>
-                Hammer-On Studios!
-              </Typography>
+              <motion.div
+                initial={{ x: -200, opacity: 0 }} // Initial position outside the left side of the screen with opacity 0
+                animate={{ x: 0, opacity: 1 }} // Final position (its actual position) with opacity 1
+                transition={{ duration: 1, type: "easeIn", delay: 1 }} // Animation duration, easing, and delay
+              >
+                <Typography variant="h3" sx={style.ComName}>
+                  Hammer-On Studios!
+                </Typography>
+              </motion.div>
             </Box>
             <Typography sx={style.para}>
               Your Ultimate Hub For Intricate Repairs, Exquisite Renovations,

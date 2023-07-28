@@ -1,5 +1,8 @@
 import HeroCarousel from "@/Components/Home/HeroCarousel";
+import ReadyToGetCard from "@/Components/Home/ReadyToGetCard";
 import RepariAndRenovation from "@/Components/Home/RepariAndRenovation";
+import WhatWeDo from "@/Components/Home/WhatWeDo";
+import WorkSection from "@/Components/Home/WorkSection";
 import Layout from "@/Components/Layout";
 import Head from "next/head";
 
@@ -16,6 +19,9 @@ export default function Home() {
         <Layout>
           <HeroCarousel />
           <RepariAndRenovation />
+          <WhatWeDo />
+          <WorkSection />
+          <ReadyToGetCard />
         </Layout>
       </main>
     </>

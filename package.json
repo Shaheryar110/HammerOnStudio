@@ -14,10 +14,16 @@
     "@mui/icons-material": "^5.14.1",
     "@mui/material": "^5.14.2",
     "@mui/styled-engine-sc": "^5.12.0",
+    "@svgr/webpack": "^8.0.1",
+    "framer-motion": "^10.14.0",
     "next": "13.4.12",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-responsive-carousel": "^3.2.23",
+    "resolve-url-loader": "^5.0.0",
     "styled-components": "^5.3.11"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0"
   }
 }
