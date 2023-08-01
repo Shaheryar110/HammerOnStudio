@@ -1,6 +1,9 @@
+import Contact from "@/Components/Home/Contact";
+import ContactForm1 from "@/Components/Home/ContactForm1";
 import HeroCarousel from "@/Components/Home/HeroCarousel";
 import ReadyToGetCard from "@/Components/Home/ReadyToGetCard";
 import RepariAndRenovation from "@/Components/Home/RepariAndRenovation";
+import Testimonials from "@/Components/Home/Testimonials";
 import WhatWeDo from "@/Components/Home/WhatWeDo";
 import WorkSection from "@/Components/Home/WorkSection";
 import Layout from "@/Components/Layout";
@@ -22,6 +25,9 @@ export default function Home() {
           <WhatWeDo />
           <WorkSection />
           <ReadyToGetCard />
+          <Testimonials />
+          <Contact />
+          <ContactForm1 />
         </Layout>
       </main>
     </>

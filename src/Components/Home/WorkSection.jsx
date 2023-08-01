@@ -43,13 +43,13 @@ function WorkSection() {
     <>
       <Stack sx={style.workSec}>
         <Container sx={responsive.container}>
-          <Grid container>
+          <Grid container columnSpacing={2}>
             <Grid item lg={6}>
               <Box className={styles.workTag}>
                 <Image
                   src={worker}
                   alt="oops"
-                  style={{ height: "750px", width: "90%" }}
+                  style={{ height: "750px", width: "100%" }}
                 />
               </Box>
             </Grid>
