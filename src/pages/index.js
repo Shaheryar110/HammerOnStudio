@@ -1,5 +1,6 @@
 import Contact from "@/Components/Home/Contact";
 import ContactForm1 from "@/Components/Home/ContactForm1";
+import Gallery from "@/Components/Home/Gallery";
 import HeroCarousel from "@/Components/Home/HeroCarousel";
 import ReadyToGetCard from "@/Components/Home/ReadyToGetCard";
 import RepariAndRenovation from "@/Components/Home/RepariAndRenovation";
@@ -25,6 +26,7 @@ export default function Home() {
           <WhatWeDo />
           <WorkSection />
           <ReadyToGetCard />
+          <Gallery />
           <Testimonials />
           <Contact />
           <ContactForm1 />

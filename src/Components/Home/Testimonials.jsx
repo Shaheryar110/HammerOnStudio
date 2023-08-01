@@ -30,7 +30,7 @@ function Testimonials() {
         position: "absolute",
         left: "1100px",
         right: 0,
-        top: "6000px",
+        top: "7200px",
         bottom: 0,
         width: "778px",
         height: "300px",

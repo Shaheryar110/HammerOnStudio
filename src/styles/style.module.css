@@ -360,23 +360,31 @@
 }
 .feild {
   background-color: #408ecd;
-  border: none;
+  width: 100%;
   display: block;
 
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
   line-height: 1.25;
-  color: #ffffff;
+
   margin-top: 1.2rem;
   background-image: none;
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+
   border-radius: 0.25rem;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   font-size: 16px;
-  color: #fafcff;
+
   padding: 14px 15px;
-  border-radius: 6px;
+}
+.feild:active {
+  border: none;
+}
+.feild:focus-visible {
+  border: none !important;
+}
+.feild::placeholder {
+  color: white;
 }
 .feild1 {
   background-color: white;
@@ -397,4 +405,34 @@
   color: black;
   padding: 14px 15px;
   border-radius: 6px;
+}
+/* Gallery */
+.navTab {
+  border: 2px solid #dee2e6;
+  width: 60%;
+  border-radius: 5px;
+  margin: 0 auto 35px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  flex-wrap: wrap;
+}
+.navItem {
+  color: #000;
+  font-weight: 700;
+  padding: 0;
+  border-bottom: 3px solid white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding-bottom: 0.5rem;
+}
+.active {
+  color: #2871ae;
+  border-bottom: 3px solid #2871ae;
+  padding: 15px 0px;
 }
