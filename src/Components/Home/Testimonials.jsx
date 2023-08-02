@@ -80,6 +80,8 @@ function Testimonials() {
                 centerMode={true}
                 centerSlidePercentage={45}
                 showStatus={false}
+                interval={2000}
+                infiniteLoop={true}
               >
                 <Box sx={style.sliderCard}>
                   <Image

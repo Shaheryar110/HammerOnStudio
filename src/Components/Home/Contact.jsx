@@ -140,10 +140,10 @@ function Contact() {
                 <Typography variant="h3" sx={style.h31}>
                   Send Us a Message
                 </Typography>
-                <input className={styles.feild} placeholder="Name" />
-                <input className={styles.feild} placeholder="Email" />
-                <input className={styles.feild} placeholder="Phone" />
-                <input className={styles.feild} placeholder="Address" />
+                <input className={styles.feildC} placeholder="Name" />
+                <input className={styles.feildC} placeholder="Email" />
+                <input className={styles.feildC} placeholder="Phone" />
+                <input className={styles.feildC} placeholder="Address" />
                 <Button variant="contained" sx={style.buton}>
                   SUBMIT NOW
                 </Button>

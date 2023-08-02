@@ -360,7 +360,7 @@
 }
 .feild {
   background-color: #408ecd;
-  width: 100%;
+
   display: block;
 
   padding: 0.5rem 0.75rem;
@@ -385,6 +385,9 @@
 }
 .feild::placeholder {
   color: white;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 .feild1 {
   background-color: white;
@@ -447,4 +450,35 @@
 .imgs:hover {
   transform: scale(1.2);
   transition: ease all 0.5s;
+}
+.feildC {
+  background-color: #408ecd;
+  width: 100%;
+  display: block;
+
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+
+  margin-top: 1.2rem;
+  background-image: none;
+  background-clip: padding-box;
+
+  border-radius: 0.25rem;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  font-size: 16px;
+
+  padding: 14px 15px;
+}
+.feildC:active {
+  border: none;
+}
+.feildC:focus-visible {
+  border: none !important;
+}
+.feildC::placeholder {
+  color: white;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }

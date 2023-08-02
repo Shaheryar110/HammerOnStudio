@@ -11,14 +11,16 @@ import roof5 from "../../assets/images/roof5.jpg";
 import roof6 from "../../assets/images/roof6.jpg";
 import GalleryBox from "../Commons/GalleryBox";
 
-function Gallery() {
+function Gallery({ border }) {
   const style = {
     center: {
       justifyContent: "center",
       alignItems: "center",
     },
     margin: {
-      marginY: "4rem",
+      marginY: border ? "0px" : "4rem",
+      paddingX: "0px",
+      marginX: "0px",
     },
     navItem: {
       fontSize: "1.2rem",
@@ -65,6 +67,12 @@ function Gallery() {
       backgroundColor: "rgb(0, 0, 0,0.3)",
       padding: "30px",
     },
+    borders: {
+      borderTop: border ? "8px solid #3772B0" : "none",
+      borderLeft: border ? "1rem solid #3772B0" : "none",
+      borderRight: border ? "1rem solid #3772B0" : "none",
+      borderBottom: border ? "1rem solid #3772B0" : "none",
+    },
   };
 
   const [activeStatus, setActiveStatus] = useState("All Project");
@@ -74,7 +82,7 @@ function Gallery() {
   return (
     <>
       <Box sx={style.margin}>
-        <Container className={responsive.container}>
+        <Container className={responsive.container} sx={style.borders}>
           <Grid container sx={style.center}>
             <Grid item lg={12}>
               <ul className={styles.navTab}>

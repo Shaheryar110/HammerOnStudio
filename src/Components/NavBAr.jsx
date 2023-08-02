@@ -31,7 +31,8 @@ function NavBAr() {
       marginLeft: "31rem",
       borderRadius: "1rem",
       width: "300px",
-
+      position: "absolute",
+      zIndex: "99",
       marginTop: "0.5rem",
     },
   };
@@ -67,9 +68,11 @@ function NavBAr() {
                   <KeyboardArrowDownIcon />
                 </li>
                 <li className={styles.li}>
-                  <Typography className={styles.text} id={styles.margin}>
-                    Merchandis
-                  </Typography>
+                  <Link href="/merchandis" style={{ textDecoration: "none" }}>
+                    <Typography className={styles.text} id={styles.margin}>
+                      Merchandis
+                    </Typography>
+                  </Link>
                 </li>
               </Box>
               <li className={styles.liImage} id={styles.margin}>
@@ -77,16 +80,22 @@ function NavBAr() {
               </li>
               <Box className={styles.boxStyle}>
                 <li className={styles.li}>
-                  <Typography className={styles.text}>Our Work</Typography>
+                  <Link href="/work" style={{ textDecoration: "none" }}>
+                    <Typography className={styles.text}>Our Work</Typography>
+                  </Link>
                 </li>
                 <li className={styles.li}>
                   <Typography className={styles.text}>Blogs</Typography>
                 </li>
                 <li className={styles.li}>
-                  <Typography className={styles.text}>Conatct Us</Typography>
+                  <Link href="/contact" style={{ textDecoration: "none" }}>
+                    <Typography className={styles.text}>Conatct Us</Typography>
+                  </Link>
                 </li>
                 <li className={styles.li}>
-                  <Typography className={styles.text}>Get A Qoute</Typography>
+                  <Link href="/get-a-qoute" style={{ textDecoration: "none" }}>
+                    <Typography className={styles.text}>Get A Qoute</Typography>
+                  </Link>
                 </li>
               </Box>
             </ul>
@@ -96,13 +105,23 @@ function NavBAr() {
       {active && (
         <Box sx={style.dropDowmBox}>
           <ListItemButton className={styles.size}>
-            <ListItemText primary="Commercial Service" />
+            <Link
+              href="/commercialService"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <ListItemText primary="Commercial Service" />
+            </Link>
           </ListItemButton>
           <ListItemButton>
-            <ListItemText
-              primary="Residential Service"
-              className={styles.size}
-            />
+            <Link
+              href="/residentialService"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <ListItemText
+                primary="Residential Service"
+                className={styles.size}
+              />
+            </Link>
           </ListItemButton>
         </Box>
       )}
