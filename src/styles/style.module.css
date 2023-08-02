@@ -436,3 +436,15 @@
   border-bottom: 3px solid #2871ae;
   padding: 15px 0px;
 }
+.imgs {
+  border-style: solid;
+  border-width: 0px 20px 10px 5px;
+  border-color: #3772b0;
+  border-radius: 100px 0px 0px 0px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  transition: ease-out all 0.5s;
+}
+.imgs:hover {
+  transform: scale(1.2);
+  transition: ease all 0.5s;
+}

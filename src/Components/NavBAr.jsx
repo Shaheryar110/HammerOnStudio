@@ -13,6 +13,7 @@ import styles from "../../src/styles/style.module.css";
 import logo from "../../src/assets/images/logo.png";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useState } from "react";
+import Link from "next/link";
 function NavBAr() {
   const style = {
     navBar: {
@@ -50,10 +51,14 @@ function NavBAr() {
             <ul className={styles.ul}>
               <Box className={styles.boxStyle}>
                 <li className={styles.li}>
-                  <Typography className={styles.text}>Home</Typography>
+                  <Link href="/" style={{ textDecoration: "none" }}>
+                    <Typography className={styles.text}>Home</Typography>
+                  </Link>
                 </li>
                 <li className={styles.li}>
-                  <Typography className={styles.text}>About</Typography>
+                  <Link href="/about" style={{ textDecoration: "none" }}>
+                    <Typography className={styles.text}>About</Typography>
+                  </Link>
                 </li>
                 <li className={styles.lis}>
                   <Typography className={styles.text} onClick={DropDownHandler}>
