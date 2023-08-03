@@ -19,7 +19,7 @@ function WorkSection() {
       zIndex: "-1",
     },
     article: {
-      marginTop: "35px",
+      // marginTop: "35px",
     },
     head: {
       fontWeight: 700,
@@ -35,7 +35,7 @@ function WorkSection() {
       lineHeight: "28px",
       lineHeight: 1.7,
 
-      margin: "30px 0",
+      margin: "10px 0",
       color: " #7A7A7A",
     },
   };
@@ -43,13 +43,13 @@ function WorkSection() {
     <>
       <Stack sx={style.workSec}>
         <Container sx={responsive.container}>
-          <Grid container columnSpacing={2}>
+          <Grid container columnSpacing={2} my={5}>
             <Grid item lg={6}>
               <Box className={styles.workTag}>
                 <Image
                   src={worker}
                   alt="oops"
-                  style={{ height: "750px", width: "100%" }}
+                  style={{ height: "100%", width: "100%" }}
                 />
               </Box>
             </Grid>

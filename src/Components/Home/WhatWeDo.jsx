@@ -25,6 +25,42 @@ function WhatWeDo() {
       color: "black",
       fontSize: "1rem",
     },
+    h4: {
+      color: "#fff",
+      fontSize: "14px",
+      fontWeight: 700,
+      marginBottom: "10px",
+      letterSpacing: "1px",
+      fontFamily: "Inter, sans-serif",
+      position: "relative",
+      paddingLeft: "30px",
+      lineHeight: "21px",
+      "&::before": {
+        content: '""',
+        height: "3px",
+        width: "21px",
+        backgroundColor: "#2871ae",
+        position: "absolute",
+        top: "9px",
+        left: 0,
+      },
+    },
+    h3: {
+      fontFamily: "Inter, sans-serif",
+      fontSize: "30px",
+      lineHeight: "46px",
+      fontWeight: 800,
+      fontStyle: "normal",
+      color: "#fff",
+    },
+    par: {
+      fontSize: "17px",
+      fontWeight: 400,
+      lineHeight: "1.7",
+      fontFamily: "Roboto, sans-serif",
+      margin: "30px 0",
+      color: "white",
+    },
   };
   return (
     <>
@@ -33,23 +69,23 @@ function WhatWeDo() {
           <Grid container spacing={2}>
             <Grid item lg={6}>
               <Box className={styles.headings}>
-                <Typography variant="h4" className={styles.h4}>
+                <Typography variant="h4" sx={style.h4}>
                   WHAT WE DO
                 </Typography>
-                <Typography variant="h3" className={styles.h3}>
+                <Typography variant="h3" sx={style.h3}>
                   At Hammer-On Studios, we specialize in offering residential
                   and building repair and renovation services.
                 </Typography>
               </Box>
             </Grid>
             <Grid item lg={6}>
-              <Typography className={styles.par}>
+              <Typography sx={style.par}>
                 We provide facility renovation services that are designed to
                 utilize your location in the best possible way, helping you
                 improve the aesthetics, functionality, and value of your
                 property.
               </Typography>
-              <Typography className={styles.par}>
+              <Typography sx={style.par}>
                 From simple remodeling to adding an extension, Hammer-On Studios
                 has adequate skills and knowledge to deliver all your projects
                 on time and within budget.
