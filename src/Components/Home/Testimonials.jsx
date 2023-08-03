@@ -65,6 +65,36 @@ function Testimonials() {
 
       zIndex: "99",
     },
+    h4: {
+      color: "#fff",
+      fontSize: "14px",
+      fontWeight: 700,
+      marginBottom: "10px",
+      letterSpacing: "1px",
+      fontFamily: "Inter, sans-serif",
+      position: "relative",
+      paddingLeft: "30px",
+      lineHeight: "21px",
+      "&::before": {
+        content: '""',
+        height: "3px",
+        width: "21px",
+        backgroundColor: "#2871ae",
+        position: "absolute",
+        top: "9px",
+        left: 0,
+      },
+    },
+    h3: {
+      fontFamily: "Inter, sans-serif",
+      fontSize: "30px",
+      lineHeight: "46px",
+      fontWeight: 800,
+      fontStyle: "normal",
+      color: "#fff",
+      position: "relative",
+      zIndex: "2",
+    },
   };
 
   return (
@@ -158,14 +188,10 @@ function Testimonials() {
           </Grid>
           <Grid item lg={5}>
             <Box sx={style.carBox1}>
-              <Typography variant="h4" className={styles.h4}>
+              <Typography variant="h4" sx={style.h4}>
                 OUR TESTIMONIAL
               </Typography>
-              <Typography
-                variant="h3"
-                className={styles.h3}
-                sx={{ position: "relative", zIndex: "2" }}
-              >
+              <Typography variant="h3" sx={style.h3}>
                 What Our Clients Say About Us
               </Typography>
               <Typography

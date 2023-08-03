@@ -1,4 +1,4 @@
-import { Container, Box, Typography, Stack, Grid } from "@mui/material";
+import { Container, Box, Typography, Stack, Grid, Button } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import responsive from "../../styles/responsive.module.css";
@@ -61,6 +61,28 @@ function WhatWeDo() {
       margin: "30px 0",
       color: "white",
     },
+    hThree: {
+      fontWeight: 700,
+      marginBottom: "12px",
+      fontSize: "24px",
+      color: "black",
+    },
+    paragraph: {
+      marginTop: 0,
+      color: "#7a7a7a",
+      fontSize: "15px",
+      marginBottom: 0,
+    },
+    btn: {
+      color: "#000",
+      marginTop: "13px",
+      display: "inherit",
+      border: "none",
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "center",
+      backgroundColor: "white",
+    },
   };
   return (
     <>
@@ -99,25 +121,18 @@ function WhatWeDo() {
                 <figure className={styles.fig}>
                   <Image src={services} />
                 </figure>
-                {/* <div class="svg-content">
-                  <Image src={top} />
-                  {/* <Image src={bottomSvg} />
-                  <Image src={bottomSvgW} /> */}
                 <article className={styles.article}>
-                  {/* <div className={styles.iconic}>
-                    <HomeOutlinedIcon />
-                  </div> */}
-                  <Typography variant="h3" className={styles.hThree}>
+                  <Typography variant="h3" sx={style.hThree}>
                     Commercial Services
                   </Typography>
-                  <Typography className={styles.paragraph}>
+                  <Typography sx={style.paragraph}>
                     Hammer-On Studios supports commercial locations with
                     top-quality renovation services tailored to our clients’
                     eclectic needs. From breweries and restaurants to…
                   </Typography>
-                  <button className={styles.btn}>
+                  <Button sx={style.btn}>
                     Read More <KeyboardArrowRightOutlinedIcon sx={style.ic} />
-                  </button>
+                  </Button>
                 </article>
               </Box>
             </Grid>
@@ -134,17 +149,17 @@ function WhatWeDo() {
                   {/* <div className={styles.iconic}>
                     <HomeOutlinedIcon />
                   </div> */}
-                  <Typography variant="h3" className={styles.hThree}>
+                  <Typography variant="h3" sx={style.hThree}>
                     Residential Services
                   </Typography>
-                  <Typography className={styles.paragraph}>
+                  <Typography sx={style.paragraph}>
                     Hammer-On Studios’ home renovation services assist you in
                     meeting all your remodeling ambitions seamlessly. We
                     transform your living space with…
                   </Typography>
-                  <button className={styles.btn}>
+                  <Button sx={style.btn}>
                     Read More <KeyboardArrowRightOutlinedIcon sx={style.ic} />
-                  </button>
+                  </Button>
                 </article>
               </Box>
             </Grid>
