@@ -82,6 +82,7 @@ function Testimonials() {
                 showStatus={false}
                 interval={2000}
                 infiniteLoop={true}
+                showThumbs={false}
               >
                 <Box sx={style.sliderCard}>
                   <Image

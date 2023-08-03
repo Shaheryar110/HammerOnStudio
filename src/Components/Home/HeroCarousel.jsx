@@ -63,7 +63,12 @@ function HeroCarousel() {
   };
 
   return (
-    <Carousel showArrows={true} showIndicators={false} infiniteLoop={true}>
+    <Carousel
+      showArrows={true}
+      showIndicators={false}
+      infiniteLoop={true}
+      showThumbs={false}
+    >
       <div style={{ position: "relative" }}>
         <Image src={slider1} />
         <Container className={responsive.container}>

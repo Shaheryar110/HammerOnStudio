@@ -1,7 +1,5 @@
 /** @type {import('next').NextConfig} */
 
-const { withGoogleFonts } = require("@next/google-fonts");
-
 const nextConfig = {
   reactStrictMode: true,
   webpack(config) {
