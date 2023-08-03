@@ -35,6 +35,16 @@ function NavBAr() {
       zIndex: "99",
       marginTop: "0.5rem",
     },
+    text: {
+      color: "white",
+      textTransform: "capitalize",
+      fontSize: "1.3rem",
+      fontWeight: 600,
+      padding: "0px",
+    },
+    container: {
+      maxWidth: { lg: "1450px", md: "1000px" },
+    },
   };
   const [active, setActive] = useState(false);
   const DropDownHandler = () => {
@@ -47,29 +57,29 @@ function NavBAr() {
   return (
     <>
       <Box bgcolor="#2296E6" color="white">
-        <Container className={responsive.container}>
+        <Container sx={style.container}>
           <Box sx={style.navBar}>
             <ul className={styles.ul}>
               <Box className={styles.boxStyle}>
                 <li className={styles.li}>
                   <Link href="/" style={{ textDecoration: "none" }}>
-                    <Typography className={styles.text}>Home</Typography>
+                    <Typography sx={style.text}>Home</Typography>
                   </Link>
                 </li>
                 <li className={styles.li}>
                   <Link href="/about" style={{ textDecoration: "none" }}>
-                    <Typography className={styles.text}>About</Typography>
+                    <Typography sx={style.text}>About</Typography>
                   </Link>
                 </li>
                 <li className={styles.lis}>
-                  <Typography className={styles.text} onClick={DropDownHandler}>
+                  <Typography sx={style.text} onClick={DropDownHandler}>
                     Services
                   </Typography>
                   <KeyboardArrowDownIcon />
                 </li>
                 <li className={styles.li}>
                   <Link href="/merchandis" style={{ textDecoration: "none" }}>
-                    <Typography className={styles.text} id={styles.margin}>
+                    <Typography sx={style.text} id={styles.margin}>
                       Merchandis
                     </Typography>
                   </Link>
@@ -81,22 +91,22 @@ function NavBAr() {
               <Box className={styles.boxStyle}>
                 <li className={styles.li}>
                   <Link href="/work" style={{ textDecoration: "none" }}>
-                    <Typography className={styles.text}>Our Work</Typography>
+                    <Typography sx={style.text}>Our Work</Typography>
                   </Link>
                 </li>
                 <li className={styles.li}>
                   <Link href="/blogs" style={{ textDecoration: "none" }}>
-                    <Typography className={styles.text}>Blogs</Typography>
+                    <Typography sx={style.text}>Blogs</Typography>
                   </Link>
                 </li>
                 <li className={styles.li}>
                   <Link href="/contact" style={{ textDecoration: "none" }}>
-                    <Typography className={styles.text}>Conatct Us</Typography>
+                    <Typography sx={style.text}>Conatct Us</Typography>
                   </Link>
                 </li>
                 <li className={styles.li}>
                   <Link href="/get-a-qoute" style={{ textDecoration: "none" }}>
-                    <Typography className={styles.text}>Get A Qoute</Typography>
+                    <Typography sx={style.text}>Get A Qoute</Typography>
                   </Link>
                 </li>
               </Box>

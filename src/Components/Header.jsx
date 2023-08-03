@@ -54,10 +54,13 @@ const HeaderTop = () => {
       alignItems: "center",
       justifyContent: "center",
     },
+    container: {
+      maxWidth: { lg: "1450px", md: "1000px" },
+    },
   };
   return (
     <Box bgcolor="#1F588C" color="primary.contrastText">
-      <Container className={responsive.container}>
+      <Container sx={style.container}>
         <Stack sx={style.topHeader}>
           <Box sx={style.Left}>
             <Box sx={style.boxDetail}>
