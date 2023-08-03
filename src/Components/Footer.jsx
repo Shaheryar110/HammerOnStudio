@@ -7,6 +7,7 @@ import footerLogo from "../assets/images/cas.png";
 import PhoneIcon from "@mui/icons-material/Phone";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import Link from "next/link";
 
 function Footer() {
   const style = {
@@ -55,12 +56,16 @@ function Footer() {
             </Grid>
             <Grid item lg={2}>
               <Box className={styles.footSocial}>
-                <Box sx={style.socialStyle}>
-                  <FacebookIcon sx={{ color: "white", fontSize: "2rem" }} />
-                </Box>
-                <Box sx={style.socialStyle}>
-                  <InstagramIcon sx={{ color: "white", fontSize: "2rem" }} />
-                </Box>
+                <Link href="https://www.facebook.com/HammerOnStudios">
+                  <Box sx={style.socialStyle}>
+                    <FacebookIcon sx={{ color: "white", fontSize: "2rem" }} />
+                  </Box>
+                </Link>
+                <Link href="https://www.instagram.com/hammeronstudiosllc/">
+                  <Box sx={style.socialStyle}>
+                    <InstagramIcon sx={{ color: "white", fontSize: "2rem" }} />
+                  </Box>
+                </Link>
               </Box>
             </Grid>
           </Grid>

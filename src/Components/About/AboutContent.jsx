@@ -6,6 +6,7 @@ import BeforeHeadSmall from "../Commons/BeforeHeadSmall";
 import HeadingH2 from "../Commons/HeadingH2";
 import labours from "../../assets/images/labours.jpg";
 import Image from "next/image";
+import tag01 from "../../assets/images/tag01.jpg";
 
 function AboutContent() {
   const style = {
@@ -19,10 +20,17 @@ function AboutContent() {
       fontSize: "1.3rem",
     },
     rightSide: {},
+    image: {
+      backgroundImage: `url(${tag01.src})`,
+      backgroundPosition: "top right",
+      backgroundRepeat: "repeat",
+      opacity: 1,
+      transition: "background 0.3s, border-radius 0.3s, opacity 0.3s",
+    },
   };
   return (
     <>
-      <Box>
+      <Box sx={style.image}>
         <Container className={responsive.container}>
           <Grid container sx={style.sapcing}>
             <Grid item lg={6}>

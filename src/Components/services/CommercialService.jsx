@@ -10,6 +10,7 @@ import fourMen3 from "../../assets/images/tag03.webp";
 import fourMen4 from "../../assets/images/const1.jpg";
 import fourMen5 from "../../assets/images/imgtag-03.jpg";
 import new1 from "../../assets/images/new1.webp";
+import tag01 from "../../assets/images/tag01.jpg";
 import house from "../../assets/images/house.png";
 import Testimonials from "../Home/Testimonials";
 import Image from "next/image";
@@ -126,10 +127,17 @@ function CommercialService() {
       fontStyle: "normal",
       fontWeight: 800,
     },
+    image: {
+      backgroundImage: `url(${tag01.src})`,
+      backgroundPosition: "top right",
+      backgroundRepeat: "repeat",
+      opacity: 1,
+      transition: "background 0.3s, border-radius 0.3s, opacity 0.3s",
+    },
   };
   return (
     <>
-      <Box>
+      <Box sx={style.image}>
         <Stripe heading="COMMERCIAL SERVICE" />
         <Container className={responsive.container}>
           <Box sx={style.margins}>

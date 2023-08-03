@@ -5,6 +5,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 import responsive from "../../src/styles/responsive.module.css";
+import Link from "next/link";
 const HeaderTop = () => {
   const style = {
     topHeader: {
@@ -87,12 +88,16 @@ const HeaderTop = () => {
             </Box>
           </Box>
           <Box sx={style.Left}>
-            <Box sx={style.icon}>
-              <FacebookIcon />
-            </Box>
-            <Box sx={style.icon}>
-              <InstagramIcon />
-            </Box>
+            <Link href="https://www.facebook.com/HammerOnStudios">
+              <Box sx={style.icon}>
+                <FacebookIcon />
+              </Box>
+            </Link>
+            <Link href="https://www.instagram.com/hammeronstudiosllc/">
+              <Box sx={style.icon}>
+                <InstagramIcon />
+              </Box>
+            </Link>
             <Box sx={style.icon}>
               <PinterestIcon />
             </Box>

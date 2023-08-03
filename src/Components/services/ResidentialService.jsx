@@ -12,6 +12,7 @@ import fourMen5 from "../../assets/images/imgtag-03.jpg";
 import new1 from "../../assets/images/new1.webp";
 import house from "../../assets/images/house.png";
 import Testimonials from "../Home/Testimonials";
+import tag01 from "../../assets/images/tag01.jpg";
 import Image from "next/image";
 import styles from "../../styles/style.module.css";
 function CommercialService() {
@@ -208,10 +209,17 @@ function CommercialService() {
       fontStyle: "normal",
       fontWeight: 800,
     },
+    image: {
+      backgroundImage: `url(${tag01.src})`,
+      backgroundPosition: "top right",
+      backgroundRepeat: "repeat",
+      opacity: 1,
+      transition: "background 0.3s, border-radius 0.3s, opacity 0.3s",
+    },
   };
   return (
     <>
-      <Box>
+      <Box sx={style.image}>
         <Stripe heading="RESIDENTIAL SERVICE" />
         <Container className={responsive.container}>
           <Box sx={style.margins}>

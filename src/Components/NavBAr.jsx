@@ -85,7 +85,9 @@ function NavBAr() {
                   </Link>
                 </li>
                 <li className={styles.li}>
-                  <Typography className={styles.text}>Blogs</Typography>
+                  <Link href="/blogs" style={{ textDecoration: "none" }}>
+                    <Typography className={styles.text}>Blogs</Typography>
+                  </Link>
                 </li>
                 <li className={styles.li}>
                   <Link href="/contact" style={{ textDecoration: "none" }}>
