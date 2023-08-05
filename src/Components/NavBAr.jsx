@@ -33,7 +33,7 @@ function NavBAr() {
       width: "300px",
       position: "absolute",
       zIndex: "99",
-      marginTop: "0.5rem",
+      marginTop: "-2rem",
     },
     text: {
       color: "white",
@@ -41,18 +41,41 @@ function NavBAr() {
       fontSize: "1.3rem",
       fontWeight: 600,
       padding: "0px",
+      ":hover": {
+        color: "black",
+        textDecoration: "underline",
+        transition: "ease all 0.8s",
+      },
     },
     container: {
       maxWidth: { lg: "1450px", md: "1000px" },
     },
   };
   const [active, setActive] = useState(false);
+  const [isHoverDropdown, setIsHoverDropdown] = useState(false);
+  const handleMouseEnter = () => {
+    setActive(true);
+  };
+
+  const handleMouseLeave = () => {
+    setTimeout(() => {
+      if (!isHoverDropdown) setActive(false);
+      else setActive(true);
+    }, 1000);
+  };
   const DropDownHandler = () => {
     if (active) {
       setActive(false);
     } else {
       setActive(true);
     }
+  };
+  const text = {
+    color: "white",
+    textTransform: "capitalize",
+    fontSize: "1.3rem",
+    fontWeight: 600,
+    padding: 0,
   };
   return (
     <>
@@ -71,7 +94,11 @@ function NavBAr() {
                     <Typography sx={style.text}>About</Typography>
                   </Link>
                 </li>
-                <li className={styles.lis}>
+                <li
+                  className={styles.lis}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
                   <Typography sx={style.text} onClick={DropDownHandler}>
                     Services
                   </Typography>
@@ -80,7 +107,7 @@ function NavBAr() {
                 <li className={styles.li}>
                   <Link href="/merchandis" style={{ textDecoration: "none" }}>
                     <Typography sx={style.text} id={styles.margin}>
-                      Merchandis
+                      Merchandise
                     </Typography>
                   </Link>
                 </li>
@@ -115,8 +142,22 @@ function NavBAr() {
         </Container>
       </Box>
       {active && (
-        <Box sx={style.dropDowmBox}>
-          <ListItemButton className={styles.size}>
+        <Box
+          sx={style.dropDowmBox}
+          onMouseEnter={() => setIsHoverDropdown(true)}
+          onMouseLeave={() => {
+            setIsHoverDropdown(false);
+            setActive(false);
+          }}
+        >
+          <ListItemButton
+            className={styles.size}
+
+            // onMouseLeave={() => {
+            //   setIsHoverDropdown(false);
+            //   setActive(false);
+            // }}
+          >
             <Link
               href="/commercialService"
               style={{ textDecoration: "none", color: "inherit" }}
@@ -124,7 +165,13 @@ function NavBAr() {
               <ListItemText primary="Commercial Service" />
             </Link>
           </ListItemButton>
-          <ListItemButton>
+          <ListItemButton
+          // onMouseEnter={() => setIsHoverDropdown(true)}
+          // onMouseLeave={() => {
+          //   setIsHoverDropdown(false);
+          //   setActive(false);
+          // }}
+          >
             <Link
               href="/residentialService"
               style={{ textDecoration: "none", color: "inherit" }}

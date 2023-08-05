@@ -372,22 +372,22 @@
   background-clip: padding-box;
 
   border-radius: 0.25rem;
-  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  border: none;
   font-size: 16px;
 
   padding: 14px 15px;
 }
-.feild:active {
-  border: none;
-}
-.feild:focus-visible {
+
+.feild:focus {
   border: none !important;
+  outline: none;
 }
 .feild::placeholder {
   color: white;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  border: none !important;
 }
 .feild1 {
   background-color: white;
@@ -408,6 +408,10 @@
   color: black;
   padding: 14px 15px;
   border-radius: 6px;
+}
+.feild1:focus {
+  border: none !important;
+  outline: none;
 }
 /* Gallery */
 .navTab {
@@ -461,26 +465,20 @@
   line-height: 1.25;
 
   margin-top: 1.2rem;
-  background-image: none;
-  background-clip: padding-box;
 
   border-radius: 0.25rem;
-  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+
   font-size: 16px;
 
   padding: 14px 15px;
 }
-.feildC:active {
-  border: none;
-}
-.feildC:focus-visible {
+
+.feildC:focus {
+  outline: none;
   border: none !important;
 }
 .feildC::placeholder {
   color: white;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
 }
 .cardBox {
   box-shadow: 0px 5px 59px 0px rgba(0, 0, 0, 0.31);

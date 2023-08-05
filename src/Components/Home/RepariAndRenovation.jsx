@@ -9,6 +9,7 @@ import dril from "../../assets/images/dril.webp";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined";
 import CabinOutlinedIcon from "@mui/icons-material/CabinOutlined";
+import { motion, easeIn } from "framer-motion";
 
 function RepariAndRenovation() {
   const style = {
@@ -124,16 +125,22 @@ function RepariAndRenovation() {
                 </Box>
               </Grid>
               <Grid item lg={5}>
-                <Box sx={style.figure}>
-                  <Image
-                    src={white}
-                    alt="white"
-                    className={styles.img1}
-                    style={{ height: "350px", width: "60%" }}
-                  />
-                  <Image src={yellw} alt="white" className={styles.img2} />
-                  <Image src={dril} alt="white" className={styles.img3} />
-                </Box>
+                <motion.div
+                  initial={{ y: 200, opacity: 0 }} // Initial position outside the left side of the screen with opacity 0
+                  animate={{ y: 0, opacity: 1 }} // Final position (its actual position) with opacity 1
+                  transition={{ duration: 2, type: "easeIn", delay: 1 }} // Animation duration, easing, and delay
+                >
+                  <Box sx={style.figure}>
+                    <Image
+                      src={white}
+                      alt="white"
+                      className={styles.img1}
+                      style={{ height: "350px", width: "60%" }}
+                    />
+                    <Image src={yellw} alt="white" className={styles.img2} />
+                    <Image src={dril} alt="white" className={styles.img3} />
+                  </Box>
+                </motion.div>
               </Grid>
             </Grid>
           </Box>

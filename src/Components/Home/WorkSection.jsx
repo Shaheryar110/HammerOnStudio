@@ -5,6 +5,7 @@ import responsive from "../../styles/responsive.module.css";
 import styles from "../../styles/style.module.css";
 import sbg2 from "../../assets/images/sbg2.png";
 import worker from "../../assets/images/worker01.webp";
+import { motion, easeIn } from "framer-motion";
 
 function WorkSection() {
   const style = {
@@ -46,11 +47,17 @@ function WorkSection() {
           <Grid container columnSpacing={2} my={5}>
             <Grid item lg={6}>
               <Box className={styles.workTag}>
-                <Image
-                  src={worker}
-                  alt="oops"
-                  style={{ height: "100%", width: "100%" }}
-                />
+                <motion.div
+                  initial={{ x: -200, opacity: 0 }} // Initial position outside the left side of the screen with opacity 0
+                  animate={{ x: 0, opacity: 1 }} // Final position (its actual position) with opacity 1
+                  transition={{ duration: 1, type: "easeIn", delay: 1 }} // Animation duration, easing, and delay
+                >
+                  <Image
+                    src={worker}
+                    alt="oops"
+                    style={{ height: "100%", width: "100%" }}
+                  />
+                </motion.div>
               </Box>
             </Grid>
             <Grid item lg={6}>

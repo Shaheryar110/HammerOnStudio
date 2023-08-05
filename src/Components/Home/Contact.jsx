@@ -98,6 +98,8 @@ function Contact() {
       color: "white",
       borderRadius: "1rem",
       fontSize: "1.3rem",
+      backgroundColor: "#05365F",
+      textTransform: "uppercase",
     },
     bux: {
       height: "100%",

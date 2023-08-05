@@ -20,7 +20,7 @@ function GetAQoute() {
     },
     butn: {
       marginY: "1rem",
-      fontSize: "1.5rem",
+      fontSize: "1rem",
       width: "100%",
       backgroundColor: "#1F588C",
       paddingY: "0.7rem",

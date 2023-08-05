@@ -20,7 +20,10 @@ function Testimonials() {
       background: "rgb(255,255,255)",
       background:
         "linear-gradient(90deg, rgba(255,255,255,1) 51%, rgba(36,36,36,1) 51%)",
-      marginY: "3rem",
+      marginY: "4rem",
+      position: "relative",
+      zIndex: "2",
+
       // " :: before": {
       //   content: "' '",
       //   backgroundImage: `url(${shape34.src})`,
@@ -95,11 +98,21 @@ function Testimonials() {
       position: "relative",
       zIndex: "2",
     },
+    imgBack: {
+      position: "absolute",
+      zIndex: "-1",
+      right: "0%",
+    },
   };
 
   return (
     <>
       <Box sx={style.main}>
+        <Box sx={style.imgBack}>
+          {" "}
+          <Image src={shape34} style={{ width: "100%", height: "100%" }} />
+        </Box>
+
         <Grid container>
           <Grid item lg={7}>
             <Box sx={style.carBox}>
@@ -197,7 +210,7 @@ function Testimonials() {
               <Typography
                 sx={{
                   color: "white",
-                  width: "70%",
+                  width: "90%",
                   marginY: "1rem",
                   position: "relative",
                   zIndex: "2",

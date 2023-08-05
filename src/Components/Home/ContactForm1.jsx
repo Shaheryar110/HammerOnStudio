@@ -14,10 +14,6 @@ function ContactForm1() {
 
     boxSetting: {
       marginY: "4rem",
-      //   display: "flex",
-      //   flexDirection: "column",
-      //   alignItems: "center",
-      //   justifyContent: "flex-end",
     },
     buton: {
       marginY: "1rem",
@@ -27,6 +23,25 @@ function ContactForm1() {
       backgroundColor: "white",
       color: "black",
       marginTop: "2rem",
+      fontWeight: 600,
+      shadow: "none",
+      border: "1px solid white",
+      paddingX: "1rem",
+      borderRadius: "0.5rem",
+      ":hover": {
+        marginY: "1rem",
+        color: "white",
+        paddingY: "0.5rem",
+        fontSize: "1rem",
+        backgroundColor: "white",
+        color: "black",
+        marginTop: "2rem",
+        fontWeight: 600,
+        shadow: "none",
+        border: "1px solid white",
+        paddingX: "1rem",
+        borderRadius: "0.5rem",
+      },
     },
     three: {
       display: "flex",
@@ -61,10 +76,8 @@ function ContactForm1() {
                 </Typography>
                 <Box sx={style.three}>
                   <input className={styles.feild} placeholder="Name" />
-                  <input className={styles.feild1} placeholder="Name" />
-                  <Button variant="contained" sx={style.buton}>
-                    SUBMIT NOW
-                  </Button>
+                  <input className={styles.feild1} placeholder="Email" />
+                  <Button sx={style.buton}>SUBMIT NOW</Button>
                 </Box>
               </Box>
             </Grid>
