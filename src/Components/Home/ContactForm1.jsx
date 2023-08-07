@@ -4,6 +4,13 @@ import responsive from "../../styles/responsive.module.css";
 import styles from "../../styles/style.module.css";
 import new1 from "../../assets/images/new1.webp";
 import Image from "next/image";
+import BeforeHeadSmall from "../Commons/BeforeHeadSmall";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
 function ContactForm1() {
   const style = {
     main: {
@@ -68,16 +75,16 @@ function ContactForm1() {
             <Grid item lg={5}></Grid>
             <Grid item lg={7}>
               <Box sx={style.boxSetting}>
-                <Typography variant="h4" className={styles.h4}>
-                  CONTACT FORM
-                </Typography>
+                <BeforeHeadSmall text="CONTACT FORM" color="white" />
                 <Typography variant="h3" className={styles.h3}>
                   Need Any Home Repair Help?
                 </Typography>
                 <Box sx={style.three}>
                   <input className={styles.feild} placeholder="Name" />
                   <input className={styles.feild1} placeholder="Email" />
-                  <Button sx={style.buton}>SUBMIT NOW</Button>
+                  <Button sx={style.buton} className={poppins.className}>
+                    SUBMIT NOW
+                  </Button>
                 </Box>
               </Box>
             </Grid>

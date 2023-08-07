@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Box, Typography, Button, Grid } from "@mui/material";
-import Image from "next/image";
 import responsive from "../../styles/responsive.module.css";
 import BeforeHeadSmall from "../Commons/BeforeHeadSmall";
 import HeadingH2 from "../Commons/HeadingH2";
@@ -8,6 +7,12 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import WifiCalling3Icon from "@mui/icons-material/WifiCalling3";
 import styles from "../../styles/style.module.css";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
 
 function Form() {
   const style = {
@@ -63,6 +68,7 @@ function Form() {
         backgroundColor: "white",
         border: "2px solid #05365F",
       },
+      fontFamily: "poppins",
     },
     mainGrid: {
       justifyContent: "space-around",
@@ -157,7 +163,9 @@ function Form() {
                   />
                 </Grid>
               </Grid>
-              <Button sx={style.btn}>SUBMIT</Button>
+              <Box clasName={poppins.className}>
+                <Button sx={style.btn}>SUBMIT</Button>
+              </Box>
             </Grid>
           </Grid>
         </Box>

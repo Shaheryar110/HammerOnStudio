@@ -2,10 +2,10 @@ import { Typography } from "@mui/material";
 import React from "react";
 import styles from "../../styles/style.module.css";
 
-function BeforeHeadSmall({ text, size }) {
+function BeforeHeadSmall({ text, size, color }) {
   const style = {
     h4: {
-      color: "black",
+      color: color || "black",
       fontSize: size || "1rem",
       fontWeight: 700,
       marginBottom: "10px",

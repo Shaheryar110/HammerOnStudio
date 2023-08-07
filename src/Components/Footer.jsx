@@ -23,6 +23,29 @@ function Footer() {
     footerAlign: {
       justifyContent: "space-between",
     },
+    small: {
+      color: "white",
+      fontWeight: 700,
+      fontSize: "1.3rem",
+    },
+    contact: {
+      color: "white",
+      fontWeight: 700,
+      fontSize: "1.3rem",
+    },
+    IconStyle: {
+      backgroundColor: "#2296e6",
+      width: "60px",
+      height: "60px",
+      alignItems: "center",
+      display: "flex",
+      borderRadius: "100%",
+      color: "white",
+      justifyContent: "center",
+    },
+    phoneIcon: {
+      fontSize: "2rem",
+    },
   };
   return (
     <>
@@ -40,14 +63,14 @@ function Footer() {
             <Grid item lg={6}>
               <Box className={styles.cta}>
                 <Box sx={style.flex}>
-                  <Box className={styles.IconStyle}>
-                    <PhoneIcon />
+                  <Box sx={style.IconStyle}>
+                    <PhoneIcon sx={style.phoneIcon} />
                   </Box>
                   <Box className={styles.mediaBody}>
-                    <Typography className={styles.small}>
+                    <Typography sx={style.small}>
                       Need any renovation help?
                     </Typography>
-                    <Typography className={styles.contact}>
+                    <Typography sx={style.contact}>
                       Contact Us: (845) 837-2616
                     </Typography>
                   </Box>

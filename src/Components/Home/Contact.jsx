@@ -3,6 +3,18 @@ import React from "react";
 import responsive from "../../styles/responsive.module.css";
 import styles from "../../styles/style.module.css";
 import img021 from "../../assets/images/img012.jpg";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
 
 function Contact() {
   const style = {
@@ -97,16 +109,42 @@ function Contact() {
       marginY: "1rem",
       color: "white",
       borderRadius: "1rem",
-      fontSize: "1.3rem",
+      fontSize: "1.2rem",
       backgroundColor: "#05365F",
       textTransform: "uppercase",
+      fontWeight: 400,
     },
     bux: {
       height: "100%",
       display: "flex",
       justifyContent: "center",
-
       flexDirection: "column",
+    },
+    feildC: {
+      backgroundColor: "#408ecd",
+      width: "100%",
+      display: "block",
+      padding: "0.5rem 0.75rem",
+      fontSize: "1rem",
+      lineHeight: "1.25",
+      marginTop: "1.2rem",
+      borderRadius: "0.25rem",
+      ":focus": {
+        outline: "none",
+      },
+    },
+  };
+  const feildC = {
+    backgroundColor: "#408ecd",
+    width: "100%",
+    display: "block",
+    padding: "0.5rem 0.75rem",
+    fontSize: "1rem",
+    lineHeight: "1.25",
+    marginTop: "1.2rem",
+    borderRadius: "0.25rem",
+    ":focus": {
+      outline: "none",
     },
   };
   return (
@@ -129,8 +167,10 @@ function Contact() {
                   hours.
                 </Typography>
                 <ul className={styles.unOrderList}>
-                  <li id={styles.changeColor}>info@hammeronstudios.com</li>
-                  <li>(845) 837-2616</li>
+                  <li id={styles.changeColor} className={inter.className}>
+                    info@hammeronstudios.com
+                  </li>
+                  <li className={inter.className}>(845) 837-2616</li>
                 </ul>
               </Box>
             </Grid>
@@ -142,11 +182,16 @@ function Contact() {
                 <Typography variant="h3" sx={style.h31}>
                   Send Us a Message
                 </Typography>
+
                 <input className={styles.feildC} placeholder="Name" />
                 <input className={styles.feildC} placeholder="Email" />
                 <input className={styles.feildC} placeholder="Phone" />
                 <input className={styles.feildC} placeholder="Address" />
-                <Button variant="contained" sx={style.buton}>
+                <Button
+                  variant="contained"
+                  sx={style.buton}
+                  className={poppins.className}
+                >
                   SUBMIT NOW
                 </Button>
               </Box>
