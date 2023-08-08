@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { TextField, MenuItem } from "@mui/material";
 import { Container, Box, Typography, Button, Grid } from "@mui/material";
 import responsive from "../../styles/responsive.module.css";
@@ -6,6 +6,9 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { Select, FormControl, InputLabel } from "@mui/material";
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
 
 function GetAQoute() {
   const style = {
@@ -46,6 +49,67 @@ function GetAQoute() {
   const handleChange = (event) => {
     setSelectedOption(event.target.value);
   };
+  const commercialServicesOption = [
+    "Office renovation and expansion",
+    "Workspace Addition in Commercial Buildings",
+    "Commercial Remodeling",
+    "Warehouse Remodel",
+    "Office Interior and Exterior",
+    "Conference Rooms Renovations and Expansion",
+  ];
+  const residentialServicesOption = [
+    "Roofs",
+    "Floors",
+    "Siding",
+    "Retaining Walls",
+    "Painting",
+    "Kitchen and Bathroom Renovations",
+    "Basement Remodeling",
+    "Decks",
+    "Crown Molding",
+    "Attic Renovations",
+    "Garage Renovations",
+    "Building Sheds",
+    "Room Expansions",
+    "Closet Expansions",
+    "Carpentry",
+    "Patios",
+    "Pergolas",
+  ];
+  const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
+
+  const handleCheckboxChange = (event) => {
+    const checkboxValue = event.target.value;
+    if (event.target.checked) {
+      setSelectedCheckboxes((prevSelected) => [...prevSelected, checkboxValue]);
+    } else {
+      setSelectedCheckboxes((prevSelected) =>
+        prevSelected.filter((value) => value !== checkboxValue)
+      );
+    }
+  };
+
+  const [selectedCheckboxesRes, setSelectedCheckboxesRes] = useState([]);
+
+  const handleCheckboxChangeRes = (event) => {
+    const checkboxValue = event.target.value;
+    if (event.target.checked) {
+      setSelectedCheckboxesRes((prevSelected) => [
+        ...prevSelected,
+        checkboxValue,
+      ]);
+    } else {
+      setSelectedCheckboxesRes((prevSelected) =>
+        prevSelected.filter((value) => value !== checkboxValue)
+      );
+    }
+  };
+
+  //Data that has to be sent in api below
+
+  const commercialData = selectedCheckboxes.join(", ");
+  const residentialData = selectedCheckboxesRes.join(", ");
+
   return (
     <Box>
       <Container className={responsive.container}>
@@ -159,6 +223,52 @@ function GetAQoute() {
                   </Select>
                 </FormControl>
               </Grid>
+              {selectedOption === "Commercial Service" && (
+                <Grid item lg={6}>
+                  <Box sx={style.checkBoxes}>
+                    {commercialServicesOption.map((options) => {
+                      return (
+                        <FormGroup>
+                          <FormControlLabel
+                            control={
+                              <Checkbox
+                                value={options}
+                                checked={selectedCheckboxes.includes(options)}
+                                onChange={handleCheckboxChange}
+                              />
+                            }
+                            label={options}
+                          />
+                        </FormGroup>
+                      );
+                    })}
+                  </Box>
+                </Grid>
+              )}
+              {selectedOption === "Residential Service" && (
+                <Grid item lg={6}>
+                  <Box sx={style.checkBoxes}>
+                    {residentialServicesOption.map((options) => {
+                      return (
+                        <FormGroup>
+                          <FormControlLabel
+                            control={
+                              <Checkbox
+                                value={options}
+                                checked={selectedCheckboxesRes.includes(
+                                  options
+                                )}
+                                onChange={handleCheckboxChangeRes}
+                              />
+                            }
+                            label={options}
+                          />
+                        </FormGroup>
+                      );
+                    })}
+                  </Box>
+                </Grid>
+              )}
             </Grid>
             <Button variant="contained" sx={style.butn}>
               SUBMIT
