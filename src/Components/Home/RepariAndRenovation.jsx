@@ -10,7 +10,7 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined";
 import CabinOutlinedIcon from "@mui/icons-material/CabinOutlined";
 import { motion, easeIn } from "framer-motion";
-import IconCard from "../Commons/iconCard";
+import IconCard from "../Commons/IconCard";
 
 function RepariAndRenovation() {
   const style = {
@@ -199,9 +199,9 @@ function RepariAndRenovation() {
         <Stack sx={style.submain}>
           <Container className={responsive.container}>
             <Grid container>
-              {data.map((data) => {
+              {data.map((data, index) => {
                 return (
-                  <Grid item lg={4}>
+                  <Grid item lg={4} key={index}>
                     <IconCard
                       icon={data.icon}
                       heading={data.heading}
