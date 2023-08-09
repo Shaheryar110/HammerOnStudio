@@ -60,7 +60,7 @@ function FourHoverCards() {
       fontSize: "36px",
       fontWeight: 800,
       lineHeight: "46px",
-      color: "black",
+      color: "#393738",
     },
     slogan: {
       color: "#646464",

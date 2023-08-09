@@ -22,7 +22,7 @@ function Contact() {
       marginY: "5rem",
     },
     tag: {
-      color: "black",
+      color: "#393738",
       fontSize: "14px",
       fontWeight: 700,
       marginBottom: "10px",
@@ -45,7 +45,7 @@ function Contact() {
       fontSize: "40px",
       fontWeight: 800,
       fontStyle: "normal",
-      color: "black",
+      color: "#393738",
       lineHeight: "46px",
       marginBottom: "1rem",
     },

@@ -3,12 +3,12 @@ import { Container, Box, Typography, Stack, Grid } from "@mui/material";
 import Image from "next/image";
 import responsive from "../../styles/responsive.module.css";
 import styles from "../../styles/style.module.css";
-import roof1 from "../../assets/images/roof1.jpg";
-import roof2 from "../../assets/images/roof2.jpg";
-import roof3 from "../../assets/images/roof3.jpg";
-import roof4 from "../../assets/images/roof4.jpg";
-import roof5 from "../../assets/images/roof5.jpg";
-import roof6 from "../../assets/images/roof6.jpg";
+import roof1 from "../../assets/images/galleryImg/1.jpg";
+import roof2 from "../../assets/images/galleryImg/2.jpg";
+import roof3 from "../../assets/images/galleryImg/3.jpg";
+import roof4 from "../../assets/images/galleryImg/4.jpg";
+import roof5 from "../../assets/images/galleryImg/5.jpg";
+import roof6 from "../../assets/images/galleryImg/6.jpg";
 import GalleryBox from "../Commons/GalleryBox";
 
 function Gallery({ border }) {
@@ -134,26 +134,50 @@ function Gallery({ border }) {
               <Grid item lg={6}>
                 <Grid container>
                   <Grid item lg={6}>
-                    <GalleryBox src={roof1} category="Factory,Residential" />
+                    <GalleryBox
+                      src={roof1}
+                      category="Factory,Residential"
+                      service="Roof Construction"
+                    />
                   </Grid>
                   <Grid item lg={6}>
-                    <GalleryBox src={roof2} category="Factory,Residential" />
+                    <GalleryBox
+                      src={roof2}
+                      category="Factory,Residential"
+                      service="Roof Construction"
+                    />
                   </Grid>
                   <Grid item lg={12}>
-                    <GalleryBox src={roof3} category="Factory,Residential" />
+                    <GalleryBox
+                      src={roof6}
+                      category="Factory,Residential"
+                      service="Renovation Roof"
+                    />
                   </Grid>
                 </Grid>
               </Grid>
               <Grid item lg={6}>
                 <Grid container>
                   <Grid item lg={12}>
-                    <GalleryBox src={roof4} category="Factory,Residential" />
+                    <GalleryBox
+                      src={roof3}
+                      category="Factory,Residential"
+                      service="Modern Roofing"
+                    />
                   </Grid>
                   <Grid item lg={6}>
-                    <GalleryBox src={roof5} category="Factory,Residential" />
+                    <GalleryBox
+                      src={roof4}
+                      service="Classic Roofing"
+                      category="Factory,Residential"
+                    />
                   </Grid>
                   <Grid item lg={6}>
-                    <GalleryBox src={roof6} category="Factory,Residential" />
+                    <GalleryBox
+                      src={roof5}
+                      service="Repair Roof"
+                      category="Factory,Residential"
+                    />
                   </Grid>
                 </Grid>
               </Grid>
@@ -164,16 +188,28 @@ function Gallery({ border }) {
               <Grid item lg={6}>
                 <Grid container>
                   <Grid item lg={6}>
-                    <GalleryBox src={roof1} category="Factory,Residential" />
+                    <GalleryBox
+                      src={roof1}
+                      service="Roof Construction"
+                      category="Factory,Residential"
+                    />
                   </Grid>
                   <Grid item lg={6}>
-                    <GalleryBox src={roof2} category="Factory,Residential" />
+                    <GalleryBox
+                      src={roof2}
+                      service="Roof Construction"
+                      category="Factory,Residential"
+                    />
                   </Grid>
                 </Grid>
               </Grid>
 
               <Grid item lg={6}>
-                <GalleryBox src={roof3} category="Factory,Residential" />
+                <GalleryBox
+                  src={roof6}
+                  service="Renovation Roof"
+                  category="Factory,Residential"
+                />
               </Grid>
             </Grid>
           )}
@@ -182,23 +218,43 @@ function Gallery({ border }) {
               <Grid item lg={12}>
                 <Grid container>
                   <Grid item lg={3}>
-                    <GalleryBox src={roof1} category="Factory,Residential" />
+                    <GalleryBox
+                      src={roof1}
+                      service="Roof Construction"
+                      category="Factory,Residential"
+                    />
                   </Grid>
                   <Grid item lg={6}>
-                    <GalleryBox src={roof2} category="Factory,Residential" />
+                    <GalleryBox
+                      src={roof3}
+                      service="Modern Roofing"
+                      category="Factory,Residential"
+                    />
                   </Grid>
                   <Grid item lg={3}>
-                    <GalleryBox src={roof3} category="Factory,Residential" />
+                    <GalleryBox
+                      src={roof4}
+                      service="Roof Construction"
+                      category="Factory,Residential"
+                    />
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item lg={10}>
-                <Grid container>
-                  <Grid item lg={8}>
-                    <GalleryBox src={roof4} category="Factory,Residential" />
+              <Grid item lg={12}>
+                <Grid container sx={{ justifyContent: "space-between" }}>
+                  <Grid item lg={5}>
+                    <GalleryBox
+                      src={roof6}
+                      service="Renovation Roof"
+                      category="Factory,Residential"
+                    />
                   </Grid>
-                  <Grid item lg={4}>
-                    <GalleryBox src={roof4} category="Factory,Residential" />
+                  <Grid item lg={3}>
+                    <GalleryBox
+                      src={roof5}
+                      service="Repair Roof"
+                      category="Factory,Residential"
+                    />
                   </Grid>
                 </Grid>
               </Grid>
@@ -209,15 +265,27 @@ function Gallery({ border }) {
               <Grid item lg={9}>
                 <Grid container>
                   <Grid item lg={4}>
-                    <GalleryBox src={roof1} category="Factory,Residential" />
+                    <GalleryBox
+                      src={roof1}
+                      service="Roof Construction"
+                      category="Factory,Residential"
+                    />
                   </Grid>
                   <Grid item lg={8}>
-                    <GalleryBox src={roof2} category="Factory,Residential" />
+                    <GalleryBox
+                      src={roof3}
+                      service="Modern Roofing"
+                      category="Factory,Residential"
+                    />
                   </Grid>
                 </Grid>
               </Grid>
               <Grid item lg={6}>
-                <GalleryBox src={roof3} category="Factory,Residential" />
+                <GalleryBox
+                  src={roof6}
+                  service="Renovation Roof"
+                  category="Factory,Residential"
+                />
               </Grid>
             </Grid>
           )}
@@ -226,10 +294,18 @@ function Gallery({ border }) {
               <Grid item lg={6}>
                 <Grid container>
                   <Grid item lg={6}>
-                    <GalleryBox src={roof1} category="Factory,Residential" />
+                    <GalleryBox
+                      src={roof4}
+                      service="Classic Roofing"
+                      category="Factory,Residential"
+                    />
                   </Grid>
                   <Grid item lg={6}>
-                    <GalleryBox src={roof2} category="Factory,Residential" />
+                    <GalleryBox
+                      src={roof5}
+                      category="Factory,Residential"
+                      service="Repair Roof"
+                    />
                   </Grid>
                 </Grid>
               </Grid>

@@ -2,7 +2,7 @@ import { Container, Box, Typography, Stack, Grid } from "@mui/material";
 import React from "react";
 import responsive from "../../styles/responsive.module.css";
 import styles from "../../styles/style.module.css";
-import img01 from "../../assets/images/img01.jpg";
+import img01 from "../../assets/images/img01.webp";
 import bgIcon from "../../assets/images/bgicon.png";
 import QuestionAnswerIcon from "@mui/icons-material/QuestionAnswer";
 import AnimatedCard from "./AnimatedCard";
@@ -47,7 +47,7 @@ function ReadyToGetCard() {
         backgroundColor: "#2871ae",
         position: "absolute",
         width: "116px",
-        height: "293px",
+        height: "250px",
         left: "113px",
         right: 0,
         margin: "0 auto",
@@ -63,7 +63,7 @@ function ReadyToGetCard() {
       fontSize: "36px",
       fontWeight: 800,
       lineHeight: "46px",
-      color: "black",
+      color: "#393738",
     },
     slogan: {
       color: "#646464",
@@ -81,7 +81,7 @@ function ReadyToGetCard() {
       <Stack sx={style.readyCard}>
         <Container sx={responsive.container}>
           <Grid container sx={style.card}>
-            <Grid item lg={9}>
+            <Grid item lg={12}>
               <Box sx={style.artic}>
                 <Box className={styles.mediass}>
                   <span className={styles.span1}>

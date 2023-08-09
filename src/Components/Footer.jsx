@@ -1,6 +1,6 @@
 import { Container, Box, Typography, Stack, Grid } from "@mui/material";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import responsive from "../styles/responsive.module.css";
 import styles from "../styles/style.module.css";
 import footerLogo from "../assets/images/cas.png";
@@ -8,17 +8,45 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTiktok } from "@fortawesome/free-brands-svg-icons";
 
 function Footer() {
+  const [isMouseInside, setIsMouseInside] = useState([false, false, false]);
+
+  const handleMouseEnter = (index) => {
+    setIsMouseInside((prev) => {
+      const updated = [...prev];
+      updated[index] = true;
+      return updated;
+    });
+  };
+
+  const handleMouseLeave = (index) => {
+    setIsMouseInside((prev) => {
+      const updated = [...prev];
+      updated[index] = false;
+      return updated;
+    });
+  };
   const style = {
     flex: {
       display: "flex",
       marginTop: "2rem",
     },
     socialStyle: {
-      padding: "0.5rem",
+      width: "50px",
+      height: "50px",
       backgroundColor: "#2E2F31",
-      borderRadius: "10px",
+      borderRadius: "5px",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      ":hover": {
+        backgroundColor: "white",
+        transform: "scale(1.1)",
+        transition: "all ease 0.5s",
+      },
     },
     footerAlign: {
       justifyContent: "space-between",
@@ -80,15 +108,47 @@ function Footer() {
             <Grid item lg={2}>
               <Box className={styles.footSocial}>
                 <Link href="https://www.facebook.com/HammerOnStudios">
-                  <Box sx={style.socialStyle}>
-                    <FacebookIcon sx={{ color: "white", fontSize: "2rem" }} />
+                  <Box
+                    sx={style.socialStyle}
+                    onMouseEnter={() => handleMouseEnter(0)}
+                    onMouseLeave={() => handleMouseLeave(0)}
+                  >
+                    <FacebookIcon
+                      sx={{
+                        color: isMouseInside[0] ? "#2296E6" : "white",
+                        fontSize: "1.2rem",
+                      }}
+                    />
                   </Box>
                 </Link>
                 <Link href="https://www.instagram.com/hammeronstudiosllc/">
-                  <Box sx={style.socialStyle}>
-                    <InstagramIcon sx={{ color: "white", fontSize: "2rem" }} />
+                  <Box
+                    sx={style.socialStyle}
+                    onMouseEnter={() => handleMouseEnter(1)}
+                    onMouseLeave={() => handleMouseLeave(1)}
+                  >
+                    <InstagramIcon
+                      sx={{
+                        color: isMouseInside[1] ? "#2296E6" : "white",
+                        fontSize: "1.2rem",
+                      }}
+                    />
                   </Box>
                 </Link>
+                <Box
+                  sx={style.socialStyle}
+                  onMouseEnter={() => handleMouseEnter(2)}
+                  onMouseLeave={() => handleMouseLeave(2)}
+                >
+                  <FontAwesomeIcon
+                    icon={faTiktok}
+                    className="fas fa-check"
+                    style={{
+                      color: isMouseInside[2] ? "#2296E6" : "white",
+                      fontSize: "1rem",
+                    }}
+                  />
+                </Box>
               </Box>
             </Grid>
           </Grid>

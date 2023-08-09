@@ -12,15 +12,10 @@ import styles from "../../styles/style.module.css";
 function Testimonials() {
   const style = {
     main: {
-      //   backgroundImage: `url(${shape34.src})`,
-      //   backgroundPosition: "top right",
-      //   backgroundRepeat: "no-repeat",
-      //   backgroundSize: "auto",
-      //   height: "100%",
       background: "rgb(255,255,255)",
       background:
         "linear-gradient(90deg, rgba(255,255,255,1) 51%, rgba(36,36,36,1) 51%)",
-      marginY: "4rem",
+      marginY: "7rem",
       position: "relative",
       zIndex: "2",
 
@@ -102,6 +97,7 @@ function Testimonials() {
       position: "absolute",
       zIndex: "-1",
       right: "0%",
+      top: "-2rem",
     },
   };
 

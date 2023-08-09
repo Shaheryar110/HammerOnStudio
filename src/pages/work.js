@@ -4,6 +4,7 @@ import React from "react";
 import { Container, Box, Typography, Button, Grid } from "@mui/material";
 import responsive from "../styles/responsive.module.css";
 import Gallery from "@/Components/Home/Gallery";
+import Testimonials from "@/Components/Home/Testimonials";
 
 function work() {
   const style = {
@@ -23,7 +24,7 @@ function work() {
       textAlign: "center",
     },
     mainhead: {
-      color: "black",
+      color: "#393738",
       fontSize: "40px",
       fontWeight: 800,
       textAlign: "center",
@@ -48,6 +49,7 @@ function work() {
           </Box>
         </Box>
       </Container>
+      <Testimonials />
     </Layout>
   );
 }

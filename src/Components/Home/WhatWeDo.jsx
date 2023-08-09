@@ -22,7 +22,7 @@ function WhatWeDo() {
       padding: "6rem 0",
     },
     ic: {
-      color: "black",
+      color: "#393738",
       fontSize: "1rem",
     },
     h4: {
@@ -65,7 +65,7 @@ function WhatWeDo() {
       fontWeight: 700,
       marginBottom: "12px",
       fontSize: "24px",
-      color: "black",
+      color: "#393738",
     },
     paragraph: {
       marginTop: 0,

@@ -83,7 +83,7 @@ function RepariAndRenovation() {
       flex: 1,
     },
     heading: {
-      color: "black",
+      color: "#393738",
       fontSize: "1.5rem",
       marginBottom: "0.5rem",
       fontWeight: 500,

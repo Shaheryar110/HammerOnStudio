@@ -28,7 +28,7 @@ function WorkSection() {
       fontSize: "36px",
       lineHeight: "46px",
       fontStyle: "normal",
-      color: "black",
+      color: "#393738",
     },
     p: {
       fontSize: "17px",
@@ -46,19 +46,19 @@ function WorkSection() {
         <Container sx={responsive.container}>
           <Grid container columnSpacing={2} my={5}>
             <Grid item lg={6}>
-              <Box className={styles.workTag}>
-                <motion.div
-                  initial={{ x: -200, opacity: 0 }} // Initial position outside the left side of the screen with opacity 0
-                  animate={{ x: 0, opacity: 1 }} // Final position (its actual position) with opacity 1
-                  transition={{ duration: 1, type: "easeIn", delay: 1 }} // Animation duration, easing, and delay
-                >
+              <motion.div
+                initial={{ x: -200, opacity: 0 }} // Initial position outside the left side of the screen with opacity 0
+                animate={{ x: 0, opacity: 1 }} // Final position (its actual position) with opacity 1
+                transition={{ duration: 1, type: "easeIn", delay: 1 }} // Animation duration, easing, and delay
+              >
+                <Box className={styles.workTag}>
                   <Image
                     src={worker}
                     alt="oops"
                     style={{ height: "100%", width: "100%" }}
                   />
-                </motion.div>
-              </Box>
+                </Box>
+              </motion.div>
             </Grid>
             <Grid item lg={6}>
               <Box sx={style.article}>

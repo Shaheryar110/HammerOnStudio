@@ -17,6 +17,7 @@ function ContactForm1() {
       backgroundColor: "#3FBDF9",
       marginTop: "3rem",
       position: "relative",
+      height: "100%",
     },
 
     boxSetting: {
@@ -28,7 +29,7 @@ function ContactForm1() {
       paddingY: "0.5rem",
       fontSize: "1rem",
       backgroundColor: "white",
-      color: "black",
+      color: "#393738",
       marginTop: "2rem",
       fontWeight: 600,
       shadow: "none",
@@ -41,7 +42,7 @@ function ContactForm1() {
         paddingY: "0.5rem",
         fontSize: "1rem",
         backgroundColor: "white",
-        color: "black",
+        color: "#393738",
         marginTop: "2rem",
         fontWeight: 600,
         shadow: "none",
@@ -70,12 +71,12 @@ function ContactForm1() {
         <Container className={responsive.container}>
           <Grid container columnSpacing={3}>
             <Box sx={style.helpering}>
-              <Image src={new1} style={{ height: "400px" }} />
+              <Image src={new1} />
             </Box>
             <Grid item lg={5}></Grid>
             <Grid item lg={7}>
               <Box sx={style.boxSetting}>
-                <BeforeHeadSmall text="CONTACT FORM" color="white" />
+                <BeforeHeadSmall text="NEWSLETTER" color="white" />
                 <Typography variant="h3" className={styles.h3}>
                   Need Any Home Repair Help?
                 </Typography>
@@ -83,7 +84,7 @@ function ContactForm1() {
                   <input className={styles.feild} placeholder="Name" />
                   <input className={styles.feild1} placeholder="Email" />
                   <Button sx={style.buton} className={poppins.className}>
-                    SUBMIT NOW
+                    SUBSCRIBE
                   </Button>
                 </Box>
               </Box>

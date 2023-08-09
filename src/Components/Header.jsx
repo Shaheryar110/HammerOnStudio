@@ -6,6 +6,8 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 import responsive from "../../src/styles/responsive.module.css";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTiktok } from "@fortawesome/free-brands-svg-icons";
 const HeaderTop = () => {
   const style = {
     topHeader: {
@@ -46,13 +48,14 @@ const HeaderTop = () => {
       gap: "1rem",
     },
     icon: {
-      padding: "0.5rem",
       color: "white",
       backgroundColor: "#35A5F2",
       borderRadius: "50%",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
+      height: "40px",
+      width: "40px",
     },
     container: {
       maxWidth: { lg: "1450px", md: "1000px" },
@@ -102,7 +105,7 @@ const HeaderTop = () => {
               </Box>
             </Link>
             <Box sx={style.icon}>
-              <PinterestIcon />
+              <FontAwesomeIcon icon={faTiktok} className="fas fa-check" />
             </Box>
           </Box>
         </Stack>

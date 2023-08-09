@@ -14,6 +14,7 @@ import logo from "../../src/assets/images/logo.png";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useState } from "react";
 import Link from "next/link";
+
 function NavBAr() {
   const style = {
     navBar: {
@@ -26,7 +27,7 @@ function NavBAr() {
     },
     dropDowmBox: {
       color: "white",
-      backgroundColor: "#1F588C",
+      backgroundColor: "#2296E6",
       padding: "1rem",
       marginLeft: "31rem",
       borderRadius: "1rem",
@@ -42,7 +43,7 @@ function NavBAr() {
       fontWeight: 600,
       padding: "0px",
       ":hover": {
-        color: "black",
+        color: "#393738",
         textDecoration: "underline",
         transition: "ease all 0.8s",
       },

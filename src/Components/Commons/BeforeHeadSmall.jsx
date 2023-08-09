@@ -5,7 +5,7 @@ import styles from "../../styles/style.module.css";
 function BeforeHeadSmall({ text, size, color }) {
   const style = {
     h4: {
-      color: color || "black",
+      color: color || "#393738",
       fontSize: size || "1rem",
       fontWeight: 700,
       marginBottom: "10px",

@@ -37,7 +37,7 @@
   padding: 0;
 }
 .text:hover {
-  color: black;
+  color: #393738;
   text-decoration: underline;
   transition: ease all 0.8s;
 }
@@ -69,7 +69,7 @@
   font-size: 1.3rem;
 }
 .back:hover {
-  background-color: black;
+  background-color: #393738;
 }
 .img1 {
   padding: 20px;
@@ -196,7 +196,7 @@
   font-weight: 700;
   margin-bottom: 12px;
   font-size: 24px;
-  color: black;
+  color: #393738;
 }
 .paragraph {
   margin-top: 0;
@@ -397,7 +397,7 @@
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
   line-height: 1.25;
-  color: black;
+  color: #393738;
   margin-top: 1.2rem;
   background-image: none;
   background-clip: padding-box;
@@ -405,7 +405,7 @@
   border-radius: 0.25rem;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   font-size: 16px;
-  color: black;
+  color: #393738;
   padding: 14px 15px;
   border-radius: 6px;
 }
@@ -460,7 +460,7 @@
   width: 100%;
   display: block;
 
-  padding: 0.5rem 0.75rem;
+  padding: 1.1rem 0.75rem;
   font-size: 1rem;
   line-height: 1.25;
 
@@ -471,7 +471,6 @@
   font-size: 16px;
   outline: none;
   border: none !important;
-  padding: 14px 15px;
 }
 
 .feildC:focus {

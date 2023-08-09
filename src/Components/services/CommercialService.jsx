@@ -81,10 +81,6 @@ function CommercialService() {
     },
     boxSetting: {
       marginY: "4rem",
-      //   display: "flex",
-      //   flexDirection: "column",
-      //   alignItems: "center",
-      //   justifyContent: "flex-end",
     },
     buton: {
       marginY: "1rem",
@@ -92,7 +88,7 @@ function CommercialService() {
       paddingY: "0.5rem",
       fontSize: "1rem",
       backgroundColor: "white",
-      color: "black",
+      color: "#393738",
       marginTop: "2rem",
     },
     three: {
@@ -103,7 +99,7 @@ function CommercialService() {
       alignItems: "center",
     },
     h4: {
-      color: "black",
+      color: "#393738",
       fontSize: "14px",
       fontWeight: 700,
       marginBottom: "10px",

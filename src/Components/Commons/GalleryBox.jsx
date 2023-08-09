@@ -3,7 +3,7 @@ import { Container, Box, Typography, Stack, Grid } from "@mui/material";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-function GalleryBox({ src, category }) {
+function GalleryBox({ src, category, service }) {
   const style = {
     center: {
       justifyContent: "center",
@@ -24,6 +24,7 @@ function GalleryBox({ src, category }) {
       fontWeight: 800,
       fontSize: "1.5rem",
       color: "white",
+      marginBottom: "1rem",
       " :: before": {
         content: "' '",
         position: "absolute",
@@ -37,6 +38,7 @@ function GalleryBox({ src, category }) {
     superText: {
       color: "white",
       fontSize: "1.1rem",
+      marginY: "1rem",
     },
     gridIamge: {
       position: "relative",
@@ -51,9 +53,9 @@ function GalleryBox({ src, category }) {
       height: "100%",
       width: "100%",
       display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      backgroundColor: "rgb(0, 0, 0,0.3)",
+      alignItems: "flex-end",
+
+      backgroundColor: "rgb(0, 0, 0,0.5)",
       padding: "30px",
     },
   };
@@ -64,12 +66,12 @@ function GalleryBox({ src, category }) {
       transition={{ duration: 1 }}
     >
       <Box sx={style.gridIamge}>
-        <Image src={src} style={{ width: "100%" }} />
+        <Image src={src} style={{ width: "100%", height: "300px" }} />
         <Box sx={style.galleryOverlay}>
           <Box>
             <Typography sx={style.superText}>{category}</Typography>
             <Typography variant="h3" sx={style.ComName}>
-              Hammer-On Studios!
+              {service}
             </Typography>
           </Box>
         </Box>
