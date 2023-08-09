@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import responsive from "../../styles/responsive.module.css";
 import styles from "../../styles/style.module.css";
@@ -6,6 +6,7 @@ import new1 from "../../assets/images/new1.webp";
 import Image from "next/image";
 import BeforeHeadSmall from "../Commons/BeforeHeadSmall";
 import { Poppins } from "next/font/google";
+import postNewsLetterForm from "../../service/newLetterService";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -64,6 +65,41 @@ function ContactForm1() {
       left: "380px",
     },
   };
+  //name feild
+  const [name, setName] = useState("");
+
+  const nameHandler = (e) => {
+    const value = e.target.value;
+    setName(value);
+  };
+  //email
+  const [email, setEmail] = useState("");
+  const [isValidEmail, setIsValidEmail] = useState(true);
+
+  const validateEmail = (input) => {
+    // Regular expression to validate email addresses
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return emailPattern.test(input);
+  };
+
+  const handleInputChangeEmail = (event) => {
+    const inputValue = event.target.value;
+    setEmail(inputValue);
+    setIsValidEmail(validateEmail(inputValue));
+  };
+  const handleSubmit = () => {
+    if (name && isValidEmail) {
+      postNewsLetterForm({
+        name: name,
+        email: email,
+      });
+      setName("");
+      setEmail("");
+      console.log("data sent");
+    } else {
+      console.log("Invalid  submission");
+    }
+  };
 
   return (
     <>
@@ -81,9 +117,23 @@ function ContactForm1() {
                   Need Any Home Repair Help?
                 </Typography>
                 <Box sx={style.three}>
-                  <input className={styles.feild} placeholder="Name" />
-                  <input className={styles.feild1} placeholder="Email" />
-                  <Button sx={style.buton} className={poppins.className}>
+                  <input
+                    className={styles.feild}
+                    placeholder="Name"
+                    value={name}
+                    onChange={nameHandler}
+                  />
+                  <input
+                    className={styles.feild1}
+                    placeholder="Email"
+                    onChange={handleInputChangeEmail}
+                    value={email}
+                  />
+                  <Button
+                    onClick={handleSubmit}
+                    sx={style.buton}
+                    className={poppins.className}
+                  >
                     SUBSCRIBE
                   </Button>
                 </Box>

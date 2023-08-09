@@ -9,6 +9,7 @@ import { Select, FormControl, InputLabel } from "@mui/material";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
+import postGetAqouteForm from "../../service/getAqouteService";
 
 function GetAQoute() {
   const style = {
@@ -20,6 +21,7 @@ function GetAQoute() {
     },
     space: {
       marginY: "2rem",
+      width: "100%",
     },
     butn: {
       marginY: "1rem",
@@ -32,6 +34,7 @@ function GetAQoute() {
   const [selectedHour, setSelectedHour] = useState(1);
   const [selectedMonth, setSelectedMonth] = useState(1);
   const [selectedAmPm, setSelectedAmPm] = useState("AM");
+  const [concatenatedValue, setConcatenatedValue] = useState("");
 
   const handleHourChange = (event) => {
     setSelectedHour(event.target.value);
@@ -43,6 +46,10 @@ function GetAQoute() {
 
   const handleAmPmChange = (event) => {
     setSelectedAmPm(event.target.value);
+  };
+  const concatenateValues = () => {
+    const concatenated = `${selectedHour}:${selectedMonth}:${selectedAmPm}`;
+    setConcatenatedValue(concatenated);
   };
   const [selectedOption, setSelectedOption] = useState("");
 
@@ -109,6 +116,124 @@ function GetAQoute() {
 
   const commercialData = selectedCheckboxes.join(", ");
   const residentialData = selectedCheckboxesRes.join(", ");
+  const [mergedServiceAndCheckBoxes, setMergedServiceAndCheckBoxes] =
+    useState(" ");
+
+  const slectedServiceAndCheckBoxes = () => {
+    if (selectedOption === "Commercial Service") {
+      const temp = selectedOption + commercialData;
+      setMergedServiceAndCheckBoxes(temp);
+    } else {
+      const temp = selectedOption + residentialData;
+      setMergedServiceAndCheckBoxes(temp);
+    }
+  };
+
+  //full name
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [fullName, setFullName] = useState("");
+
+  const handleFirstNameChange = (event) => {
+    setFirstName(event.target.value);
+  };
+
+  const handleLastNameChange = (event) => {
+    setLastName(event.target.value);
+  };
+
+  const concatenateFullName = () => {
+    const full = `${firstName} ${lastName}`;
+    setFullName(full);
+  };
+
+  //email
+  const [email, setEmail] = useState("");
+  const [isValidEmail, setIsValidEmail] = useState(true);
+
+  const validateEmail = (input) => {
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return emailPattern.test(input);
+  };
+
+  const handleInputChangeEmail = (event) => {
+    const inputValue = event.target.value;
+    setEmail(inputValue);
+    setIsValidEmail(validateEmail(inputValue));
+  };
+
+  //phone number
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [isValidPhoneNumber, setIsValidPhoneNumber] = useState(true);
+  const validatePhoneNumber = (input) => {
+    // Regular expression to match US phone numbers in various formats
+    const phoneNumberPattern = /^\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?(\d{4})$/;
+    return phoneNumberPattern.test(input);
+  };
+  const handleInputChange = (event) => {
+    const inputValue = event.target.value;
+    setPhoneNumber(inputValue);
+    setIsValidPhoneNumber(validatePhoneNumber(inputValue));
+  };
+
+  //date picker
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [formattedDate, setFormattedDate] = useState("");
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+    if (date) {
+      const formatted = new Date(date).toLocaleDateString("en-US");
+      setFormattedDate(formatted);
+    } else {
+      setFormattedDate("");
+    }
+  };
+
+  // handle submit form
+  const handleSubmit = () => {
+    concatenateValues();
+    concatenateFullName();
+    slectedServiceAndCheckBoxes();
+    if (
+      // isValidPhoneNumber
+      fullName &&
+      isValidEmail &&
+      isValidPhoneNumber &&
+      formattedDate &&
+      concatenatedValue &&
+      mergedServiceAndCheckBoxes
+    ) {
+      postGetAqouteForm({
+        name: fullName,
+        phone: phoneNumber,
+        email: email,
+        date: selectedDate,
+        time: concatenatedValue,
+        service: mergedServiceAndCheckBoxes,
+      }).then((res) => {
+        console.log(res.data);
+      });
+      console.log(
+        fullName,
+        isValidEmail,
+        isValidPhoneNumber,
+        formattedDate,
+        concatenatedValue,
+        mergedServiceAndCheckBoxes
+      );
+    } else {
+      console.log("nahi hai");
+      console.log(
+        fullName,
+        isValidEmail,
+        isValidPhoneNumber,
+        formattedDate,
+        concatenatedValue,
+        mergedServiceAndCheckBoxes
+      );
+    }
+  };
 
   return (
     <Box>
@@ -123,6 +248,8 @@ function GetAQoute() {
                     label="First Name"
                     variant="outlined"
                     sx={style.width}
+                    value={firstName}
+                    onChange={handleFirstNameChange}
                   />
                 </Box>
               </Grid>
@@ -133,6 +260,8 @@ function GetAQoute() {
                     label="Last Name"
                     variant="outlined"
                     sx={style.width}
+                    value={lastName}
+                    onChange={handleLastNameChange}
                   />
                 </Box>
               </Grid>
@@ -142,6 +271,8 @@ function GetAQoute() {
                   label="Email"
                   variant="outlined"
                   sx={style.width}
+                  value={email}
+                  onChange={handleInputChangeEmail}
                 />
               </Grid>
               <Grid item lg={6}>
@@ -150,12 +281,17 @@ function GetAQoute() {
                   label="Phone"
                   variant="outlined"
                   sx={style.width}
+                  value={phoneNumber}
+                  onChange={handleInputChange}
                 />
               </Grid>
               <Grid item lg={6}>
                 <Box sx={style.space}>
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DatePicker />
+                    <DatePicker
+                      selected={selectedDate}
+                      onChange={handleDateChange}
+                    />
                   </LocalizationProvider>
                 </Box>
               </Grid>
@@ -163,7 +299,7 @@ function GetAQoute() {
                 <Box sx={style.space}>
                   <TextField
                     select
-                    label="Select Hour"
+                    label="Hour"
                     value={selectedHour}
                     onChange={handleHourChange}
                     style={{ margin: "10px" }}
@@ -177,7 +313,7 @@ function GetAQoute() {
 
                   <TextField
                     select
-                    label="Select Month"
+                    label="Month"
                     value={selectedMonth}
                     onChange={handleMonthChange}
                     style={{ margin: "10px" }}
@@ -270,7 +406,7 @@ function GetAQoute() {
                 </Grid>
               )}
             </Grid>
-            <Button variant="contained" sx={style.butn}>
+            <Button variant="contained" sx={style.butn} onClick={handleSubmit}>
               SUBMIT
             </Button>
           </Box>
