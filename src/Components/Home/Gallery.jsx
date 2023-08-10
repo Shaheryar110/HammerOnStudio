@@ -82,7 +82,7 @@ function Gallery({ border }) {
   return (
     <>
       <Box sx={style.margin}>
-        <Container className={responsive.container} sx={style.borders}>
+        <Container sx={style.borders}>
           <Grid container sx={style.center}>
             <Grid item lg={12}>
               <ul className={styles.navTab}>
@@ -241,7 +241,7 @@ function Gallery({ border }) {
                 </Grid>
               </Grid>
               <Grid item lg={12}>
-                <Grid container sx={{ justifyContent: "space-between" }}>
+                <Grid container>
                   <Grid item lg={5}>
                     <GalleryBox
                       src={roof6}

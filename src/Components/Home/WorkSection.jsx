@@ -6,7 +6,11 @@ import styles from "../../styles/style.module.css";
 import sbg2 from "../../assets/images/sbg2.png";
 import worker from "../../assets/images/worker01.webp";
 import { motion, easeIn } from "framer-motion";
-
+import { Inter } from "next/font/google";
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "900"],
+});
 function WorkSection() {
   const style = {
     workSec: {
@@ -23,20 +27,27 @@ function WorkSection() {
       // marginTop: "35px",
     },
     head: {
-      fontWeight: 700,
-
+      fontWeight: 900,
+      margin: "0px 0px 20px",
       fontSize: "36px",
-      lineHeight: "46px",
+      lineHeight: "1.3em",
+      fontStyle: "normal",
+      color: "#393738",
+    },
+    head1: {
+      fontWeight: 900,
+      margin: "0px 0px 20px",
+      fontSize: "33px",
+      lineHeight: "1.3em",
       fontStyle: "normal",
       color: "#393738",
     },
     p: {
-      fontSize: "17px",
+      fontSize: "16px",
       fontWeight: 400,
-      lineHeight: "28px",
-      lineHeight: 1.7,
+      lineHeight: "1.3em",
 
-      margin: "10px 0",
+      margin: "0px 0px 20px",
       color: " #7A7A7A",
     },
   };
@@ -44,8 +55,13 @@ function WorkSection() {
     <>
       <Stack sx={style.workSec}>
         <Container sx={responsive.container}>
-          <Grid container columnSpacing={2} my={5}>
-            <Grid item lg={6}>
+          <Grid
+            container
+            columnSpacing={4}
+            my={5}
+            sx={{ justifyContent: "space-between" }}
+          >
+            <Grid item lg={5}>
               <motion.div
                 initial={{ x: -200, opacity: 0 }} // Initial position outside the left side of the screen with opacity 0
                 animate={{ x: 0, opacity: 1 }} // Final position (its actual position) with opacity 1
@@ -62,7 +78,11 @@ function WorkSection() {
             </Grid>
             <Grid item lg={6}>
               <Box sx={style.article}>
-                <Typography variant="h3" sx={style.head}>
+                <Typography
+                  variant="h3"
+                  sx={style.head1}
+                  className={inter.className}
+                >
                   Why Choose Hammer-On Studios
                 </Typography>
                 <Typography sx={style.p}>
@@ -74,7 +94,11 @@ function WorkSection() {
                   and expertise make us our clients’ perfect partners to help
                   turn their vision into an enticing reality and success.
                 </Typography>
-                <Typography variant="h3" sx={style.head}>
+                <Typography
+                  variant="h3"
+                  sx={style.head}
+                  className={inter.className}
+                >
                   Our Attention To Detail
                 </Typography>
                 <Typography sx={style.p}>
@@ -89,10 +113,18 @@ function WorkSection() {
               </Box>
             </Grid>
           </Grid>
-          <Grid container columnSpacing={2}>
+          <Grid
+            container
+            columnSpacing={4}
+            sx={{ justifyContent: "space-between" }}
+          >
             <Grid item lg={6}>
               <Box sx={style.article}>
-                <Typography variant="h3" sx={style.head}>
+                <Typography
+                  variant="h3"
+                  sx={style.head}
+                  className={inter.className}
+                >
                   Dedicated Renovation Process
                 </Typography>
                 <Typography sx={style.p}>
@@ -107,7 +139,11 @@ function WorkSection() {
             </Grid>
             <Grid item lg={6}>
               <Box sx={style.article}>
-                <Typography variant="h3" sx={style.head}>
+                <Typography
+                  variant="h3"
+                  sx={style.head}
+                  className={inter.className}
+                >
                   Workmanship Guarantee
                 </Typography>
                 <Typography sx={style.p}>

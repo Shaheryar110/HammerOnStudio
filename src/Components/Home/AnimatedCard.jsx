@@ -55,7 +55,7 @@ function AnimatedCard() {
   return (
     <>
       <Box sx={style.mainContainer}>
-        <Grid container>
+        <Grid container sx={{ justifyContent: "space-around" }}>
           <Grid item lg={3}>
             <Box sx={style.card}>
               <ViewInArIcon sx={style.icon} />

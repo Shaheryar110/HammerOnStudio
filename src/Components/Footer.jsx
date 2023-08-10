@@ -1,4 +1,11 @@
-import { Container, Box, Typography, Stack, Grid } from "@mui/material";
+import {
+  Container,
+  Box,
+  Typography,
+  Stack,
+  Grid,
+  Divider,
+} from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";
 import responsive from "../styles/responsive.module.css";
@@ -74,6 +81,36 @@ function Footer() {
     phoneIcon: {
       fontSize: "2rem",
     },
+    copright: {
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-between",
+      marginTop: "1rem",
+    },
+    page: {
+      color: "white",
+      ":hover": {
+        color: "#3FBDF9",
+        transition: "all ease 0.5s",
+      },
+    },
+    page1: {
+      color: "white",
+      paddingX: "0.5rem",
+      borderRight: "1px solid white",
+      ":hover": {
+        color: "#3FBDF9",
+        transition: "all ease 0.5s",
+        borderRight: "1px solid #3FBDF9",
+      },
+    },
+    footerPage: {
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "center",
+      gap: "1rem",
+    },
   };
   return (
     <>
@@ -135,23 +172,46 @@ function Footer() {
                     />
                   </Box>
                 </Link>
-                <Box
-                  sx={style.socialStyle}
-                  onMouseEnter={() => handleMouseEnter(2)}
-                  onMouseLeave={() => handleMouseLeave(2)}
-                >
-                  <FontAwesomeIcon
-                    icon={faTiktok}
-                    className="fas fa-check"
-                    style={{
-                      color: isMouseInside[2] ? "#2296E6" : "white",
-                      fontSize: "1rem",
-                    }}
-                  />
-                </Box>
+                <Link href="https://www.tiktok.com/@hammer.on.studios">
+                  <Box
+                    sx={style.socialStyle}
+                    onMouseEnter={() => handleMouseEnter(2)}
+                    onMouseLeave={() => handleMouseLeave(2)}
+                  >
+                    <FontAwesomeIcon
+                      icon={faTiktok}
+                      style={{
+                        color: isMouseInside[2] ? "#2296E6" : "white",
+                        fontSize: "1rem",
+                      }}
+                    />
+                  </Box>
+                </Link>
               </Box>
             </Grid>
           </Grid>
+        </Container>
+
+        <Divider
+          sx={{
+            backgroundColor: "#242424",
+            marginY: "1rem",
+          }}
+        />
+        <Container sx={responsive.container}>
+          <Box sx={style.copright}>
+            <Typography sx={{ color: "grey" }}>
+              © Copyright Hammer-On Studios 2022. All Right Reserved.
+            </Typography>
+            <Box sx={style.footerPage}>
+              <Link href="/privacy" style={{ textDecoration: "none" }}>
+                <Typography sx={style.page1}>Privacy Policy</Typography>
+              </Link>
+              <Link href="/terms" style={{ textDecoration: "none" }}>
+                <Typography sx={style.page}>Terms & Condition</Typography>
+              </Link>
+            </Box>
+          </Box>
         </Container>
       </Stack>
     </>

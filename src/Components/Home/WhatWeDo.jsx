@@ -5,14 +5,21 @@ import responsive from "../../styles/responsive.module.css";
 import styles from "../../styles/style.module.css";
 import sbg from "../../assets/images/sbg.png";
 import services from "../../assets/images/services01.webp";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import KeyboardArrowRightOutlinedIcon from "@mui/icons-material/KeyboardArrowRightOutlined";
-// import top from "../../Components/svg/top.svg";
-// import bottomSvg from "../../../public/bottom.svg";
-// import bottomSvgW from "../../../public/bottomw.svg";
+import { Inter } from "next/font/google";
+import cardSvg1 from "../../assets/images/cardsvg1.png";
+import cardSvg2 from "../../assets/images/cardSvg2.png";
+import card2 from "../../assets/images/card2.webp";
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
 
 function WhatWeDo() {
   const style = {
+    container: {
+      maxWidth: { xl: "1300px" },
+    },
     bgMain: {
       backgroundColor: "#191818",
       backgroundImage: `url(${sbg.src})`,
@@ -46,11 +53,10 @@ function WhatWeDo() {
       },
     },
     h3: {
-      fontFamily: "Inter, sans-serif",
-      fontSize: "30px",
+      fontSize: "36px",
       lineHeight: "46px",
-      fontWeight: 800,
-      fontStyle: "normal",
+      fontWeight: 1000,
+      margin: "0px 0px 20px",
       color: "#fff",
     },
     par: {
@@ -66,6 +72,9 @@ function WhatWeDo() {
       marginBottom: "12px",
       fontSize: "24px",
       color: "#393738",
+      ":hover": {
+        color: "#2871AE",
+      },
     },
     paragraph: {
       marginTop: 0,
@@ -82,19 +91,37 @@ function WhatWeDo() {
       flexDirection: "row",
       alignItems: "center",
       backgroundColor: "white",
+      fontWeight: "600",
+      ":hover": {
+        color: "red",
+      },
+    },
+    article: {
+      position: "relative",
+    },
+    svg: {
+      width: "100%",
+      height: "40%",
+      position: "relative",
+      left: "-25px",
+      top: "-65px",
     },
   };
   return (
     <>
       <Stack className={styles.bgMain}>
-        <Container sx={responsive.container}>
+        <Container sx={style.container}>
           <Grid container spacing={2}>
             <Grid item lg={6}>
               <Box className={styles.headings}>
                 <Typography variant="h4" sx={style.h4}>
                   WHAT WE DO
                 </Typography>
-                <Typography variant="h3" sx={style.h3}>
+                <Typography
+                  variant="h3"
+                  sx={style.h3}
+                  className={inter.className}
+                >
                   At Hammer-On Studios, we specialize in offering residential
                   and building repair and renovation services.
                 </Typography>
@@ -116,11 +143,19 @@ function WhatWeDo() {
           </Grid>
           <Grid container className={styles.card} columnSpacing={2}>
             <div className={styles.border}></div>
-            <Grid item lg={4}>
+            <Grid item lg={5}>
               <Box className={styles.cardInfo}>
                 <figure className={styles.fig}>
                   <Image src={services} />
                 </figure>
+                <Box sx={{ position: "relative" }}>
+                  <Box sx={style.svg}>
+                    <Image
+                      src={cardSvg1}
+                      style={{ width: "100%", height: "100%" }}
+                    />
+                  </Box>
+                </Box>
                 <article className={styles.article}>
                   <Typography variant="h3" sx={style.hThree}>
                     Commercial Services
@@ -136,26 +171,27 @@ function WhatWeDo() {
                 </article>
               </Box>
             </Grid>
-            <Grid item lg={4}>
+            <Grid item lg={5}>
               <Box className={styles.cardInfo}>
                 <figure className={styles.fig}>
-                  <Image src={services} />
+                  <Image src={card2} />
                 </figure>
-                {/* <div class="svg-content">
-                  <Image src={top} />
-                  {/* <Image src={bottomSvg} />
-                  <Image src={bottomSvgW} /> */}
+                <Box sx={{ position: "relative" }}>
+                  <Box sx={style.svg}>
+                    <Image
+                      src={cardSvg2}
+                      style={{ width: "100%", height: "100%" }}
+                    />
+                  </Box>
+                </Box>
                 <article className={styles.article}>
-                  {/* <div className={styles.iconic}>
-                    <HomeOutlinedIcon />
-                  </div> */}
                   <Typography variant="h3" sx={style.hThree}>
                     Residential Services
                   </Typography>
                   <Typography sx={style.paragraph}>
-                    Hammer-On Studios’ home renovation services assist you in
-                    meeting all your remodeling ambitions seamlessly. We
-                    transform your living space with…
+                    Hammer-On Studios supports commercial locations with
+                    top-quality renovation services tailored to our clients’
+                    eclectic needs. From breweries and restaurants to…
                   </Typography>
                   <Button sx={style.btn}>
                     Read More <KeyboardArrowRightOutlinedIcon sx={style.ic} />

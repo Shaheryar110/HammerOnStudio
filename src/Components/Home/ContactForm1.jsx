@@ -7,7 +7,8 @@ import Image from "next/image";
 import BeforeHeadSmall from "../Commons/BeforeHeadSmall";
 import { Poppins } from "next/font/google";
 import postNewsLetterForm from "../../service/newLetterService";
-
+import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
+import { motion } from "framer-motion";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
@@ -27,29 +28,29 @@ function ContactForm1() {
     buton: {
       marginY: "1rem",
       color: "white",
-      paddingY: "0.5rem",
-      fontSize: "1rem",
+      paddingY: "0.8rem",
+      fontSize: "0.7rem",
       backgroundColor: "white",
       color: "#393738",
       marginTop: "2rem",
       fontWeight: 600,
       shadow: "none",
       border: "1px solid white",
-      paddingX: "1rem",
+      paddingX: "0.7rem",
       borderRadius: "0.5rem",
       ":hover": {
         marginY: "1rem",
         color: "white",
-        paddingY: "0.5rem",
-        fontSize: "1rem",
+
         backgroundColor: "white",
         color: "#393738",
         marginTop: "2rem",
         fontWeight: 600,
         shadow: "none",
         border: "1px solid white",
-        paddingX: "1rem",
+        paddingX: "0.7rem",
         borderRadius: "0.5rem",
+        transition: "all ease 1s",
       },
     },
     three: {
@@ -100,7 +101,13 @@ function ContactForm1() {
       console.log("Invalid  submission");
     }
   };
-
+  const [active, setActive] = useState(false);
+  const enter = () => {
+    setActive(true);
+  };
+  const out = () => {
+    setActive(false);
+  };
   return (
     <>
       <Box sx={style.main}>
@@ -133,8 +140,35 @@ function ContactForm1() {
                     onClick={handleSubmit}
                     sx={style.buton}
                     className={poppins.className}
+                    onMouseEnter={enter}
+                    onMouseOut={out}
                   >
-                    SUBSCRIBE
+                    <motion.div
+                      initial={{ x: 0, opacity: 0 }}
+                      whileInView={{ opacity: 1, x: active ? -5 : 10 }}
+                      transition={{ duration: 0.5 }}
+                      onMouseEnter={enter}
+                      onMouseOut={out}
+                    >
+                      {" "}
+                      SUBSCRIBE
+                    </motion.div>
+
+                    <motion.div
+                      initial={{ x: -10, opacity: 0 }}
+                      whileInView={{ opacity: active ? 1 : 0, x: -5 }}
+                      transition={{ duration: 0.5 }}
+                      onMouseEnter={enter}
+                      onMouseOut={out}
+                    >
+                      <KeyboardDoubleArrowRightIcon
+                        sx={{
+                          transition: "all ease 0.5s",
+                          display: "flex",
+                          alignSelf: "center",
+                        }}
+                      />
+                    </motion.div>
                   </Button>
                 </Box>
               </Box>

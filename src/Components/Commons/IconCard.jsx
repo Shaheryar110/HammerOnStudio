@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { Container, Box, Typography, Stack, Grid } from "@mui/material";
+import { Inter } from "next/font/google";
+import Image from "next/image";
 
-function IconCard({ icon, heading, para }) {
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
+function IconCard({ icon, heading, para, hoverIcon }) {
   const [iconHover, setIconHover] = useState(false);
   const mouseEnter = () => {
     setIconHover(true);
-    // console.log(iconHover);
   };
   const mouseExit = () => {
     setIconHover(false);
-    // console.log(iconHover);
   };
   const style = {
     media: {
@@ -37,9 +41,9 @@ function IconCard({ icon, heading, para }) {
     },
     heading: {
       color: "#393738",
-      fontSize: "1.5rem",
-      marginBottom: "0.5rem",
-      fontWeight: 500,
+      fontSize: "20px",
+      margin: "0px 0px 20px",
+      fontWeight: 600,
       lineHeight: 1.2,
     },
     text: {
@@ -48,7 +52,6 @@ function IconCard({ icon, heading, para }) {
       fontWeight: 400,
       lineHeight: "28px",
       lineHeight: 1.7,
-      margin: "30px 0",
       color: "#7A7A7A",
     },
     hover: {
@@ -66,9 +69,21 @@ function IconCard({ icon, heading, para }) {
   };
   return (
     <Box sx={style.media} onMouseEnter={mouseEnter} onMouseLeave={mouseExit}>
-      <Box sx={[style.iconBox, iconHover && style.hover]}>{icon}</Box>
+      <Box sx={[style.iconBox, iconHover && style.hover]}>
+        {!iconHover && (
+          <Image
+            src={icon}
+            style={{
+              width: "50%",
+              height: "50%",
+              color: "red",
+            }}
+          />
+        )}
+        {iconHover && <Image src={hoverIcon} />}
+      </Box>
       <Box sx={style.mediaBody}>
-        <Typography variant="h4" sx={style.heading}>
+        <Typography variant="h4" sx={style.heading} className={inter.className}>
           {heading}
         </Typography>
         <Typography sx={style.text}>{para}</Typography>

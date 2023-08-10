@@ -31,7 +31,7 @@ function NavBAr() {
       padding: "1rem",
       marginLeft: "31rem",
       borderRadius: "1rem",
-      width: "300px",
+      width: "200px",
       position: "absolute",
       zIndex: "99",
       marginTop: "-2rem",
@@ -129,7 +129,7 @@ function NavBAr() {
                 </li>
                 <li className={styles.li}>
                   <Link href="/contact" style={{ textDecoration: "none" }}>
-                    <Typography sx={style.text}>Conatct Us</Typography>
+                    <Typography sx={style.text}>Contact Us</Typography>
                   </Link>
                 </li>
                 <li className={styles.li}>
@@ -151,28 +151,21 @@ function NavBAr() {
             setActive(false);
           }}
         >
-          <ListItemButton
-            className={styles.size}
-
-            // onMouseLeave={() => {
-            //   setIsHoverDropdown(false);
-            //   setActive(false);
-            // }}
-          >
+          <ListItemButton className={styles.size}>
             <Link
               href="/commercialService"
               style={{ textDecoration: "none", color: "inherit" }}
             >
-              <ListItemText primary="Commercial Service" />
+              <ListItemText
+                primary="Commercial Service"
+                sx={{
+                  ":hover": { color: "black", transition: "all ease 0.5s" },
+                }}
+              />
             </Link>
           </ListItemButton>
-          <ListItemButton
-          // onMouseEnter={() => setIsHoverDropdown(true)}
-          // onMouseLeave={() => {
-          //   setIsHoverDropdown(false);
-          //   setActive(false);
-          // }}
-          >
+          <hr />
+          <ListItemButton>
             <Link
               href="/residentialService"
               style={{ textDecoration: "none", color: "inherit" }}
@@ -180,6 +173,9 @@ function NavBAr() {
               <ListItemText
                 primary="Residential Service"
                 className={styles.size}
+                sx={{
+                  ":hover": { color: "black", transition: "all ease 0.5s" },
+                }}
               />
             </Link>
           </ListItemButton>

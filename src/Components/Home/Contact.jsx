@@ -7,7 +7,7 @@ import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "500", "700", "900"],
 });
 import { Inter } from "next/font/google";
 
@@ -43,7 +43,7 @@ function Contact() {
     },
     h3: {
       fontSize: "40px",
-      fontWeight: 800,
+      fontWeight: 900,
       fontStyle: "normal",
       color: "#393738",
       lineHeight: "46px",
@@ -157,7 +157,11 @@ function Contact() {
                 <Typography variant="h4" sx={style.tag}>
                   REVIEWS
                 </Typography>
-                <Typography variant="h3" sx={style.h3}>
+                <Typography
+                  variant="h3"
+                  sx={style.h3}
+                  className={inter.className}
+                >
                   Our professional services are just one call away!
                 </Typography>
                 <Typography sx={style.par}>

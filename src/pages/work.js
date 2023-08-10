@@ -5,7 +5,11 @@ import { Container, Box, Typography, Button, Grid } from "@mui/material";
 import responsive from "../styles/responsive.module.css";
 import Gallery from "@/Components/Home/Gallery";
 import Testimonials from "@/Components/Home/Testimonials";
-
+import { Inter } from "next/font/google";
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "900"],
+});
 function work() {
   const style = {
     borders: {
@@ -38,11 +42,14 @@ function work() {
       <StripSection heading="OUR WORK" />
       <Container className={responsive.container}>
         <Box sx={style.spaces}>
-          <Typography sx={style.tophead}>
+          <Typography sx={style.tophead} className={inter.className}>
             If It’s Broken, We Can Fix It!
           </Typography>
-          <Typography sx={style.mainhead}>
-            Explore Our Latest Projects And Recent Works
+          <Typography sx={style.mainhead} className={inter.className}>
+            Explore Our Latest Projects
+          </Typography>
+          <Typography sx={style.mainhead} className={inter.className}>
+            And Recent Works
           </Typography>
           <Box sx={style.margiins}>
             <Gallery border={true} />

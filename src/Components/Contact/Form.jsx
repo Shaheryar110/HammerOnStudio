@@ -344,10 +344,10 @@ function Form() {
                       }}
                     >
                       <Select
-                        hidden={true}
-                        defaultValue="Select"
+                        // hidden={true}
+                        // defaultValue="Select"
                         displayEmpty={true}
-                        renderValue={(e) => e}
+                        renderValue={(e) => (e ? e : "State")}
                         sx={{
                           backgroundColor: "#408ECD",
                           color: "white",

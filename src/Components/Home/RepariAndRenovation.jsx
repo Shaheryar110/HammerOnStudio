@@ -6,14 +6,27 @@ import styles from "../../styles/style.module.css";
 import white from "../../assets/images/white.webp";
 import yellw from "../../assets/images/yellw.webp";
 import dril from "../../assets/images/dril.webp";
-import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
-import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined";
-import CabinOutlinedIcon from "@mui/icons-material/CabinOutlined";
-import { motion, easeIn } from "framer-motion";
+import { motion } from "framer-motion";
 import IconCard from "../Commons/IconCard";
+import { Inter } from "next/font/google";
+import joist from "../../../public/joist.png";
+import joistWhite from "../../../public/joistWhite1.png";
+import check from "../../../public/check.png";
+import checkWhite from "../../../public/checkWhite.png";
+import user from "../../../public/user.png";
+import userWhite from "../../../public/userWhite.png";
+import banner from "../../assets/images/banner.jpg";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "900"],
+});
 
 function RepariAndRenovation() {
   const style = {
+    container: {
+      maxWidth: { xl: "1300px", lg: "1200px" },
+    },
     main: {
       paddingY: "5rem",
     },
@@ -27,16 +40,20 @@ function RepariAndRenovation() {
       justifyContent: "center",
     },
     weight: {
-      fontWeight: "700",
-      fontSize: "1.79rem",
+      fontWeight: "800",
+      fontSize: "31px",
+      lineHeight: "31px",
+      margin: "0px 0px 30px",
+      color: "#393738",
+      letterSpacing: 0.5,
     },
     para: {
-      fontSize: "18px",
+      fontSize: "16px",
       fontWeight: 400,
       lineHeight: "28px",
       lineHeight: 1.7,
 
-      margin: "30px 0",
+      margin: "0px 0px 30px",
       color: "#7A7A7A",
     },
     figure: {
@@ -44,7 +61,7 @@ function RepariAndRenovation() {
       " :: before": {
         content: "''",
         width: "10px",
-        height: "37rem",
+        height: "35.6rem",
         backgroundColor: "#3772B0",
         position: "absolute",
         right: 0,
@@ -110,10 +127,24 @@ function RepariAndRenovation() {
       color: "white",
       transition: "all ease 1",
     },
+    contentBox: {
+      width: "100%",
+      height: "100%",
+      position: "relative",
+      "::before": {
+        content: "''",
+        backgroundImage: `url(${banner.src})`,
+        backgroundPosition: "top right",
+        position: "absolute",
+        zIndex: "-1",
+        backgroundSize: "cover",
+      },
+    },
   };
   const data = [
     {
-      icon: <PersonOutlineOutlinedIcon />,
+      icon: user,
+      hover: userWhite,
       heading: "Professionalism",
       para: ` With over 25 years of experience in the construction industry,
       Hammer-On Studios is the leading commercial and residential repair and
@@ -123,7 +154,8 @@ function RepariAndRenovation() {
       provides you with a cost-effective and healthy outcome.`,
     },
     {
-      icon: <DoneOutlinedIcon />,
+      icon: joist,
+      hover: joistWhite,
       heading: "Reliability",
       para: `As an experienced residential and building remodeling
       business, we strive to develop strong professional
@@ -133,7 +165,8 @@ function RepariAndRenovation() {
       genuine efforts.`,
     },
     {
-      icon: <CabinOutlinedIcon />,
+      icon: check,
+      hover: checkWhite,
       heading: "Quality",
       para: `Our legacy as the top-tier office renovation contractor in
       New York has the magnitude of excellence because Hammer-On
@@ -152,7 +185,7 @@ function RepariAndRenovation() {
             <Grid container sx={style.center}>
               <Grid item lg={5}>
                 <Box>
-                  <Typography variant="h3" sx={style.weight}>
+                  <Typography sx={style.weight} className={inter.className}>
                     We are your Commercial and Residential Repair and Renovation
                     Expert!
                   </Typography>
@@ -186,7 +219,7 @@ function RepariAndRenovation() {
                       src={white}
                       alt="white"
                       className={styles.img1}
-                      style={{ height: "350px", width: "60%" }}
+                      style={{ height: "330px", width: "60%" }}
                     />
                     <Image src={yellw} alt="white" className={styles.img2} />
                     <Image src={dril} alt="white" className={styles.img3} />
@@ -197,7 +230,7 @@ function RepariAndRenovation() {
           </Box>
         </Container>
         <Stack sx={style.submain}>
-          <Container className={responsive.container}>
+          <Container sx={style.container}>
             <Grid container>
               {data.map((data, index) => {
                 return (
@@ -206,6 +239,7 @@ function RepariAndRenovation() {
                       icon={data.icon}
                       heading={data.heading}
                       para={data.para}
+                      hoverIcon={data.hover}
                     />
                   </Grid>
                 );

@@ -16,7 +16,7 @@ function Content({ smallHeading, mainHeading, para1, para2, src, order }) {
     para: {
       marginY: "20px",
       color: "#817173",
-      fontSize: "1.3rem",
+      fontSize: "1rem",
     },
     rightSide: {},
   };

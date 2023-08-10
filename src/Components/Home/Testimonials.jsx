@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
-import shape34 from "../../assets/images/shape34.webp";
+import shape34 from "../../assets/images/shape34.png";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
@@ -18,21 +18,6 @@ function Testimonials() {
       marginY: "7rem",
       position: "relative",
       zIndex: "2",
-
-      // " :: before": {
-      //   content: "' '",
-      //   backgroundImage: `url(${shape34.src})`,
-      //   backgroundPosition: "top right",
-      //   backgroundRepeat: "no-repeat",
-      //   backgroundSize: "auto",
-      //   position: "absolute",
-      //   left: "1100px",
-      //   right: 0,
-      //   top: "7200px",
-      //   bottom: 0,
-      //   width: "778px",
-      //   height: "300px",
-      // },
     },
     sliderCard: {
       padding: "1.5rem",
@@ -96,7 +81,7 @@ function Testimonials() {
     imgBack: {
       position: "absolute",
       zIndex: "-1",
-      right: "0%",
+      right: 0,
       top: "-2rem",
     },
   };
@@ -105,7 +90,6 @@ function Testimonials() {
     <>
       <Box sx={style.main}>
         <Box sx={style.imgBack}>
-          {" "}
           <Image src={shape34} style={{ width: "100%", height: "100%" }} />
         </Box>
 

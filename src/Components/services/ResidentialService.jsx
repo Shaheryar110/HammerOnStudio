@@ -1,5 +1,5 @@
 import { Container, Box, Typography, Button, Grid } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import responsive from "../../styles/responsive.module.css";
 import ServiceGridSection from "../Commons/ServiceGridSection";
 import Stripe from "../Commons/Stripe";
@@ -15,6 +15,10 @@ import Testimonials from "../Home/Testimonials";
 import tag01 from "../../assets/images/tag01.jpg";
 import Image from "next/image";
 import styles from "../../styles/style.module.css";
+import postNewsLetterForm from "@/service/newLetterService";
+import { motion } from "framer-motion";
+import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
+
 function CommercialService() {
   const data = [
     {
@@ -176,6 +180,9 @@ function CommercialService() {
       backgroundColor: "white",
       color: "#393738",
       marginTop: "2rem",
+      ":hover": {
+        backgroundColor: "white",
+      },
     },
     three: {
       display: "flex",
@@ -217,6 +224,48 @@ function CommercialService() {
       transition: "background 0.3s, border-radius 0.3s, opacity 0.3s",
     },
   };
+  //name feild
+  const [name, setName] = useState("");
+
+  const nameHandler = (e) => {
+    const value = e.target.value;
+    setName(value);
+  };
+  //email
+  const [email, setEmail] = useState("");
+  const [isValidEmail, setIsValidEmail] = useState(true);
+
+  const validateEmail = (input) => {
+    // Regular expression to validate email addresses
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return emailPattern.test(input);
+  };
+
+  const handleInputChangeEmail = (event) => {
+    const inputValue = event.target.value;
+    setEmail(inputValue);
+    setIsValidEmail(validateEmail(inputValue));
+  };
+  const handleSubmit = () => {
+    if (name && isValidEmail) {
+      postNewsLetterForm({
+        name: name,
+        email: email,
+      });
+      setName("");
+      setEmail("");
+      console.log("data sent");
+    } else {
+      console.log("Invalid  submission");
+    }
+  };
+  const [active, setActive] = useState(false);
+  const enter = () => {
+    setActive(true);
+  };
+  const out = () => {
+    setActive(false);
+  };
   return (
     <>
       <Box sx={style.image}>
@@ -238,12 +287,11 @@ function CommercialService() {
           </Box>
         </Container>
         <Testimonials />
-        <Grid container>
-          <Grid item lg={2}></Grid>
+        <Grid container sx={{ justifyContent: "center", alignItems: "center" }}>
           <Grid item lg={3}>
             <Image src={new1} />
           </Grid>
-          <Grid item lg={4}>
+          <Grid item lg={5}>
             <Box sx={style.boxSetting}>
               <Typography variant="h4" sx={style.h4}>
                 CONTACT FORM
@@ -252,11 +300,42 @@ function CommercialService() {
                 Need Any Home Repair Help?
               </Typography>
               <Box sx={style.three}>
-                <input className={styles.feild} placeholder="Name" />
-                <input className={styles.feild1} placeholder="Name" />
+                <input
+                  className={styles.feild}
+                  placeholder="Name"
+                  value={name}
+                  onChange={nameHandler}
+                />
+                <input
+                  className={styles.feild1}
+                  placeholder="Email"
+                  onChange={handleInputChangeEmail}
+                  value={email}
+                />
               </Box>
-              <Button variant="contained" sx={style.buton}>
-                SUBMIT NOW
+              <Button
+                variant="contained"
+                sx={style.buton}
+                onClick={handleSubmit}
+                onMouseEnter={enter}
+                onMouseOut={out}
+              >
+                SUBSCRIBE
+                {active && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 1 }}
+                  >
+                    <KeyboardDoubleArrowRightIcon
+                      sx={{
+                        transition: "all ease 0.5s",
+                        display: "flex",
+                        alignSelf: "center",
+                      }}
+                    />
+                  </motion.div>
+                )}
               </Button>
             </Box>
           </Grid>

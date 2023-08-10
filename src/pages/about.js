@@ -10,7 +10,7 @@ function about() {
     <Layout>
       <StripSection />
       <AboutContent />
-      <FourHoverCards />
+
       <Testimonials />
     </Layout>
   );

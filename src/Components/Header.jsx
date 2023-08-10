@@ -104,9 +104,11 @@ const HeaderTop = () => {
                 <InstagramIcon />
               </Box>
             </Link>
-            <Box sx={style.icon}>
-              <FontAwesomeIcon icon={faTiktok} className="fas fa-check" />
-            </Box>
+            <Link href="https://www.tiktok.com/@hammer.on.studios">
+              <Box sx={style.icon}>
+                <FontAwesomeIcon icon={faTiktok} />
+              </Box>
+            </Link>
           </Box>
         </Stack>
       </Container>

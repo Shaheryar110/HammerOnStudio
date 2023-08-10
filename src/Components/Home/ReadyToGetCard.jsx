@@ -4,11 +4,20 @@ import responsive from "../../styles/responsive.module.css";
 import styles from "../../styles/style.module.css";
 import img01 from "../../assets/images/img01.webp";
 import bgIcon from "../../assets/images/bgicon.png";
-import QuestionAnswerIcon from "@mui/icons-material/QuestionAnswer";
+import { Inter } from "next/font/google";
 import AnimatedCard from "./AnimatedCard";
+import Image from "next/image";
+import chat from "../../../public/chat.png";
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "900"],
+});
 
 function ReadyToGetCard() {
   const style = {
+    container: {
+      maxWidth: { xl: "1200px", lg: "1200px" },
+    },
     readyCard: {
       paddingY: "6rem",
     },
@@ -32,13 +41,13 @@ function ReadyToGetCard() {
         zIndex: 1,
         content: "''",
         background: `url(${bgIcon.src})`,
-        width: "300px",
-        height: "300px",
+        width: "320px",
+        height: "320px",
         position: "absolute",
         left: "135px",
         right: "40px",
         bottom: "12px",
-        top: 0,
+        top: "30px",
         backgroundRepeat: "no-repeat",
       },
       "::after": {
@@ -47,8 +56,8 @@ function ReadyToGetCard() {
         backgroundColor: "#2871ae",
         position: "absolute",
         width: "116px",
-        height: "250px",
-        left: "113px",
+        height: "337.5px",
+        left: "98px",
         right: 0,
         margin: "0 auto",
         bottom: 0,
@@ -57,21 +66,23 @@ function ReadyToGetCard() {
     },
     static: {
       textAlign: "center",
-      marginY: "3rem",
+      marginTop: "6rem",
+      marginBottom: "7rem",
     },
     textHead: {
-      fontSize: "36px",
+      fontSize: "38px",
       fontWeight: 800,
       lineHeight: "46px",
       color: "#393738",
+      marginBottom: "12px",
     },
     slogan: {
       color: "#646464",
-      fontSize: "1.3rem",
+      fontSize: "16px",
     },
     cardHeading: {
       fontSize: "36px",
-      fontWeight: 800,
+      fontWeight: 900,
       lineHeight: "46px",
       color: "#393738",
     },
@@ -79,13 +90,13 @@ function ReadyToGetCard() {
   return (
     <>
       <Stack sx={style.readyCard}>
-        <Container sx={responsive.container}>
+        <Container sx={style.container}>
           <Grid container sx={style.card}>
             <Grid item lg={12}>
               <Box sx={style.artic}>
                 <Box className={styles.mediass}>
                   <span className={styles.span1}>
-                    <QuestionAnswerIcon />
+                    <Image src={chat} />
                   </span>
                   <div className={styles.mediaBod}>
                     <Typography variant="h4" className={styles.cardText}>
@@ -101,7 +112,11 @@ function ReadyToGetCard() {
             </Grid>
           </Grid>
           <Box sx={style.static}>
-            <Typography variant="h3" sx={style.textHead}>
+            <Typography
+              variant="h3"
+              sx={style.textHead}
+              className={inter.className}
+            >
               If It’s Broken, We Can Fix It!
             </Typography>
             <Typography sx={style.slogan}>
@@ -110,9 +125,17 @@ function ReadyToGetCard() {
             </Typography>
           </Box>
           <Box sx={style.cardSectionTop}>
-            <Grid container columnSpacing={3}>
+            <Grid
+              container
+              columnSpacing={3}
+              sx={{ justifyContent: "space-between" }}
+            >
               <Grid item lg={6}>
-                <Typography variant="h3" sx={style.cardHeading}>
+                <Typography
+                  variant="h4"
+                  sx={style.cardHeading}
+                  className={inter.className}
+                >
                   Leading Way In Roofing & Home Repair Construction!
                 </Typography>
               </Grid>
@@ -124,14 +147,14 @@ function ReadyToGetCard() {
                   professional remodeling service that is focused on quality in
                   every way.
                 </Typography>
-                <ul>
+                <ul style={{ paddingLeft: "2rem", marginTop: "1.5rem" }}>
                   <li
                     style={{
                       color: "#393738",
-                      fontSize: "1.3rem",
+                      fontSize: "1rem",
                       marginTop: "1rem",
-                      fontFamily: "inherit",
                     }}
+                    className={inter.className}
                   >
                     3000+ successfully completed projects
                   </li>
