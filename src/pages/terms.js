@@ -1,4 +1,4 @@
-import TermsAndCondition from "@/Components/Terms/termsAndCondition";
+import TermsAndCondition from "@/Components/Terms/TermsAndCondition";
 import React from "react";
 
 function terms() {
