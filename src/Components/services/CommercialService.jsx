@@ -17,8 +17,12 @@ import Image from "next/image";
 import styles from "../../styles/style.module.css";
 import postNewsLetterForm from "@/service/newLetterService";
 import { motion } from "framer-motion";
+import { Poppins } from "next/font/google";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
-
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
 function CommercialService() {
   const data = [
     {

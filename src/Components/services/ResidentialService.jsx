@@ -14,11 +14,15 @@ import house from "../../assets/images/house.png";
 import Testimonials from "../Home/Testimonials";
 import tag01 from "../../assets/images/tag01.jpg";
 import Image from "next/image";
+import { Poppins } from "next/font/google";
 import styles from "../../styles/style.module.css";
 import postNewsLetterForm from "@/service/newLetterService";
 import { motion } from "framer-motion";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
-
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
 function CommercialService() {
   const data = [
     {
