@@ -114,7 +114,12 @@ function NavBAr() {
                 </li>
               </Box>
               <li className={styles.liImage} id={styles.margin}>
-                <Image src={logo} alt="logo" className={styles.image} />
+                <Image
+                  src={logo}
+                  alt="logo"
+                  className={styles.image}
+                  loading="eager"
+                />
               </li>
               <Box className={styles.boxStyle}>
                 <li className={styles.li}>
