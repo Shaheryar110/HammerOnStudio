@@ -3,12 +3,23 @@ import React, { useState } from "react";
 import responsive from "../../styles/responsive.module.css";
 import ServiceGridSection from "../Commons/ServiceGridSection";
 import Stripe from "../Commons/Stripe";
-import fourMen from "../../assets/images/img01.jpg";
-import fourMen1 from "../../assets/images/const.png";
-import fourMen2 from "../../assets/images/imgtav01.jpg";
-import fourMen3 from "../../assets/images/tag03.webp";
-import fourMen4 from "../../assets/images/const1.jpg";
-import fourMen5 from "../../assets/images/imgtag-03.jpg";
+import res01 from "../../assets/images/res01.jpg";
+import res02 from "../../assets/images/res02.jpg";
+import res03 from "../../assets/images/res03.jpg";
+import res04 from "../../assets/images/res04.jpg";
+import res05 from "../../assets/images/res05.jpg";
+import res06 from "../../assets/images/res06.jpg";
+import res07 from "../../assets/images/res07.jpg";
+import res08 from "../../assets/images/res08.jpg";
+import res09 from "../../assets/images/res09.jpg";
+import res10 from "../../assets/images/res10.jpg";
+import res11 from "../../assets/images/res11.jpg";
+import res12 from "../../assets/images/res12.jpg";
+import res13 from "../../assets/images/res13.jpg";
+import res14 from "../../assets/images/res14.jpg";
+import res15 from "../../assets/images/res15.jpg";
+import res16 from "../../assets/images/res16.jpg";
+import res17 from "../../assets/images/res17.jpg";
 import new1 from "../../assets/images/new1.webp";
 import house from "../../assets/images/house.png";
 import Testimonials from "../Home/Testimonials";
@@ -30,7 +41,7 @@ function CommercialService() {
       mainHeading: "Roofs",
       para1:
         "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
-      src: fourMen,
+      src: res01,
     },
     {
       smallHeading: "SHORT INTRO ABOUT",
@@ -38,7 +49,7 @@ function CommercialService() {
       para1:
         "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
 
-      src: fourMen1,
+      src: res02,
       order: true,
     },
     {
@@ -47,7 +58,7 @@ function CommercialService() {
       para1:
         "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
 
-      src: fourMen2,
+      src: res03,
     },
     {
       smallHeading: "SHORT INTRO ABOUT",
@@ -55,7 +66,7 @@ function CommercialService() {
       para1:
         "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
 
-      src: fourMen3,
+      src: res04,
       order: true,
     },
     {
@@ -64,7 +75,7 @@ function CommercialService() {
       para1:
         "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
 
-      src: fourMen4,
+      src: res05,
     },
     {
       smallHeading: "SHORT INTRO ABOUT",
@@ -72,7 +83,7 @@ function CommercialService() {
       para1:
         "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
 
-      src: fourMen5,
+      src: res06,
       order: true,
     },
     {
@@ -80,7 +91,7 @@ function CommercialService() {
       mainHeading: "Basement Remodeling",
       para1:
         "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
-      src: fourMen5,
+      src: res07,
     },
     {
       smallHeading: "SHORT INTRO ABOUT",
@@ -88,7 +99,7 @@ function CommercialService() {
       para1:
         "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
 
-      src: fourMen5,
+      src: res08,
       order: true,
     },
     {
@@ -97,7 +108,7 @@ function CommercialService() {
       para1:
         "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
 
-      src: fourMen5,
+      src: res09,
     },
     {
       smallHeading: "SHORT INTRO ABOUT",
@@ -105,7 +116,7 @@ function CommercialService() {
       para1:
         "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
 
-      src: fourMen5,
+      src: res10,
       order: true,
     },
     //   hi
@@ -115,7 +126,7 @@ function CommercialService() {
       para1:
         "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
 
-      src: fourMen5,
+      src: res11,
     },
     {
       smallHeading: "SHORT INTRO ABOUT",
@@ -123,7 +134,7 @@ function CommercialService() {
       para1:
         "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
 
-      src: fourMen5,
+      src: res12,
       order: true,
     },
     {
@@ -132,7 +143,7 @@ function CommercialService() {
       para1:
         "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
 
-      src: fourMen5,
+      src: res13,
     },
     {
       smallHeading: "SHORT INTRO ABOUT",
@@ -140,7 +151,7 @@ function CommercialService() {
       para1:
         "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
 
-      src: fourMen5,
+      src: res14,
       order: true,
     },
     {
@@ -149,7 +160,7 @@ function CommercialService() {
       para1:
         "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
 
-      src: fourMen5,
+      src: res15,
     },
     {
       smallHeading: "SHORT INTRO ABOUT",
@@ -157,7 +168,7 @@ function CommercialService() {
       para1:
         "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
 
-      src: fourMen5,
+      src: res16,
       order: true,
     },
     {
@@ -166,7 +177,7 @@ function CommercialService() {
       para1:
         "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
 
-      src: fourMen5,
+      src: res17,
     },
   ];
   const style = {
