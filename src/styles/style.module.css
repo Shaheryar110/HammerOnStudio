@@ -520,11 +520,12 @@
 .cardContent {
   padding: 30px 30px 0px;
   background: #fff;
+  height: "220px";
 }
 .cardHeading {
   font-weight: 700;
   margin-bottom: 15px;
-  font-size: 1.3rem;
+  font-size: 1rem;
   line-height: 36px;
 }
 .readMore {

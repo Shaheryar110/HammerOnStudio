@@ -38,6 +38,17 @@ function Blogs() {
       marginY: "1rem",
       alignItems: "center",
     },
+    cardHeading: {
+      fontWeight: 700,
+      marginBottom: "15px",
+      fontSize: "1rem",
+      lineHeight: "36px",
+    },
+    cardContent: {
+      padding: "30px 30px 0px",
+      backgroundColor: "white",
+      height: "220px",
+    },
   };
   const CardData = [
     {
@@ -99,8 +110,8 @@ function Blogs() {
                       June 22, 2023
                     </Box>
                   </Box>
-                  <Box className={styles.cardContent}>
-                    <Typography variant="h3" className={styles.cardHeading}>
+                  <Box sx={style.cardContent}>
+                    <Typography variant="h3" sx={style.cardHeading}>
                       {data.title}
                     </Typography>
                     <Box sx={style.cardIconBox}>
