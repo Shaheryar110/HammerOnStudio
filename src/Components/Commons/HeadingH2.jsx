@@ -8,10 +8,10 @@ const inter = Inter({
 function HeadingH2({ text, align }) {
   const style = {
     styling: {
-      fontWeight: "800",
+      fontWeight: "900",
       color: "#393738",
       textAlign: align || "left",
-      fontSize: "36px",
+      fontSize: "37px",
       margin: "0px 0px 20px",
     },
   };

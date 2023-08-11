@@ -314,28 +314,38 @@ function CommercialService() {
                 />
               </Box>
               <Button
-                variant="contained"
-                sx={style.buton}
                 onClick={handleSubmit}
+                sx={style.buton}
+                className={poppins.className}
                 onMouseEnter={enter}
                 onMouseOut={out}
               >
-                SUBSCRIBE
-                {active && (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 1 }}
-                  >
-                    <KeyboardDoubleArrowRightIcon
-                      sx={{
-                        transition: "all ease 0.5s",
-                        display: "flex",
-                        alignSelf: "center",
-                      }}
-                    />
-                  </motion.div>
-                )}
+                <motion.div
+                  initial={{ x: 0, opacity: 0 }}
+                  whileInView={{ opacity: 1, x: active ? -5 : 10 }}
+                  transition={{ duration: 0.5 }}
+                  onMouseEnter={enter}
+                  onMouseOut={out}
+                >
+                  {" "}
+                  SUBSCRIBE
+                </motion.div>
+
+                <motion.div
+                  initial={{ x: -10, opacity: 0 }}
+                  whileInView={{ opacity: active ? 1 : 0, x: -5 }}
+                  transition={{ duration: 0.5 }}
+                  onMouseEnter={enter}
+                  onMouseOut={out}
+                >
+                  <KeyboardDoubleArrowRightIcon
+                    sx={{
+                      transition: "all ease 0.5s",
+                      display: "flex",
+                      alignSelf: "center",
+                    }}
+                  />
+                </motion.div>
               </Button>
             </Box>
           </Grid>
