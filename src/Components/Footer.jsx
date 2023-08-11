@@ -174,7 +174,7 @@ function Footer() {
                 </Link>
                 <Link href="https://www.tiktok.com/@hammer.on.studios">
                   <Box
-                    sx={style.socialStyle}
+                    sx={[style.socialStyle, { padding: "15px" }]}
                     onMouseEnter={() => handleMouseEnter(2)}
                     onMouseLeave={() => handleMouseLeave(2)}
                   >

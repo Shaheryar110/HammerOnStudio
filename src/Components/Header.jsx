@@ -105,8 +105,13 @@ const HeaderTop = () => {
               </Box>
             </Link>
             <Link href="https://www.tiktok.com/@hammer.on.studios">
-              <Box sx={style.icon}>
-                <FontAwesomeIcon icon={faTiktok} fontSize={20} color="white" />
+              <Box sx={[style.icon, { padding: "15px" }]}>
+                <FontAwesomeIcon
+                  icon={faTiktok}
+                  fontSize={20}
+                  size={20}
+                  color="white"
+                />
               </Box>
             </Link>
           </Box>
