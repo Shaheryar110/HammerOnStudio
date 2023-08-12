@@ -1,5 +1,5 @@
 import { Container, Box, Typography, Button, Grid } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import responsive from "../../styles/responsive.module.css";
 import HeadingH2 from "../Commons/HeadingH2";
 import StripSection from "../Commons/Stripe";
@@ -10,7 +10,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import ForumIcon from "@mui/icons-material/Forum";
 import Image from "next/image";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
-
+import getAllBlogs from "@/service/getAllBlogs";
 function Blogs() {
   const style = {
     marginHead: {
@@ -89,6 +89,12 @@ function Blogs() {
         "Top Commercial and Home Renovation Contractors in New York – Monroe and NYC",
     },
   ];
+  const [pic, setPic] = useState(allBlogs);
+  useEffect(() => {
+    getAllBlogs().then((res) => {
+      console.log(res.data);
+    });
+  }, []);
   return (
     <Box>
       <StripSection heading="LATEST NEWS" />
@@ -97,22 +103,29 @@ function Blogs() {
           <HeadingH2 text="Latest News" align="center" />
         </Box>
         <Grid container>
-          {CardData.map((data) => {
+          {pic?.map((data) => {
             return (
               <Grid item lg={4}>
                 <Box className={styles.cardBox}>
                   <Box className={styles.cardImg}>
                     <Box>
-                      <Image src={roof1} alt="oops" />
+                      {/* <img
+                        src={data?.image}
+                        fill={true}
+                        width={100}
+                        height={100}
+                        alt={data.id}
+                        priority
+                      /> */}
                     </Box>
                     <Box className={styles.itemdate}>
                       <CalendarMonthIcon />
-                      June 22, 2023
+                      {data?.date}
                     </Box>
                   </Box>
                   <Box sx={style.cardContent}>
                     <Typography variant="h3" sx={style.cardHeading}>
-                      {data.title}
+                      {data?.heading}
                     </Typography>
                     <Box sx={style.cardIconBox}>
                       <Box sx={style.flexOnIcon}>
@@ -141,4 +154,23 @@ function Blogs() {
   );
 }
 
+export async function getServerSideProps() {
+  try {
+    const response = await axios.get("https://172.16.100.76:5001/api/blogs");
+    const data = response.data;
+    console.log(data);
+    return {
+      props: {
+        data,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return {
+      props: {
+        data: [],
+      },
+    };
+  }
+}
 export default Blogs;

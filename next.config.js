@@ -2,16 +2,23 @@
 
 const nextConfig = {
   reactStrictMode: true,
+
   webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: {
-        loader: "url-loader",
-        options: {
-          limit: 50000, // make sure this number is big enough to load your resource, or do not define it at all.
+    config.module.rules.push(
+      {
+        test: /\.svg$/,
+        use: {
+          loader: "url-loader",
+          options: {
+            limit: 50000,
+          },
         },
       },
-    });
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        type: "asset/resource", // Use asset/resource to load remote images as files
+      }
+    );
     return config;
   },
 };
