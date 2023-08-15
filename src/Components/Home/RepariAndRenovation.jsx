@@ -9,13 +9,13 @@ import dril from "../../assets/images/dril.webp";
 import { motion } from "framer-motion";
 import IconCard from "../Commons/IconCard";
 import { Inter } from "next/font/google";
-import joist from "../../../public/joist.png";
-import joistWhite from "../../../public/joistWhite1.png";
-import check from "../../../public/check.png";
-import checkWhite from "../../../public/checkWhite.png";
-import user from "../../../public/user.png";
-import userWhite from "../../../public/userWhite.png";
-import banner from "../../assets/images/banner.jpg";
+import joist from "../../../public/joist.webp";
+import joistWhite from "../../../public/joistWhite1.webp";
+import check from "../../../public/check.webp";
+import checkWhite from "../../../public/checkWhite.webp";
+import user from "../../../public/user.webp";
+import userWhite from "../../../public/userWhite.webp";
+import banner from "../../assets/images/banner.webp";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -219,10 +219,21 @@ function RepariAndRenovation() {
                       src={white}
                       alt="white"
                       className={styles.img1}
+                      fill={false}
                       style={{ height: "330px", width: "60%" }}
                     />
-                    <Image src={yellw} alt="white" className={styles.img2} />
-                    <Image src={dril} alt="white" className={styles.img3} />
+                    <Image
+                      src={yellw}
+                      alt="white"
+                      className={styles.img2}
+                      fill={false}
+                    />
+                    <Image
+                      src={dril}
+                      alt="white"
+                      className={styles.img3}
+                      fill={false}
+                    />
                   </Box>
                 </motion.div>
               </Grid>

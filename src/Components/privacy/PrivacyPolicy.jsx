@@ -5,7 +5,7 @@ import HeadingH2 from "../Commons/HeadingH2";
 import Layout from "../Layout";
 import StripSection from "../Commons/Stripe";
 import Link from "next/link";
-import tag from "../../assets/images/tag01.jpg";
+import tag from "../../assets/images/tag01.webp";
 import Image from "next/image";
 
 function PrivacyPolicy() {

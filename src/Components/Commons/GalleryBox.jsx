@@ -66,7 +66,12 @@ function GalleryBox({ src, category, service }) {
       transition={{ duration: 1 }}
     >
       <Box sx={style.gridIamge}>
-        <Image src={src} style={{ width: "100%", height: "300px" }} />
+        <Image
+          src={src}
+          height={300}
+          width={300}
+          style={{ width: "100%", height: "300px" }}
+        />
         <Box sx={style.galleryOverlay}>
           <Box>
             <Typography sx={style.superText}>{category}</Typography>

@@ -1,12 +1,12 @@
 import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
-import shape34 from "../../assets/images/shape34.png";
+import shape34 from "../../assets/images/shape34.webp";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
-import shape35 from "../../assets/images/shape35.png";
+import shape35 from "../../assets/images/shape35.webp";
 // import shape34 from "../../assets/images/shape34.webp";
-import shape36 from "../../assets/images/shape36.png";
+import shape36 from "../../assets/images/shape36.webp";
 import styles from "../../styles/style.module.css";
 
 function Testimonials() {
@@ -21,7 +21,7 @@ function Testimonials() {
     },
     sliderCard: {
       padding: "1.5rem",
-      width: "450px",
+      width: "90%",
       height: "300px",
       boxShadow: "2px 4px 13px 3px rgba(0,0,0,0.3)",
       backgroundColor: "white",
@@ -85,12 +85,23 @@ function Testimonials() {
       top: "-2rem",
     },
   };
+  const reviews = [
+    " “We hired Hammer-On Studios to get our home’s flooring done. Their team is highly professional and has the right tools, and hired adequate techniques to get the job. We are extremely satisfied with their services and are soon going to call them for our home’s paint job.”",
+
+    "“Our business had been looking for a contractor that can provide us with roofing services for quite a long time. One of our partners recommended us Hammer-On Studios and we are more than happy with the services they provided. Definitely going to work with them in the future.” ",
+
+    "“The entire crew of Hammer-On Studios was amazing. They replaced all of our sliding doors and windows and added a slider where there was previously a door. From start to finish, they did their job perfectly. Overall the job turned out perfect. We love our new windows and sliding doors!” ",
+  ];
 
   return (
     <>
       <Box sx={style.main}>
         <Box sx={style.imgBack}>
-          <Image src={shape34} style={{ width: "100%", height: "100%" }} />
+          <Image
+            src={shape34}
+            fill={false}
+            style={{ width: "100%", height: "100%" }}
+          />
         </Box>
 
         <Grid container>
@@ -101,81 +112,31 @@ function Testimonials() {
                 showArrows={false}
                 showIndicators={false}
                 centerMode={true}
-                centerSlidePercentage={45}
+                centerSlidePercentage={55}
                 showStatus={false}
                 interval={2000}
                 infiniteLoop={true}
                 showThumbs={false}
+                width="100%"
               >
-                <Box sx={style.sliderCard}>
-                  <Image
-                    src={shape35}
-                    style={{ width: "60px", height: "60px" }}
-                  />
-                  <Image
-                    src={shape36}
-                    style={{ width: "60px", height: "60px" }}
-                  />
+                {reviews.map((data) => (
+                  <Box sx={style.sliderCard}>
+                    <Image
+                      src={shape35}
+                      width={100}
+                      height={100}
+                      style={{ width: "60px", height: "60px" }}
+                    />
+                    <Image
+                      src={shape36}
+                      width={100}
+                      height={100}
+                      style={{ width: "60px", height: "60px" }}
+                    />
 
-                  <Typography sx={style.content}>
-                    “Our business had been looking for a contractor that can
-                    provide us with roofing services for quite a long time. One
-                    of our partners recommended us Hammer-On Studios and we are
-                    more than happy with the services they provided. Definitely
-                    going to work with them in the future.”{" "}
-                  </Typography>
-                </Box>
-                <Box sx={style.sliderCard}>
-                  <Image
-                    src={shape35}
-                    style={{ width: "60px", height: "60px" }}
-                  />
-                  <Image
-                    src={shape36}
-                    style={{ width: "60px", height: "60px" }}
-                  />
-                  <Typography sx={style.content}>
-                    “Our business had been looking for a contractor that can
-                    provide us with roofing services for quite a long time. One
-                    of our partners recommended us Hammer-On Studios and we are
-                    more than happy with the services they provided. Definitely
-                    going to work with them in the future.”{" "}
-                  </Typography>
-                </Box>
-                <Box sx={style.sliderCard}>
-                  <Image
-                    src={shape35}
-                    style={{ width: "60px", height: "60px" }}
-                  />
-                  <Image
-                    src={shape36}
-                    style={{ width: "60px", height: "60px" }}
-                  />
-                  <Typography sx={style.content}>
-                    “Our business had been looking for a contractor that can
-                    provide us with roofing services for quite a long time. One
-                    of our partners recommended us Hammer-On Studios and we are
-                    more than happy with the services they provided. Definitely
-                    going to work with them in the future.”{" "}
-                  </Typography>
-                </Box>
-                <Box sx={style.sliderCard}>
-                  <Image
-                    src={shape35}
-                    style={{ width: "60px", height: "60px" }}
-                  />
-                  <Image
-                    src={shape36}
-                    style={{ width: "60px", height: "60px" }}
-                  />
-                  <Typography sx={style.content}>
-                    “Our business had been looking for a contractor that can
-                    provide us with roofing services for quite a long time. One
-                    of our partners recommended us Hammer-On Studios and we are
-                    more than happy with the services they provided. Definitely
-                    going to work with them in the future.”{" "}
-                  </Typography>
-                </Box>
+                    <Typography sx={style.content}>{data}</Typography>
+                  </Box>
+                ))}
               </Carousel>
             </Box>
           </Grid>

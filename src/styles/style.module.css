@@ -494,6 +494,14 @@
   width: 90%;
   margin-bottom: 3rem;
 }
+.cardBox1 {
+  box-shadow: 0px 5px 59px 0px rgba(0, 0, 0, 0.31);
+  border-radius: 1rem;
+  overflow: hidden;
+  width: 90%;
+  margin-bottom: 3rem;
+  padding: 1rem;
+}
 .cardImg {
   overflow: hidden;
   position: relative;
@@ -517,6 +525,7 @@
   font-weight: 500;
   font-size: 15px;
 }
+
 .cardContent {
   padding: 30px 30px 0px;
   background: #fff;
@@ -531,6 +540,9 @@
 .readMore {
   color: #707173;
   font-size: 15px;
+}
+.readMore:hover {
+  color: "#2871ae";
 }
 .readMore1 {
   color: #707173;

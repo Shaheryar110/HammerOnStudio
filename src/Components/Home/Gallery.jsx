@@ -3,12 +3,12 @@ import { Container, Box, Typography, Stack, Grid } from "@mui/material";
 import Image from "next/image";
 import responsive from "../../styles/responsive.module.css";
 import styles from "../../styles/style.module.css";
-import roof1 from "../../assets/images/galleryImg/1.jpg";
-import roof2 from "../../assets/images/galleryImg/2.jpg";
-import roof3 from "../../assets/images/galleryImg/3.jpg";
-import roof4 from "../../assets/images/galleryImg/4.jpg";
-import roof5 from "../../assets/images/galleryImg/5.jpg";
-import roof6 from "../../assets/images/galleryImg/6.jpg";
+import roof1 from "../../assets/images/galleryImg/1.webp";
+import roof2 from "../../assets/images/galleryImg/2.webp";
+import roof3 from "../../assets/images/galleryImg/3.webp";
+import roof4 from "../../assets/images/galleryImg/4.webp";
+import roof5 from "../../assets/images/galleryImg/5.webp";
+import roof6 from "../../assets/images/galleryImg/6.webp";
 import GalleryBox from "../Commons/GalleryBox";
 
 function Gallery({ border }) {

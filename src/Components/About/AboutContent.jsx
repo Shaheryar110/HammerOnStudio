@@ -4,9 +4,9 @@ import responsive from "../../styles/responsive.module.css";
 import styles from "../../styles/style.module.css";
 import BeforeHeadSmall from "../Commons/BeforeHeadSmall";
 import HeadingH2 from "../Commons/HeadingH2";
-import labours from "../../assets/images/labours.jpg";
+import labours from "../../assets/images/labours.webp";
 import Image from "next/image";
-import tag01 from "../../assets/images/tag01.jpg";
+import tag01 from "../../assets/images/tag01.webp";
 import FourHoverCards from "../Commons/FourHoverCards";
 
 function AboutContent() {
@@ -65,6 +65,7 @@ function AboutContent() {
               <Box>
                 <Image
                   src={labours}
+                  fill={false}
                   style={{ width: "100%", height: "100%" }}
                   className={styles.imgs}
                 />

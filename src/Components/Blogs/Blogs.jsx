@@ -11,7 +11,9 @@ import ForumIcon from "@mui/icons-material/Forum";
 import Image from "next/image";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import getAllBlogs from "@/service/getAllBlogs";
-function Blogs() {
+import axios from "axios";
+import Link from "next/link";
+function Blogs({ posts }) {
   const style = {
     marginHead: {
       marginY: "3rem",
@@ -32,11 +34,15 @@ function Blogs() {
       gap: "1rem",
     },
     cardIconBox1: {
+      cursor: "pointer",
       display: "flex",
       flexDirection: "row",
       gap: "1rem",
       marginY: "1rem",
       alignItems: "center",
+      ":hover": {
+        color: "blue",
+      },
     },
     cardHeading: {
       fontWeight: 700,
@@ -47,7 +53,14 @@ function Blogs() {
     cardContent: {
       padding: "30px 30px 0px",
       backgroundColor: "white",
-      height: "220px",
+      height: "240px",
+    },
+    readMore: {
+      color: "#707173",
+      fontSize: "15px",
+      ":hover": {
+        color: "#2871ae",
+      },
     },
   };
   const CardData = [
@@ -89,10 +102,11 @@ function Blogs() {
         "Top Commercial and Home Renovation Contractors in New York – Monroe and NYC",
     },
   ];
-  const [pic, setPic] = useState(allBlogs);
+  const [pic, setPic] = useState([]);
   useEffect(() => {
-    getAllBlogs().then((res) => {
-      console.log(res.data);
+    axios.get("https://172.16.100.76:5001/api/blogs").then((res) => {
+      setPic(res.data);
+      console.log(pic, "pic");
     });
   }, []);
   return (
@@ -109,14 +123,13 @@ function Blogs() {
                 <Box className={styles.cardBox}>
                   <Box className={styles.cardImg}>
                     <Box>
-                      {/* <img
+                      <Image
                         src={data?.image}
-                        fill={true}
-                        width={100}
-                        height={100}
+                        width={420}
+                        height={300}
                         alt={data.id}
-                        priority
-                      /> */}
+                        priority={true}
+                      />
                     </Box>
                     <Box className={styles.itemdate}>
                       <CalendarMonthIcon />
@@ -137,12 +150,19 @@ function Blogs() {
                         <Typography>comments : 0</Typography>
                       </Box>
                     </Box>
-                    <Box sx={style.cardIconBox1}>
-                      <Typography className={styles.readMore}>
-                        READ MORE
-                      </Typography>
-                      <ArrowCircleRightIcon className={styles.readMore1} />
-                    </Box>
+                    <Link
+                      style={{
+                        textDecoration: "none",
+                        listStyle: "none",
+                        color: "inherit",
+                      }}
+                      href={data?.slug}
+                    >
+                      <Box sx={style.cardIconBox1}>
+                        <Typography sx={style.readMore}>READ MORE</Typography>
+                        <ArrowCircleRightIcon className={styles.readMore1} />
+                      </Box>
+                    </Link>
                   </Box>
                 </Box>
               </Grid>
@@ -153,24 +173,13 @@ function Blogs() {
     </Box>
   );
 }
-
-export async function getServerSideProps() {
-  try {
-    const response = await axios.get("https://172.16.100.76:5001/api/blogs");
-    const data = response.data;
-    console.log(data);
-    return {
-      props: {
-        data,
-      },
-    };
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return {
-      props: {
-        data: [],
-      },
-    };
-  }
-}
+// export async function getStaticProps() {
+//   // fetch the blog posts from the mock API
+//   const res = await axios.get("https://172.16.100.76:5001/api/blogs");
+//   const posts = await res.json();
+//   console.log(res, "json");
+//   return {
+//     props: { posts }, // props will be passed to the page
+//   };
+// }
 export default Blogs;

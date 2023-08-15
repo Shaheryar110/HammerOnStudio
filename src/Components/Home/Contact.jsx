@@ -2,7 +2,7 @@ import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import responsive from "../../styles/responsive.module.css";
 import styles from "../../styles/style.module.css";
-import img021 from "../../assets/images/img012.jpg";
+import img021 from "../../assets/images/img012.webp";
 import { Poppins } from "next/font/google";
 
 const poppins = Poppins({

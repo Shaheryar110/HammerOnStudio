@@ -10,7 +10,7 @@ import {
 import Image from "next/image";
 import responsive from "../../src/styles/responsive.module.css";
 import styles from "../../src/styles/style.module.css";
-import logo from "../../src/assets/images/logo.png";
+import logo from "../../src/assets/images/logo.webp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useState } from "react";
 import Link from "next/link";
@@ -119,11 +119,12 @@ function NavBAr() {
                   alt="logo"
                   className={styles.image}
                   loading="eager"
+                  fill={false}
                 />
               </li>
               <Box className={styles.boxStyle}>
                 <li className={styles.li}>
-                  <Link href="/work" style={{ textDecoration: "none" }}>
+                  <Link href="/our-work" style={{ textDecoration: "none" }}>
                     <Typography sx={style.text}>Our Work</Typography>
                   </Link>
                 </li>
@@ -138,7 +139,7 @@ function NavBAr() {
                   </Link>
                 </li>
                 <li className={styles.li}>
-                  <Link href="/get-a-qoute" style={{ textDecoration: "none" }}>
+                  <Link href="/get-a-quote" style={{ textDecoration: "none" }}>
                     <Typography sx={style.text}>Get A Qoute</Typography>
                   </Link>
                 </li>
@@ -158,7 +159,7 @@ function NavBAr() {
         >
           <ListItemButton className={styles.size}>
             <Link
-              href="/commercialService"
+              href="/commercial-services"
               style={{ textDecoration: "none", color: "inherit" }}
             >
               <ListItemText
@@ -172,7 +173,7 @@ function NavBAr() {
           <hr />
           <ListItemButton>
             <Link
-              href="/residentialService"
+              href="/residential-services"
               style={{ textDecoration: "none", color: "inherit" }}
             >
               <ListItemText

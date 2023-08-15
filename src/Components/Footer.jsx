@@ -10,7 +10,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import responsive from "../styles/responsive.module.css";
 import styles from "../styles/style.module.css";
-import footerLogo from "../assets/images/cas.png";
+import footerLogo from "../assets/images/cas.webp";
 import PhoneIcon from "@mui/icons-material/Phone";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -121,6 +121,8 @@ function Footer() {
               <Box>
                 <Image
                   src={footerLogo}
+                  width={212}
+                  height={144}
                   style={{ width: "212px", height: "144px" }}
                 />
               </Box>
@@ -202,10 +204,10 @@ function Footer() {
               © Copyright Hammer-On Studios 2022. All Right Reserved.
             </Typography>
             <Box sx={style.footerPage}>
-              <Link href="/privacy" style={{ textDecoration: "none" }}>
+              <Link href="/privacy-policy-2" style={{ textDecoration: "none" }}>
                 <Typography sx={style.page1}>Privacy Policy</Typography>
               </Link>
-              <Link href="/terms" style={{ textDecoration: "none" }}>
+              <Link href="/terms-conditions" style={{ textDecoration: "none" }}>
                 <Typography sx={style.page}>Terms & Condition</Typography>
               </Link>
             </Box>

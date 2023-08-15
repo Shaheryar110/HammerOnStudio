@@ -34,6 +34,7 @@ function Content({ smallHeading, mainHeading, para1, para2, src, order }) {
             <Box>
               <Image
                 src={src}
+                fill={false}
                 style={{ width: "100%", height: "100%" }}
                 className={styles.imgs}
               />

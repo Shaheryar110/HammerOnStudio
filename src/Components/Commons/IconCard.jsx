@@ -70,17 +70,8 @@ function IconCard({ icon, heading, para, hoverIcon }) {
   return (
     <Box sx={style.media} onMouseEnter={mouseEnter} onMouseLeave={mouseExit}>
       <Box sx={[style.iconBox, iconHover && style.hover]}>
-        {!iconHover && (
-          <Image
-            src={icon}
-            style={{
-              width: "50%",
-              height: "50%",
-              color: "red",
-            }}
-          />
-        )}
-        {iconHover && <Image src={hoverIcon} />}
+        {!iconHover && <Image src={icon} fill={false} />}
+        {iconHover && <Image src={hoverIcon} fill={false} />}
       </Box>
       <Box sx={style.mediaBody}>
         <Typography variant="h4" sx={style.heading} className={inter.className}>

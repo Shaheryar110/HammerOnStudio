@@ -6,7 +6,7 @@ import Layout from "../Layout";
 import StripSection from "../Commons/Stripe";
 import Link from "next/link";
 import Image from "next/image";
-import tag from "../../assets/images/tag01.jpg";
+import tag from "../../assets/images/tag01.webp";
 
 function TermsAndCondition() {
   const data = [

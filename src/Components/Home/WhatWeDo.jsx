@@ -3,12 +3,12 @@ import Image from "next/image";
 import React from "react";
 import responsive from "../../styles/responsive.module.css";
 import styles from "../../styles/style.module.css";
-import sbg from "../../assets/images/sbg.png";
+import sbg from "../../assets/images/sbg.webp";
 import services from "../../assets/images/services01.webp";
 import KeyboardArrowRightOutlinedIcon from "@mui/icons-material/KeyboardArrowRightOutlined";
 import { Inter } from "next/font/google";
-import cardSvg1 from "../../assets/images/cardsvg1.png";
-import cardSvg2 from "../../assets/images/cardSvg2.png";
+import cardSvg1 from "../../assets/images/cardsvg1.webp";
+import cardSvg2 from "../../assets/images/cardSvg2.webp";
 import card2 from "../../assets/images/card2.webp";
 const inter = Inter({
   subsets: ["latin"],
@@ -152,6 +152,7 @@ function WhatWeDo() {
                   <Box sx={style.svg}>
                     <Image
                       src={cardSvg1}
+                      fill={false}
                       style={{ width: "100%", height: "100%" }}
                     />
                   </Box>
@@ -174,12 +175,13 @@ function WhatWeDo() {
             <Grid item lg={5}>
               <Box className={styles.cardInfo}>
                 <figure className={styles.fig}>
-                  <Image src={card2} />
+                  <Image src={card2} fill={false} />
                 </figure>
                 <Box sx={{ position: "relative" }}>
                   <Box sx={style.svg}>
                     <Image
                       src={cardSvg2}
+                      fill={false}
                       style={{ width: "100%", height: "100%" }}
                     />
                   </Box>

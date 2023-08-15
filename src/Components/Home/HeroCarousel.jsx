@@ -2,8 +2,9 @@ import Image from "next/image";
 import React, { useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import slider1 from "../../assets/images/slider-1.jpeg";
-import slider2 from "../../assets/images/blog05.jpg";
+import slider1 from "../../assets/images/slider-1.webp";
+// import slider1 from "../../assets/images/card2.webp";
+import slider2 from "../../assets/images/slid.webp";
 import { Box, Button, Container, Typography } from "@mui/material";
 import responsive from "../../styles/responsive.module.css";
 import { motion, easeIn } from "framer-motion";
@@ -70,7 +71,12 @@ function HeroCarousel() {
       showThumbs={false}
     >
       <div style={{ position: "relative" }}>
-        <Image src={slider1} />
+        <Image
+          src={slider1}
+          width={1920}
+          height={730}
+          style={{ width: "1920px", height: "730px" }}
+        />
         <Container className={responsive.container}>
           <Box sx={style.overText}>
             <Box sx={style.subBox}>
@@ -100,7 +106,7 @@ function HeroCarousel() {
         </Container>
       </div>
       <div>
-        <Image src={slider2} style={{ width: "1920px", height: "730px" }} />
+        <Image src={slider2} width={1920} height={730} />
         <Container className={responsive.container}>
           <Box sx={style.overText}>
             <Box sx={style.subBox}>

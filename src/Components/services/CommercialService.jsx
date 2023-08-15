@@ -3,15 +3,15 @@ import React, { useState } from "react";
 import responsive from "../../styles/responsive.module.css";
 import ServiceGridSection from "../Commons/ServiceGridSection";
 import Stripe from "../Commons/Stripe";
-import fourMen from "../../assets/images/img01.jpg";
-import fourMen1 from "../../assets/images/const.png";
-import fourMen2 from "../../assets/images/imgtav01.jpg";
+import fourMen from "../../assets/images/img01.webp";
+import fourMen1 from "../../assets/images/const.webp";
+import fourMen2 from "../../assets/images/imgtav01.webp";
 import fourMen3 from "../../assets/images/tag03.webp";
-import fourMen4 from "../../assets/images/const1.jpg";
-import fourMen5 from "../../assets/images/imgtag-03.jpg";
+import fourMen4 from "../../assets/images/const1.webp";
+import fourMen5 from "../../assets/images/imgtag-03.webp";
 import new1 from "../../assets/images/new1.webp";
-import tag01 from "../../assets/images/tag01.jpg";
-import house from "../../assets/images/house.png";
+import tag01 from "../../assets/images/tag01.webp";
+import house from "../../assets/images/house.webp";
 import Testimonials from "../Home/Testimonials";
 import Image from "next/image";
 import styles from "../../styles/style.module.css";
@@ -268,7 +268,7 @@ function CommercialService() {
             </Box>
           </Grid>
           <Grid item lg={3}>
-            <Image src={house} />
+            <Image src={house} fill={false} />
           </Grid>
         </Grid>
       </Box>

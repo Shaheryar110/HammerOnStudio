@@ -7,7 +7,7 @@ import bgIcon from "../../assets/images/bgicon.png";
 import { Inter } from "next/font/google";
 import AnimatedCard from "./AnimatedCard";
 import Image from "next/image";
-import chat from "../../../public/chat.png";
+import chat from "../../../public/chat.webp";
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "700", "900"],
@@ -96,7 +96,7 @@ function ReadyToGetCard() {
               <Box sx={style.artic}>
                 <Box className={styles.mediass}>
                   <span className={styles.span1}>
-                    <Image src={chat} />
+                    <Image src={chat} fill={false} />
                   </span>
                   <div className={styles.mediaBod}>
                     <Typography variant="h4" className={styles.cardText}>

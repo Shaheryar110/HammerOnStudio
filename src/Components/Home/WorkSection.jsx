@@ -71,6 +71,7 @@ function WorkSection() {
                   <Image
                     src={worker}
                     alt="oops"
+                    fill={false}
                     style={{ height: "100%", width: "100%" }}
                   />
                 </Box>
