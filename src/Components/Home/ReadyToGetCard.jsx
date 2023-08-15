@@ -28,6 +28,7 @@ function ReadyToGetCard() {
       width: "100%",
     },
     artic: {
+      display: { lg: "block", xs: "none" },
       background: `url(${img01.src})`,
       padding: 0,
       backgroundPosition: "right",
@@ -86,6 +87,45 @@ function ReadyToGetCard() {
       lineHeight: "46px",
       color: "#393738",
     },
+    mediass: {
+      padding: "85px 0",
+      alignItems: "center",
+      justifyContent: { lg: "flex-start", xs: "center" },
+      marginLeft: { lg: "39px" },
+      display: "flex",
+      width: "100%",
+    },
+    mediass1: {
+      alignItems: "center",
+      justifyContent: { lg: "flex-start", xs: "center" },
+      marginLeft: { lg: "39px" },
+      display: "flex",
+      width: "100%",
+    },
+    span1: {
+      width: "50px",
+      height: "50px",
+      backgroundColor: "#fff",
+      borderRadius: "100px",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      marginRight: "20px",
+    },
+    smallCard: {
+      display: { lg: "none", xs: "flex" },
+      width: "100%",
+      backgroundColor: "#2871ae",
+      borderRadius: "10px",
+    },
+    cardText: {
+      color: "#ffffff",
+
+      fontWeight: { lg: 700, xs: 800 },
+      margin: "0px 0px 6px 0px",
+      lineHeight: "45px",
+      fontSize: { lg: "30px", xs: "1.5rem" },
+    },
   };
   return (
     <>
@@ -94,10 +134,26 @@ function ReadyToGetCard() {
           <Grid container sx={style.card}>
             <Grid item lg={12}>
               <Box sx={style.artic}>
-                <Box className={styles.mediass}>
-                  <span className={styles.span1}>
+                <Box sx={style.mediass}>
+                  <Box sx={style.span1}>
                     <Image src={chat} fill={false} />
-                  </span>
+                  </Box>
+                  <div className={styles.mediaBod}>
+                    <Typography variant="h4" sx={style.cardText}>
+                      Ready to get your facility renovation work done from
+                      Hammer-On Studios?
+                    </Typography>
+                    <Typography className={styles.cardContact}>
+                      Connect with us at (845) 837-2616 now!
+                    </Typography>
+                  </div>
+                </Box>
+              </Box>
+              <Box sx={style.smallCard}>
+                <Box sx={style.mediass1}>
+                  <Box sx={style.span1}>
+                    <Image src={chat} fill={false} />
+                  </Box>
                   <div className={styles.mediaBod}>
                     <Typography variant="h4" className={styles.cardText}>
                       Ready to get your facility renovation work done from

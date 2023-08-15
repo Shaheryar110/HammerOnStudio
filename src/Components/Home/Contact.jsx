@@ -42,7 +42,7 @@ function Contact() {
       },
     },
     h3: {
-      fontSize: "40px",
+      fontSize: { xl: "40px", lg: "30px" },
       fontWeight: 900,
       fontStyle: "normal",
       color: "#393738",

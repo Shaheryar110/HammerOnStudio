@@ -36,7 +36,7 @@ function ContactForm1() {
       fontWeight: 600,
       shadow: "none",
       border: "1px solid white",
-      paddingX: "0.7rem",
+      paddingX: "0.6rem",
       borderRadius: "0.5rem",
       ":hover": {
         marginY: "1rem",
@@ -48,7 +48,7 @@ function ContactForm1() {
         fontWeight: 600,
         shadow: "none",
         border: "1px solid white",
-        paddingX: "0.7rem",
+        paddingX: "0.6rem",
         borderRadius: "0.5rem",
         transition: "all ease 1s",
       },
@@ -63,7 +63,8 @@ function ContactForm1() {
     helpering: {
       position: "absolute",
       bottom: "-5px",
-      left: "380px",
+      left: { xl: "380px", lg: "200px" },
+      display: { lg: "block", xs: "none" },
     },
   };
   //name feild
@@ -116,7 +117,7 @@ function ContactForm1() {
             <Box sx={style.helpering}>
               <Image src={new1} />
             </Box>
-            <Grid item lg={5}></Grid>
+            <Grid item xl={5} lg={5}></Grid>
             <Grid item lg={7}>
               <Box sx={style.boxSetting}>
                 <BeforeHeadSmall text="NEWSLETTER" color="white" />

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
-import shape34 from "../../assets/images/shape34.webp";
+import shape34 from "../../assets/images/shape.webp";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
@@ -13,8 +13,10 @@ function Testimonials() {
   const style = {
     main: {
       background: "rgb(255,255,255)",
-      background:
-        "linear-gradient(90deg, rgba(255,255,255,1) 51%, rgba(36,36,36,1) 51%)",
+      background: {
+        lg: "linear-gradient(90deg, rgba(255,255,255,1) 51%, rgba(36,36,36,1) 51%)",
+        sm: "white",
+      },
       marginY: "7rem",
       position: "relative",
       zIndex: "2",
@@ -41,6 +43,7 @@ function Testimonials() {
     },
     carBox: {
       marginTop: "4rem",
+      display: { lg: "block", xs: "none" },
     },
     carBox1: {
       marginTop: "5rem",
@@ -49,7 +52,7 @@ function Testimonials() {
       zIndex: "99",
     },
     h4: {
-      color: "#fff",
+      color: { lg: "#fff", sm: "black" },
       fontSize: "14px",
       fontWeight: 700,
       marginBottom: "10px",
@@ -74,15 +77,17 @@ function Testimonials() {
       lineHeight: "46px",
       fontWeight: 800,
       fontStyle: "normal",
-      color: "#fff",
+      color: { lg: "#fff", sm: "black" },
       position: "relative",
       zIndex: "2",
     },
     imgBack: {
       position: "absolute",
-      zIndex: "-1",
+
       right: 0,
       top: "-2rem",
+      height: "485px",
+      display: { lg: "block", xs: "none" },
     },
   };
   const reviews = [
@@ -150,7 +155,7 @@ function Testimonials() {
               </Typography>
               <Typography
                 sx={{
-                  color: "white",
+                  color: { lg: "white", sm: "black" },
                   width: "90%",
                   marginY: "1rem",
                   position: "relative",
@@ -166,6 +171,26 @@ function Testimonials() {
             </Box>
           </Grid>
         </Grid>
+        <Box sx={{ display: { lg: "none", sm: "block" } }}>
+          {reviews.map((data) => (
+            <Box sx={style.sliderCard}>
+              <Image
+                src={shape35}
+                width={100}
+                height={100}
+                style={{ width: "60px", height: "60px" }}
+              />
+              <Image
+                src={shape36}
+                width={100}
+                height={100}
+                style={{ width: "60px", height: "60px" }}
+              />
+
+              <Typography sx={style.content}>{data}</Typography>
+            </Box>
+          ))}
+        </Box>
       </Box>
     </>
   );

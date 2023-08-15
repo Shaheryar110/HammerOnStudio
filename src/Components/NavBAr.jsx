@@ -14,12 +14,15 @@ import logo from "../../src/assets/images/logo.webp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useState } from "react";
 import Link from "next/link";
+import AppBar from "@mui/material/AppBar";
+import MenuIcon from "@mui/icons-material/Menu";
+import CancelIcon from "@mui/icons-material/Cancel";
 
 function NavBAr() {
   const style = {
     navBar: {
       width: "100%",
-      display: "flex",
+      display: { xl: "flex", xs: "none" },
       flexBasis: "100%",
       flexDirection: "row",
       justifyContent: "space-between",
@@ -49,7 +52,28 @@ function NavBAr() {
       },
     },
     container: {
-      maxWidth: { lg: "1450px", md: "1000px" },
+      maxWidth: { lg: "1500px", md: "1000px" },
+    },
+    smallAppBar: {
+      display: { xl: "none", xs: "flex" },
+    },
+    appBars: {
+      paddingY: "1rem",
+    },
+    appStyle: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      flexDirection: "row",
+      width: "100%",
+    },
+    item: {
+      color: "white",
+      fontSize: "1rem",
+      padding: "1rem",
+    },
+    listItems: {
+      width: "100%",
     },
   };
   const [active, setActive] = useState(false);
@@ -77,6 +101,28 @@ function NavBAr() {
     fontSize: "1.3rem",
     fontWeight: 600,
     padding: 0,
+  };
+  const [open, setOpen] = useState(false);
+  const openMenu = () => {
+    if (open) {
+      setOpen(false);
+    } else {
+      setOpen(true);
+    }
+  };
+  const smallApp = [
+    { link: "/", text: "HOME" },
+    { link: "/about", text: "ABOUT" },
+    { link: "/", text: "SERVICE" },
+    { link: "/our-work", text: "OUR WORK" },
+    { link: "/blogs", text: "BLOGS" },
+    { link: "/contact", text: "CONTACT US" },
+    { link: "/get-a-quote", text: "GET A QOUTE" },
+  ];
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
   };
   return (
     <>
@@ -145,6 +191,87 @@ function NavBAr() {
                 </li>
               </Box>
             </ul>
+          </Box>
+          <Box sx={style.smallAppBar}>
+            <AppBar position="static" sx={style.appBars} bgcolor="#2296E6">
+              <Box sx={style.appStyle}>
+                <Image src={logo} width={100} height={100} />
+                {!open && (
+                  <MenuIcon sx={{ fontSize: "2rem" }} onClick={openMenu} />
+                )}
+                {open && (
+                  <CancelIcon sx={{ fontSize: "2rem" }} onClick={openMenu} />
+                )}
+              </Box>
+              {open && (
+                <Box sx={style.listItems}>
+                  {smallApp.map((data) => {
+                    return (
+                      <>
+                        {data.text === "SERVICE" ? (
+                          <div>
+                            <div>
+                              <Typography
+                                sx={style.item}
+                                onClick={toggleDropdown}
+                              >
+                                {data.text}
+                              </Typography>
+
+                              {showDropdown && (
+                                <div>
+                                  <Typography sx={style.item}>
+                                    <Link
+                                      href="/commercial-service"
+                                      style={{
+                                        textDecoration: "none",
+                                        listStyle: "none",
+                                        color: "white",
+                                      }}
+                                    >
+                                      COMMERCIAL SERVICE
+                                    </Link>
+                                  </Typography>
+                                  <Typography sx={style.item}>
+                                    <Link
+                                      href="/residential-service"
+                                      style={{
+                                        textDecoration: "none",
+                                        listStyle: "none",
+                                        color: "white",
+                                      }}
+                                    >
+                                      RESIDENTIAL SERVICE
+                                    </Link>
+                                  </Typography>
+                                </div>
+                              )}
+                            </div>
+                            <hr />
+                          </div>
+                        ) : (
+                          <div>
+                            <Typography sx={style.item}>
+                              <Link
+                                href={data.link}
+                                style={{
+                                  textDecoration: "none",
+                                  listStyle: "none",
+                                  color: "white",
+                                }}
+                              >
+                                {data.text}
+                              </Link>
+                            </Typography>
+                            <hr />
+                          </div>
+                        )}
+                      </>
+                    );
+                  })}
+                </Box>
+              )}
+            </AppBar>
           </Box>
         </Container>
       </Box>

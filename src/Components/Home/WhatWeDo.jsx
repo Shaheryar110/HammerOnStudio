@@ -5,7 +5,7 @@ import responsive from "../../styles/responsive.module.css";
 import styles from "../../styles/style.module.css";
 import sbg from "../../assets/images/sbg.webp";
 import services from "../../assets/images/services01.webp";
-import KeyboardArrowRightOutlinedIcon from "@mui/icons-material/KeyboardArrowRightOutlined";
+import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import { Inter } from "next/font/google";
 import cardSvg1 from "../../assets/images/cardsvg1.webp";
 import cardSvg2 from "../../assets/images/cardSvg2.webp";
@@ -158,10 +158,14 @@ function WhatWeDo() {
           </Grid>
           <Grid container className={styles.card} columnSpacing={2}>
             <div className={styles.border}></div>
-            <Grid item lg={5}>
+            <Grid item lg={5} sm={12}>
               <Box className={styles.cardInfo}>
                 <figure className={styles.fig}>
-                  <Image src={services} />
+                  <Image
+                    src={services}
+                    fill={false}
+                    style={{ width: "100%" }}
+                  />
                 </figure>
                 <Box sx={{ position: "relative" }}>
                   <Box sx={style.svg}>
@@ -188,7 +192,7 @@ function WhatWeDo() {
                       eclectic needs. From breweries and restaurants to…
                     </Typography>
                     <Button sx={style.btn}>
-                      Read More <KeyboardArrowRightOutlinedIcon sx={style.ic} />
+                      Read More <KeyboardDoubleArrowRightIcon sx={style.ic} />
                     </Button>
                   </article>
                 </motion.div>
@@ -197,7 +201,7 @@ function WhatWeDo() {
             <Grid item lg={5}>
               <Box className={styles.cardInfo}>
                 <figure className={styles.fig}>
-                  <Image src={card2} fill={false} />
+                  <Image src={card2} fill={false} style={{ width: "100%" }} />
                 </figure>
                 <Box sx={{ position: "relative" }}>
                   <Box sx={style.svg}>
@@ -224,7 +228,7 @@ function WhatWeDo() {
                       eclectic needs. From breweries and restaurants to…
                     </Typography>
                     <Button sx={style.btn}>
-                      Read More <KeyboardArrowRightOutlinedIcon sx={style.ic} />
+                      Read More <KeyboardDoubleArrowRightIcon sx={style.ic} />
                     </Button>
                   </article>
                 </motion.div>

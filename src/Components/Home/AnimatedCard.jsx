@@ -12,6 +12,7 @@ function AnimatedCard() {
       marginY: "1rem",
     },
     card: {
+      marginY: "1rem",
       width: "95%",
       backgroundColor: "#2871ae",
       color: "white",

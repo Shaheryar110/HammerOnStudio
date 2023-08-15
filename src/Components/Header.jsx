@@ -12,10 +12,10 @@ const HeaderTop = () => {
   const style = {
     topHeader: {
       display: "flex",
-      flexDirection: "row",
+      flexDirection: { lg: "row", sm: "column" },
       alignItems: "center",
-      justifyContent: "space-between",
-      height: "100px",
+      justifyContent: { lg: "space-between", sm: "center" },
+      paddingY: { lg: "0px", sm: "2rem" },
     },
     iconStyle: {
       padding: "0.5rem",
@@ -43,6 +43,11 @@ const HeaderTop = () => {
       marginY: "1rem",
     },
     Left: {
+      display: "flex",
+      flexDirection: { lg: "row", xs: "column" },
+      gap: { lg: "1rem" },
+    },
+    Left1: {
       display: "flex",
       flexDirection: "row",
       gap: "1rem",
@@ -93,7 +98,7 @@ const HeaderTop = () => {
               </Box>
             </Box>
           </Box>
-          <Box sx={style.Left}>
+          <Box sx={style.Left1}>
             <Link href="https://www.facebook.com/HammerOnStudios">
               <Box sx={style.icon}>
                 <FacebookIcon />

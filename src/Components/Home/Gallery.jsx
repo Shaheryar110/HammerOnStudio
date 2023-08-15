@@ -84,54 +84,69 @@ function Gallery({ border }) {
       <Box sx={style.margin}>
         <Container sx={style.borders}>
           <Grid container sx={style.center}>
-            <Grid item lg={12}>
-              <ul className={styles.navTab}>
-                <li
-                  onClick={() => onChangeHandler("All Project")}
-                  className={activeStatus == "All Project" && styles.active}
-                >
-                  <Typography sx={style.navItem}>All Project</Typography>
-                </li>
-                <li onClick={() => onChangeHandler("Factory")}>
-                  {" "}
-                  <Typography
-                    className={activeStatus == "Factory" && styles.active}
-                    sx={style.navItem}
+            <Grid
+              item
+              lg={12}
+              sx={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Box
+                sx={{
+                  width: { lg: "60%", md: "100%" },
+                }}
+              >
+                <ul className={styles.navTab}>
+                  <li
+                    onClick={() => onChangeHandler("All Project")}
+                    className={activeStatus == "All Project" && styles.active}
                   >
-                    Factory
-                  </Typography>
-                </li>
-                <li onClick={() => onChangeHandler("Residential")}>
-                  <Typography
-                    className={activeStatus == "Residential" && styles.active}
-                    sx={style.navItem}
-                  >
-                    Residential
-                  </Typography>
-                </li>
-                <li onClick={() => onChangeHandler("Commercial")}>
-                  <Typography
-                    className={activeStatus == "Commercial" && styles.active}
-                    sx={style.navItem}
-                  >
-                    Commercial
-                  </Typography>
-                </li>
-                <li onClick={() => onChangeHandler("Interior")}>
-                  <Typography
-                    className={activeStatus == "Interior" && styles.active}
-                    sx={style.navItem}
-                  >
-                    Interior
-                  </Typography>
-                </li>
-              </ul>
+                    <Typography sx={style.navItem}>All Project</Typography>
+                  </li>
+                  <li onClick={() => onChangeHandler("Factory")}>
+                    {" "}
+                    <Typography
+                      className={activeStatus == "Factory" && styles.active}
+                      sx={style.navItem}
+                    >
+                      Factory
+                    </Typography>
+                  </li>
+                  <li onClick={() => onChangeHandler("Residential")}>
+                    <Typography
+                      className={activeStatus == "Residential" && styles.active}
+                      sx={style.navItem}
+                    >
+                      Residential
+                    </Typography>
+                  </li>
+                  <li onClick={() => onChangeHandler("Commercial")}>
+                    <Typography
+                      className={activeStatus == "Commercial" && styles.active}
+                      sx={style.navItem}
+                    >
+                      Commercial
+                    </Typography>
+                  </li>
+                  <li onClick={() => onChangeHandler("Interior")}>
+                    <Typography
+                      className={activeStatus == "Interior" && styles.active}
+                      sx={style.navItem}
+                    >
+                      Interior
+                    </Typography>
+                  </li>
+                </ul>
+              </Box>
             </Grid>
           </Grid>
           {/* all project */}
           {activeStatus === "All Project" && (
             <Grid container sx={style.margin}>
-              <Grid item lg={6}>
+              <Grid item lg={6} sm={12}>
                 <Grid container>
                   <Grid item lg={6}>
                     <GalleryBox
@@ -156,7 +171,7 @@ function Gallery({ border }) {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item lg={6}>
+              <Grid item lg={6} sm={12}>
                 <Grid container>
                   <Grid item lg={12}>
                     <GalleryBox
