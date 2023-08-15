@@ -109,7 +109,7 @@ function Gallery({ border }) {
                   <li onClick={() => onChangeHandler("Factory")}>
                     {" "}
                     <Typography
-                      className={activeStatus == "Factory" && styles.active}
+                      className={activeStatus === "Factory" && styles.active}
                       sx={style.navItem}
                     >
                       Factory
@@ -117,7 +117,9 @@ function Gallery({ border }) {
                   </li>
                   <li onClick={() => onChangeHandler("Residential")}>
                     <Typography
-                      className={activeStatus == "Residential" && styles.active}
+                      className={
+                        activeStatus === "Residential" && styles.active
+                      }
                       sx={style.navItem}
                     >
                       Residential

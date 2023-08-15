@@ -124,8 +124,8 @@ function Testimonials() {
                 showThumbs={false}
                 width="100%"
               >
-                {reviews.map((data) => (
-                  <Box sx={style.sliderCard}>
+                {reviews.map((data, index) => (
+                  <Box sx={style.sliderCard} key={index}>
                     <Image
                       src={shape35}
                       width={100}
@@ -172,8 +172,8 @@ function Testimonials() {
           </Grid>
         </Grid>
         <Box sx={{ display: { lg: "none", sm: "block" } }}>
-          {reviews.map((data) => (
-            <Box sx={style.sliderCard}>
+          {reviews.map((data, index) => (
+            <Box sx={style.sliderCard} key={index}>
               <Image
                 src={shape35}
                 width={100}

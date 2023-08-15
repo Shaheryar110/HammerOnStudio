@@ -104,7 +104,7 @@ function Blogs({ posts }) {
   ];
   const [pic, setPic] = useState([]);
   useEffect(() => {
-    axios.get("https://172.16.100.109:5001/api/blogs").then((res) => {
+    axios.get("https://localhost:5001/api/blogs").then((res) => {
       setPic(res.data);
       console.log(pic, "pic");
     });
