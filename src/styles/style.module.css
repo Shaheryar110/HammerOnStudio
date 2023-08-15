@@ -174,11 +174,6 @@
   height: 120px;
   margin-top: -4rem;
 }
-.article:hover {
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  height: 200px;
-}
 
 .iconic {
   text-align: center;

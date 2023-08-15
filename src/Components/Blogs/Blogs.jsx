@@ -104,7 +104,7 @@ function Blogs({ posts }) {
   ];
   const [pic, setPic] = useState([]);
   useEffect(() => {
-    axios.get("https://172.16.100.76:5001/api/blogs").then((res) => {
+    axios.get("https://172.16.100.109:5001/api/blogs").then((res) => {
       setPic(res.data);
       console.log(pic, "pic");
     });
@@ -119,7 +119,7 @@ function Blogs({ posts }) {
         <Grid container>
           {pic?.map((data) => {
             return (
-              <Grid item lg={4}>
+              <Grid item lg={4} md={6}>
                 <Box className={styles.cardBox}>
                   <Box className={styles.cardImg}>
                     <Box>

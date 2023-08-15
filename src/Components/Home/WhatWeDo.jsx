@@ -1,6 +1,6 @@
 import { Container, Box, Typography, Stack, Grid, Button } from "@mui/material";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import responsive from "../../styles/responsive.module.css";
 import styles from "../../styles/style.module.css";
 import sbg from "../../assets/images/sbg.webp";
@@ -10,6 +10,7 @@ import { Inter } from "next/font/google";
 import cardSvg1 from "../../assets/images/cardsvg1.webp";
 import cardSvg2 from "../../assets/images/cardSvg2.webp";
 import card2 from "../../assets/images/card2.webp";
+import { motion } from "framer-motion";
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
@@ -107,6 +108,20 @@ function WhatWeDo() {
       top: "-65px",
     },
   };
+  const [hover, setHover] = useState(false);
+  const onMouseEnter = () => {
+    setHover(true);
+  };
+  const onMouseLeave = () => {
+    setHover(false);
+  };
+  const [hover1, setHover1] = useState(false);
+  const onMouseEnter1 = () => {
+    setHover1(true);
+  };
+  const onMouseLeave1 = () => {
+    setHover1(false);
+  };
   return (
     <>
       <Stack className={styles.bgMain}>
@@ -157,19 +172,26 @@ function WhatWeDo() {
                     />
                   </Box>
                 </Box>
-                <article className={styles.article}>
-                  <Typography variant="h3" sx={style.hThree}>
-                    Commercial Services
-                  </Typography>
-                  <Typography sx={style.paragraph}>
-                    Hammer-On Studios supports commercial locations with
-                    top-quality renovation services tailored to our clients’
-                    eclectic needs. From breweries and restaurants to…
-                  </Typography>
-                  <Button sx={style.btn}>
-                    Read More <KeyboardArrowRightOutlinedIcon sx={style.ic} />
-                  </Button>
-                </article>
+                <motion.div
+                  animate={{ y: hover1 ? -40 : 0 }}
+                  transition={{ duration: 0.5 }}
+                  onMouseEnter={onMouseEnter1}
+                  onMouseLeave={onMouseLeave1}
+                >
+                  <article className={styles.article}>
+                    <Typography variant="h3" sx={style.hThree}>
+                      Commercial Services
+                    </Typography>
+                    <Typography sx={style.paragraph}>
+                      Hammer-On Studios supports commercial locations with
+                      top-quality renovation services tailored to our clients’
+                      eclectic needs. From breweries and restaurants to…
+                    </Typography>
+                    <Button sx={style.btn}>
+                      Read More <KeyboardArrowRightOutlinedIcon sx={style.ic} />
+                    </Button>
+                  </article>
+                </motion.div>
               </Box>
             </Grid>
             <Grid item lg={5}>
@@ -186,19 +208,26 @@ function WhatWeDo() {
                     />
                   </Box>
                 </Box>
-                <article className={styles.article}>
-                  <Typography variant="h3" sx={style.hThree}>
-                    Residential Services
-                  </Typography>
-                  <Typography sx={style.paragraph}>
-                    Hammer-On Studios supports commercial locations with
-                    top-quality renovation services tailored to our clients’
-                    eclectic needs. From breweries and restaurants to…
-                  </Typography>
-                  <Button sx={style.btn}>
-                    Read More <KeyboardArrowRightOutlinedIcon sx={style.ic} />
-                  </Button>
-                </article>
+                <motion.div
+                  animate={{ y: hover ? -40 : 0 }}
+                  transition={{ duration: 0.5 }}
+                  onMouseEnter={onMouseEnter}
+                  onMouseLeave={onMouseLeave}
+                >
+                  <article className={styles.article}>
+                    <Typography variant="h3" sx={style.hThree}>
+                      Residential Services
+                    </Typography>
+                    <Typography sx={style.paragraph}>
+                      Hammer-On Studios supports commercial locations with
+                      top-quality renovation services tailored to our clients’
+                      eclectic needs. From breweries and restaurants to…
+                    </Typography>
+                    <Button sx={style.btn}>
+                      Read More <KeyboardArrowRightOutlinedIcon sx={style.ic} />
+                    </Button>
+                  </article>
+                </motion.div>
               </Box>
             </Grid>
           </Grid>
