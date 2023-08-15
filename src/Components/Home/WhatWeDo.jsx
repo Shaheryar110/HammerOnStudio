@@ -8,7 +8,7 @@ import services from "../../assets/images/services01.webp";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import { Inter } from "next/font/google";
 import cardSvg1 from "../../assets/images/cardsvg1.webp";
-import cardSvg2 from "../../assets/images/cardSvg2.webp";
+import cardSvg2 from "../../assets/images/cardsvg2.webp";
 import card2 from "../../assets/images/card2.webp";
 import { motion } from "framer-motion";
 const inter = Inter({
