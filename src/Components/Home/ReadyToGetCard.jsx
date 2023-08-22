@@ -57,7 +57,7 @@ function ReadyToGetCard() {
         backgroundColor: "#2871ae",
         position: "absolute",
         width: "116px",
-        height: "325.5px",
+        height: "335.5px",
         left: "98px",
         right: 0,
         margin: "0 auto",

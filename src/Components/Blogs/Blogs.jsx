@@ -18,6 +18,9 @@ import Head from "next/head";
 import blogCss from "./blog.module.css";
 function Blogs({ posts }) {
   const style = {
+    container: {
+      maxWidth: { lg: "1450px", md: "1250px" },
+    },
     marginHead: {
       marginY: "3rem",
     },
@@ -120,7 +123,7 @@ function Blogs({ posts }) {
       </Head>
       <Box>
         <StripSection heading="LATEST NEWS" />
-        <Container className={responsive.container}>
+        <Container sx={style.container}>
           <Box sx={style.marginHead}>
             <HeadingH2 text="Latest News" align="center" />
           </Box>
