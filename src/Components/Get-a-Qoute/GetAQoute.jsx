@@ -10,6 +10,7 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import postGetAqouteForm from "../../service/getAqouteService";
+import Head from "next/head";
 
 function GetAQoute() {
   const style = {
@@ -236,183 +237,195 @@ function GetAQoute() {
   };
 
   return (
-    <Box>
-      <Container className={responsive.container}>
-        <Box sx={style.box}>
-          <Box sx={style.formBox}>
-            <Grid container columnSpacing={3}>
-              <Grid item lg={6}>
-                <Box sx={style.space}>
-                  <TextField
-                    id="outlined-basic"
-                    label="First Name"
-                    variant="outlined"
-                    sx={style.width}
-                    value={firstName}
-                    onChange={handleFirstNameChange}
-                  />
-                </Box>
-              </Grid>
-              <Grid item lg={6}>
-                <Box sx={style.space}>
-                  <TextField
-                    id="outlined-basic"
-                    label="Last Name"
-                    variant="outlined"
-                    sx={style.width}
-                    value={lastName}
-                    onChange={handleLastNameChange}
-                  />
-                </Box>
-              </Grid>
-              <Grid item lg={6}>
-                <TextField
-                  id="outlined-basic"
-                  label="Email"
-                  variant="outlined"
-                  sx={style.width}
-                  value={email}
-                  onChange={handleInputChangeEmail}
-                />
-              </Grid>
-              <Grid item lg={6}>
-                <TextField
-                  id="outlined-basic"
-                  label="Phone"
-                  variant="outlined"
-                  sx={style.width}
-                  value={phoneNumber}
-                  onChange={handleInputChange}
-                />
-              </Grid>
-              <Grid item lg={6}>
-                <Box sx={style.space}>
-                  <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DatePicker
-                      selected={selectedDate}
-                      onChange={handleDateChange}
+    <>
+      <Head>
+        <link rel="icon" href="/favicon.webp" />
+        <title>Get A Qoute</title>
+      </Head>
+      <Box>
+        <Container className={responsive.container}>
+          <Box sx={style.box}>
+            <Box sx={style.formBox}>
+              <Grid container columnSpacing={3}>
+                <Grid item lg={6}>
+                  <Box sx={style.space}>
+                    <TextField
+                      id="outlined-basic"
+                      label="First Name"
+                      variant="outlined"
+                      sx={style.width}
+                      value={firstName}
+                      onChange={handleFirstNameChange}
                     />
-                  </LocalizationProvider>
-                </Box>
-              </Grid>
-              <Grid item lg={6}>
-                <Box sx={style.space}>
+                  </Box>
+                </Grid>
+                <Grid item lg={6}>
+                  <Box sx={style.space}>
+                    <TextField
+                      id="outlined-basic"
+                      label="Last Name"
+                      variant="outlined"
+                      sx={style.width}
+                      value={lastName}
+                      onChange={handleLastNameChange}
+                    />
+                  </Box>
+                </Grid>
+                <Grid item lg={6}>
                   <TextField
-                    select
-                    label="Hour"
-                    value={selectedHour}
-                    onChange={handleHourChange}
-                    style={{ margin: "10px" }}
-                  >
-                    {Array.from({ length: 12 }, (_, i) => i + 1).map((hour) => (
-                      <MenuItem key={hour} value={hour}>
-                        {hour}
+                    id="outlined-basic"
+                    label="Email"
+                    variant="outlined"
+                    sx={style.width}
+                    value={email}
+                    onChange={handleInputChangeEmail}
+                  />
+                </Grid>
+                <Grid item lg={6}>
+                  <TextField
+                    id="outlined-basic"
+                    label="Phone"
+                    variant="outlined"
+                    sx={style.width}
+                    value={phoneNumber}
+                    onChange={handleInputChange}
+                  />
+                </Grid>
+                <Grid item lg={6}>
+                  <Box sx={style.space}>
+                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                      <DatePicker
+                        selected={selectedDate}
+                        onChange={handleDateChange}
+                      />
+                    </LocalizationProvider>
+                  </Box>
+                </Grid>
+                <Grid item lg={6}>
+                  <Box sx={style.space}>
+                    <TextField
+                      select
+                      label="Hour"
+                      value={selectedHour}
+                      onChange={handleHourChange}
+                      style={{ margin: "10px" }}
+                    >
+                      {Array.from({ length: 12 }, (_, i) => i + 1).map(
+                        (hour) => (
+                          <MenuItem key={hour} value={hour}>
+                            {hour}
+                          </MenuItem>
+                        )
+                      )}
+                    </TextField>
+
+                    <TextField
+                      select
+                      label="Month"
+                      value={selectedMonth}
+                      onChange={handleMonthChange}
+                      style={{ margin: "10px" }}
+                    >
+                      {Array.from({ length: 12 }, (_, i) => i + 1).map(
+                        (month) => (
+                          <MenuItem key={month} value={month}>
+                            {month}
+                          </MenuItem>
+                        )
+                      )}
+                    </TextField>
+
+                    <TextField
+                      select
+                      label="AM/PM"
+                      value={selectedAmPm}
+                      onChange={handleAmPmChange}
+                      style={{ margin: "10px" }}
+                    >
+                      <MenuItem value="AM">AM</MenuItem>
+                      <MenuItem value="PM">PM</MenuItem>
+                    </TextField>
+                  </Box>
+                </Grid>
+                <Grid item lg={6}>
+                  <FormControl variant="outlined" sx={{ width: "60%" }}>
+                    <InputLabel>Select an Service</InputLabel>
+                    <Select
+                      value={selectedOption}
+                      onChange={handleChange}
+                      label="Select an Service"
+                    >
+                      <MenuItem value="">
+                        <em>None</em>
                       </MenuItem>
-                    ))}
-                  </TextField>
-
-                  <TextField
-                    select
-                    label="Month"
-                    value={selectedMonth}
-                    onChange={handleMonthChange}
-                    style={{ margin: "10px" }}
-                  >
-                    {Array.from({ length: 12 }, (_, i) => i + 1).map(
-                      (month) => (
-                        <MenuItem key={month} value={month}>
-                          {month}
-                        </MenuItem>
-                      )
-                    )}
-                  </TextField>
-
-                  <TextField
-                    select
-                    label="AM/PM"
-                    value={selectedAmPm}
-                    onChange={handleAmPmChange}
-                    style={{ margin: "10px" }}
-                  >
-                    <MenuItem value="AM">AM</MenuItem>
-                    <MenuItem value="PM">PM</MenuItem>
-                  </TextField>
-                </Box>
-              </Grid>
-              <Grid item lg={6}>
-                <FormControl variant="outlined" sx={{ width: "60%" }}>
-                  <InputLabel>Select an Service</InputLabel>
-                  <Select
-                    value={selectedOption}
-                    onChange={handleChange}
-                    label="Select an Service"
-                  >
-                    <MenuItem value="">
-                      <em>None</em>
-                    </MenuItem>
-                    <MenuItem value="Commercial Service">
-                      Commercial Service
-                    </MenuItem>
-                    <MenuItem value="Residential Service">
-                      Residential Service
-                    </MenuItem>
-                  </Select>
-                </FormControl>
-              </Grid>
-              {selectedOption === "Commercial Service" && (
-                <Grid item lg={6}>
-                  <Box sx={style.checkBoxes}>
-                    {commercialServicesOption.map((options) => {
-                      return (
-                        <FormGroup>
-                          <FormControlLabel
-                            control={
-                              <Checkbox
-                                value={options}
-                                checked={selectedCheckboxes.includes(options)}
-                                onChange={handleCheckboxChange}
-                              />
-                            }
-                            label={options}
-                          />
-                        </FormGroup>
-                      );
-                    })}
-                  </Box>
+                      <MenuItem value="Commercial Service">
+                        Commercial Service
+                      </MenuItem>
+                      <MenuItem value="Residential Service">
+                        Residential Service
+                      </MenuItem>
+                    </Select>
+                  </FormControl>
                 </Grid>
-              )}
-              {selectedOption === "Residential Service" && (
-                <Grid item lg={6}>
-                  <Box sx={style.checkBoxes}>
-                    {residentialServicesOption.map((options) => {
-                      return (
-                        <FormGroup>
-                          <FormControlLabel
-                            control={
-                              <Checkbox
-                                value={options}
-                                checked={selectedCheckboxesRes.includes(
-                                  options
-                                )}
-                                onChange={handleCheckboxChangeRes}
-                              />
-                            }
-                            label={options}
-                          />
-                        </FormGroup>
-                      );
-                    })}
-                  </Box>
-                </Grid>
-              )}
-            </Grid>
-            <Button variant="contained" sx={style.butn} onClick={handleSubmit}>
-              SUBMIT
-            </Button>
+                {selectedOption === "Commercial Service" && (
+                  <Grid item lg={6}>
+                    <Box sx={style.checkBoxes}>
+                      {commercialServicesOption.map((options) => {
+                        return (
+                          <FormGroup>
+                            <FormControlLabel
+                              control={
+                                <Checkbox
+                                  value={options}
+                                  checked={selectedCheckboxes.includes(options)}
+                                  onChange={handleCheckboxChange}
+                                />
+                              }
+                              label={options}
+                            />
+                          </FormGroup>
+                        );
+                      })}
+                    </Box>
+                  </Grid>
+                )}
+                {selectedOption === "Residential Service" && (
+                  <Grid item lg={6}>
+                    <Box sx={style.checkBoxes}>
+                      {residentialServicesOption.map((options) => {
+                        return (
+                          <FormGroup>
+                            <FormControlLabel
+                              control={
+                                <Checkbox
+                                  value={options}
+                                  checked={selectedCheckboxesRes.includes(
+                                    options
+                                  )}
+                                  onChange={handleCheckboxChangeRes}
+                                />
+                              }
+                              label={options}
+                            />
+                          </FormGroup>
+                        );
+                      })}
+                    </Box>
+                  </Grid>
+                )}
+              </Grid>
+              <Button
+                variant="contained"
+                sx={style.butn}
+                onClick={handleSubmit}
+              >
+                SUBMIT
+              </Button>
+            </Box>
           </Box>
-        </Box>
-      </Container>
-    </Box>
+        </Container>
+      </Box>
+    </>
   );
 }
 

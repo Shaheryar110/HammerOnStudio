@@ -13,6 +13,15 @@ import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import axios from "axios";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+import { Roboto } from "next/font/google";
+import { URI } from "../uri";
+import Head from "next/head";
+import blogCss from "../Components/Blogs/blog.module.css";
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 function slug() {
   const router = useRouter();
   const parameter = router.query.slug;
@@ -38,6 +47,7 @@ function slug() {
     text: { marginY: "2rem", paddingX: "2rem" },
     heading: {
       fontWeight: 700,
+      marginY: "1rem",
     },
     flexOnIcon: {
       display: "flex",
@@ -57,25 +67,35 @@ function slug() {
       display: "flex",
       flexDirection: "column",
       alignItems: "end",
-      width: "310px",
+
+      backgroundColor: "white",
+      borderRadius: "10px",
+
+      paddingY: "0.5rem",
+      width: "100%",
     },
     prev: {
       display: "flex",
       flexDirection: "column",
       alignItems: "start",
-      width: "310px",
+
+      backgroundColor: "white",
+      borderRadius: "10px",
+      width: "100%",
+      paddingY: "0.5rem",
     },
   };
   const [detailBlog, setDetailBlogs] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://172.16.100.76:5001/api/blogsDetails?slug=${parameter}`)
+      .get(`https://${URI}:5001/api/blogsDetails?slug=${parameter}`)
       .then((res) => {
+        console.log(res, "res");
         setDetailBlogs(res.data);
       });
-  }, []);
+  }, [parameter]);
   useEffect(() => {
-    console.log(detailBlog?.currentBlog?.date, "curent");
+    console.log(detailBlog, "curent");
   }, [detailBlog]);
   const nextBlog = () => {
     router.push(`/${detailBlog?.nextBlog?.slug}`);
@@ -85,6 +105,11 @@ function slug() {
   };
   return (
     <>
+      <Head>
+        <link rel="icon" href="/favicon.webp" />
+        <title>{parameter}</title>
+      </Head>
+
       <Layout>
         <Container sx={style.container}>
           <Box sx={style.imgWithDate}>
@@ -101,12 +126,16 @@ function slug() {
                     borderRadius: "1rem",
                   }}
                 >
-                  <Image
-                    src={detailBlog?.currentBlog?.image}
-                    style={{ width: "100%", height: "100%" }}
-                    width={900}
-                    height={600}
-                  />
+                  <div className={blogCss.imageContainer}>
+                    <Image
+                      src={detailBlog?.currentBlog?.image}
+                      style={{ width: "100%", height: "100%" }}
+                      width={900}
+                      height={600}
+                      className={blogCss.zoomableDesc}
+                    />
+                    <div className={blogCss.overlay}></div>
+                  </div>
                 </Box>
                 <Box className={styles.itemdate}>
                   <CalendarMonthIcon />
@@ -138,30 +167,75 @@ function slug() {
                 <Typography variant="h5" sx={style.heading}>
                   {detailBlog?.currentBlog?.heading}
                 </Typography>
-                <Typography sx={{ marginY: "1rem" }}>
-                  {detailBlog?.currentBlog?.data}
-                </Typography>
+                <div
+                  style={{
+                    marginY: "1rem",
+                    color: "grey",
+                    fontSize: "1rem",
+                  }}
+                  dangerouslySetInnerHTML={{
+                    __html: detailBlog?.currentBlog?.data,
+                  }}
+                  className={roboto.className}
+                />
               </Box>
             </Box>
           </Box>
-          <Box sx={style.buttonBox}>
-            <Box sx={style.prev}>
-              <Button sx={{ fontWeight: 700 }} onClick={PrevBlog}>
-                <KeyboardBackspaceIcon /> Previous Button{" "}
-              </Button>
-              <Typography sx={{ fontWeight: 700, width: "310px" }}>
-                {detailBlog?.previousBlog?.heading}
-              </Typography>
-            </Box>
-            <Box sx={style.next}>
-              <Button sx={{ fontWeight: 700 }} onClick={nextBlog}>
-                Next Button <ArrowRightAltIcon />
-              </Button>
-              <Typography sx={{ fontWeight: 700, width: "310px" }}>
-                {detailBlog?.nextBlog?.heading}
-              </Typography>
-            </Box>
-          </Box>
+          {/* <Box sx={style.buttonBox}> */}
+          <Grid container justifyContent="center" marginBottom="2rem">
+            <Grid item lg={5} sx={{ border: ".5px solid #E4E4E4" }}>
+              <Box sx={style.prev}>
+                <Button
+                  sx={{
+                    fontWeight: 700,
+                    display: detailBlog?.previousBlog?.heading
+                      ? "flex"
+                      : "none",
+                  }}
+                  onClick={PrevBlog}
+                >
+                  <KeyboardBackspaceIcon /> Previous Button{" "}
+                </Button>
+                <Typography
+                  sx={{
+                    fontWeight: 700,
+                    width: "50%",
+                    paddingX: "0.5rem",
+                    cursor: "pointer",
+                    ":hover": {
+                      color: "#1976D2",
+                      transition: "all ease 0.5s",
+                    },
+                  }}
+                >
+                  {detailBlog?.previousBlog?.heading}
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid item lg={5} sx={{ border: ".5px solid #E4E4E4" }}>
+              <Box sx={style.next}>
+                <Button sx={{ fontWeight: 700 }} onClick={nextBlog}>
+                  Next Button <ArrowRightAltIcon />
+                </Button>
+                <Typography
+                  sx={{
+                    fontWeight: 700,
+                    width: "50%",
+                    paddingX: "0.5rem",
+                    cursor: "pointer",
+                    ":hover": {
+                      color: "#1976D2",
+                      transition: "all ease 0.5s",
+                    },
+                  }}
+                >
+                  {detailBlog?.nextBlog?.heading}
+                </Typography>
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* </Box> */}
         </Container>
       </Layout>
     </>

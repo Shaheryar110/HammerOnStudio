@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "next build ",
+    "start": "NODE_ENV=production node server.js",
     "lint": "next lint"
   },
   "dependencies": {
@@ -27,9 +27,12 @@
     "dayjs": "^1.11.9",
     "framer-motion": "^10.15.1",
     "next": "13.4.12",
+    "nextjs-toploader": "^1.4.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-responsive-carousel": "^3.2.23",
+    "react-router-dom": "^6.15.0",
+    "react-topbar-progress-indicator": "^4.1.1",
     "resolve-url-loader": "^5.0.0",
     "styled-components": "^5.3.11"
   },

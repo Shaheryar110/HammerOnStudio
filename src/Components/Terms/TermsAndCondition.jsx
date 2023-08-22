@@ -7,6 +7,7 @@ import StripSection from "../Commons/Stripe";
 import Link from "next/link";
 import Image from "next/image";
 import tag from "../../assets/images/tag01.webp";
+import Head from "next/head";
 
 function TermsAndCondition() {
   const data = [
@@ -168,27 +169,33 @@ function TermsAndCondition() {
     },
   };
   return (
-    <Layout>
-      <StripSection heading="TERMS & CONDITIONS" />
-      <Box sx={style.margins}>
-        <Box sx={style.overlay}>
-          <Image src={tag} style={{ width: "100%", height: "100%" }} />
-        </Box>
-        <Container sx={style.container}>
-          <BeforeHeadSmall text="Terms & Conditions" />
-          <HeadingH2 text="Terms & Conditions" />
+    <>
+      <Head>
+        <link rel="icon" href="/favicon.webp" />
+        <title>Terms & Conditions</title>
+      </Head>
+      <Layout>
+        <StripSection heading="TERMS & CONDITIONS" />
+        <Box sx={style.margins}>
+          <Box sx={style.overlay}>
+            <Image src={tag} style={{ width: "100%", height: "100%" }} />
+          </Box>
+          <Container sx={style.container}>
+            <BeforeHeadSmall text="Terms & Conditions" />
+            <HeadingH2 text="Terms & Conditions" />
 
-          {data.map((content) => {
-            return (
-              <>
-                <Typography sx={style.bold}>{content.heading}</Typography>
-                <Typography sx={style.text}>{content.para}</Typography>
-              </>
-            );
-          })}
-        </Container>
-      </Box>
-    </Layout>
+            {data.map((content) => {
+              return (
+                <>
+                  <Typography sx={style.bold}>{content.heading}</Typography>
+                  <Typography sx={style.text}>{content.para}</Typography>
+                </>
+              );
+            })}
+          </Container>
+        </Box>
+      </Layout>
+    </>
   );
 }
 

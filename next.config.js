@@ -2,6 +2,7 @@
 
 const nextConfig = {
   reactStrictMode: true,
+  unoptimized: true,
   images: {
     formats: ["image/webp", "image/avif"],
     remotePatterns: [

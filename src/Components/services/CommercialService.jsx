@@ -19,6 +19,7 @@ import postNewsLetterForm from "@/service/newLetterService";
 import { motion } from "framer-motion";
 import { Poppins } from "next/font/google";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
+import Head from "next/head";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
@@ -186,6 +187,10 @@ function CommercialService() {
   };
   return (
     <>
+      <Head>
+        <link rel="icon" href="/favicon.webp" />
+        <title>Commercial Services</title>
+      </Head>
       <Box sx={style.image}>
         <Stripe heading="COMMERCIAL SERVICE" />
         <Container className={responsive.container}>
