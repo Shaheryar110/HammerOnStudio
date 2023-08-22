@@ -182,7 +182,7 @@ function Footer() {
                   >
                     <FontAwesomeIcon
                       icon={faTiktok}
-                      fontSize={17}
+                      fontSize={"sm"}
                       color={isMouseInside[2] ? "#2296E6" : "white"}
                     />
                   </Box>

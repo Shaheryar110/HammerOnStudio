@@ -114,7 +114,7 @@ const HeaderTop = () => {
                 <FontAwesomeIcon
                   icon={faTiktok}
                   fontSize={20}
-                  size={20}
+                  size={"lg"}
                   color="white"
                 />
               </Box>
