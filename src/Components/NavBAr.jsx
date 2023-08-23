@@ -129,6 +129,9 @@ function NavBAr() {
   const openServicePage = () => {
     router.push("/services");
   };
+  const handleDoubleClick = () => {
+    router.push("/services");
+  };
   return (
     <>
       <Box bgcolor="#2296E6" color="white">
@@ -217,13 +220,14 @@ function NavBAr() {
                         {data.text === "SERVICE" ? (
                           <div>
                             <div>
-                              <Typography
-                                sx={style.item}
-                                onClick={toggleDropdown}
-                              >
-                                {data.text}
-                              </Typography>
-
+                              <div onDoubleClick={handleDoubleClick}>
+                                <Typography
+                                  sx={style.item}
+                                  onClick={toggleDropdown}
+                                >
+                                  {data.text}
+                                </Typography>
+                              </div>
                               {showDropdown && (
                                 <div>
                                   <Typography sx={style.item}>
