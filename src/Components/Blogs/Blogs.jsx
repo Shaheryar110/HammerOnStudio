@@ -17,6 +17,7 @@ import { URI } from "../../uri";
 import Head from "next/head";
 import blogCss from "./blog.module.css";
 import CircularProgress from "@mui/material/CircularProgress";
+import Skeleton from "@mui/material/Skeleton";
 function Blogs({ posts }) {
   const style = {
     container: {
@@ -126,15 +127,18 @@ function Blogs({ posts }) {
         <title>Blogs</title>
       </Head>
       {loader && (
-        <CircularProgress
+        <Box
           sx={{
-            height: "100vh",
-            marginTop: "20vh",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            height: "100%",
+            width: "100%",
+            marginY: "5rem",
           }}
-        />
+        >
+          <CircularProgress />
+        </Box>
       )}
       {!loader && (
         <Box>
