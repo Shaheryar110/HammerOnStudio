@@ -9,6 +9,8 @@ import { Poppins } from "next/font/google";
 import postNewsLetterForm from "../../service/newLetterService";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import { motion } from "framer-motion";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
@@ -98,8 +100,10 @@ function ContactForm1() {
       setName("");
       setEmail("");
       console.log("data sent");
+      toast.success("Form Submitted Successfully");
     } else {
       console.log("Invalid  submission");
+      toast.error("Invalid Feilds Occur");
     }
   };
   const [active, setActive] = useState(false);
@@ -180,6 +184,7 @@ function ContactForm1() {
             </Grid>
           </Grid>
         </Container>
+        <ToastContainer />
       </Box>
     </>
   );
