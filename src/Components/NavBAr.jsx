@@ -39,6 +39,7 @@ function NavBAr() {
       position: "absolute",
       zIndex: "99",
       marginTop: "-2rem",
+      display: "none",
     },
     text: {
       color: "white",
@@ -149,19 +150,50 @@ function NavBAr() {
                     <Typography sx={style.text}>About Us</Typography>
                   </Link>
                 </li>
-                <li
-                  className={styles.lis}
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                  onClick={openServicePage}
-                >
+                <li className={styles.lis} onClick={openServicePage}>
                   <Typography sx={style.text} onClick={DropDownHandler}>
                     Services
                   </Typography>
                   <KeyboardArrowDownIcon />
+                  <Box className={styles.dropDowmBox}>
+                    <ListItemButton className={styles.size}>
+                      <Link
+                        href="/commercial-services"
+                        style={{ textDecoration: "none", color: "inherit" }}
+                      >
+                        <ListItemText
+                          primary="Commercial Service"
+                          sx={{
+                            ":hover": {
+                              color: "black",
+                              transition: "all ease 0.5s",
+                            },
+                          }}
+                        />
+                      </Link>
+                    </ListItemButton>
+                    <hr />
+                    <ListItemButton>
+                      <Link
+                        href="/residential-services"
+                        style={{ textDecoration: "none", color: "inherit" }}
+                      >
+                        <ListItemText
+                          primary="Residential Service"
+                          className={styles.size}
+                          sx={{
+                            ":hover": {
+                              color: "black",
+                              transition: "all ease 0.5s",
+                            },
+                          }}
+                        />
+                      </Link>
+                    </ListItemButton>
+                  </Box>
                 </li>
                 <li className={styles.li}>
-                  <Link href="/merchandis" style={{ textDecoration: "none" }}>
+                  <Link href="/merchandise" style={{ textDecoration: "none" }}>
                     <Typography sx={style.text} id={styles.margin}>
                       Merchandise
                     </Typography>

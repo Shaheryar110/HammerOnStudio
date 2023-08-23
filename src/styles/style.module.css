@@ -26,6 +26,7 @@
   flex-direction: row;
   align-items: center;
   cursor: pointer;
+  position: relative;
 }
 .liImage {
   position: relative;
@@ -548,4 +549,19 @@
 .readMore1 {
   color: #707173;
   font-size: 40px;
+}
+.dropDowmBox {
+  color: white;
+  background-color: #2296e6;
+  padding: 1rem;
+
+  border-radius: 1rem;
+  width: 200px;
+  position: absolute;
+  z-index: 99;
+  margin-top: 15rem;
+  display: none;
+}
+.lis:hover .dropDowmBox {
+  display: block;
 }

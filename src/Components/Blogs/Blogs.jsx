@@ -16,6 +16,7 @@ import Link from "next/link";
 import { URI } from "../../uri";
 import Head from "next/head";
 import blogCss from "./blog.module.css";
+import CircularProgress from "@mui/material/CircularProgress";
 function Blogs({ posts }) {
   const style = {
     container: {
@@ -124,17 +125,7 @@ function Blogs({ posts }) {
         <link rel="icon" href="/favicon.webp" />
         <title>Blogs</title>
       </Head>
-      {loader && (
-        <h1
-          style={{
-            textAlign: "center",
-            paddingTop: "6rem",
-            paddingBottom: "3rem",
-          }}
-        >
-          loading.....
-        </h1>
-      )}
+      {loader && <CircularProgress />}
       {!loader && (
         <Box>
           <StripSection heading="LATEST NEWS" />
