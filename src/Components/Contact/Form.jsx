@@ -14,6 +14,8 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import postContactForm from "../../service/contactusServices";
 import Head from "next/head";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -227,6 +229,11 @@ function Form() {
         message: message,
       }).then((res) => {
         console.log(res.data);
+        if (res.data == "Quote Form Added and Email Sent") {
+          toast.success("Form Submitted Successfully");
+        } else {
+          toast.error("Invalid Feilds Occur");
+        }
       });
       setName("");
       setPhoneNumber("");
@@ -237,6 +244,7 @@ function Form() {
       setMessage("");
     } else {
       console.log("Invalid  submission");
+      toast.error("Invalid Feilds Occur");
     }
   };
 
@@ -424,6 +432,7 @@ function Form() {
             </Grid>
           </Box>
         </Container>
+        <ToastContainer />
       </Box>
     </>
   );
