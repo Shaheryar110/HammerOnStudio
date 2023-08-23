@@ -250,7 +250,7 @@ function Form() {
         <Container className={responsive.container}>
           <Box sx={style.spacing}>
             <Grid container sx={style.mainGrid}>
-              <Grid item lg={4}>
+              <Grid item lg={4} md={8}>
                 <Box>
                   <BeforeHeadSmall text="INFORMATION" />
                   <HeadingH2 text="Get in Touch" />
@@ -304,7 +304,7 @@ function Form() {
                   </Box>
                 </Box>
               </Grid>
-              <Grid item lg={4}>
+              <Grid item lg={4} md={8}>
                 <BeforeHeadSmall text="BOOKING FORM" />
                 <HeadingH2 text="Send Us Message" />
                 <Grid container sx={style.justify} columnSpacing={3}>

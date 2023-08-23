@@ -99,8 +99,9 @@ function ReadyToGetCard() {
       alignItems: "center",
       justifyContent: { lg: "flex-start", xs: "center" },
       marginLeft: { lg: "39px" },
-      display: "flex",
+      display: { md: "flex", xs: "block" },
       width: "100%",
+      padding: { md: "2px", xs: "1rem" },
     },
     span1: {
       width: "50px",
@@ -124,7 +125,7 @@ function ReadyToGetCard() {
       fontWeight: { lg: 700, xs: 800 },
       margin: "0px 0px 6px 0px",
       lineHeight: "45px",
-      fontSize: { lg: "30px", xs: "1.5rem" },
+      fontSize: { lg: "30px", md: "25px", xs: "1rem" },
     },
   };
   return (

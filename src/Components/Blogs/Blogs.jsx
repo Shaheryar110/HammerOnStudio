@@ -124,7 +124,17 @@ function Blogs({ posts }) {
         <link rel="icon" href="/favicon.webp" />
         <title>Blogs</title>
       </Head>
-      {loader && <h1>loading.....</h1>}
+      {loader && (
+        <h1
+          style={{
+            textAlign: "center",
+            paddingTop: "6rem",
+            paddingBottom: "3rem",
+          }}
+        >
+          loading.....
+        </h1>
+      )}
       {!loader && (
         <Box>
           <StripSection heading="LATEST NEWS" />
@@ -132,7 +142,7 @@ function Blogs({ posts }) {
             <Box sx={style.marginHead}>
               <HeadingH2 text="Latest News" align="center" />
             </Box>
-            <Grid container>
+            <Grid container justifyContent="center">
               {pic?.map((data) => {
                 return (
                   <Grid item lg={4} md={6}>
@@ -141,6 +151,7 @@ function Blogs({ posts }) {
                         <Box>
                           <Image
                             src={data?.image}
+                            style={{ width: "100%" }}
                             width={420}
                             height={300}
                             alt={data.id}

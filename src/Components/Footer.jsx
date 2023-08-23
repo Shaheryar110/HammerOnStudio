@@ -56,7 +56,8 @@ function Footer() {
       },
     },
     footerAlign: {
-      justifyContent: "space-between",
+      justifyContent: { md: "space-between", xs: "center" },
+      gap: { md: "0px", sm: "1rem", xs: "10px" },
     },
     small: {
       color: "white",

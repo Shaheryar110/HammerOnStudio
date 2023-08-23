@@ -54,7 +54,7 @@ function ContactForm1() {
       },
     },
     three: {
-      display: "flex",
+      display: { sm: "flex", xs: "block" },
       flexDirection: "row",
       gap: "1rem",
 
@@ -63,7 +63,7 @@ function ContactForm1() {
     helpering: {
       position: "absolute",
       bottom: "-5px",
-      left: { xl: "380px", lg: "200px" },
+      left: { xl: "300px", lg: "170px" },
       display: { lg: "block", xs: "none" },
     },
   };
@@ -113,12 +113,16 @@ function ContactForm1() {
     <>
       <Box sx={style.main}>
         <Container className={responsive.container}>
-          <Grid container columnSpacing={3}>
+          <Grid
+            container
+            columnSpacing={3}
+            justifyContent={{ lg: "start", xs: "center" }}
+          >
             <Box sx={style.helpering}>
               <Image src={new1} />
             </Box>
             <Grid item xl={5} lg={5}></Grid>
-            <Grid item lg={7}>
+            <Grid item lg={7} xs={12}>
               <Box sx={style.boxSetting}>
                 <BeforeHeadSmall text="NEWSLETTER" color="white" />
                 <Typography variant="h3" className={styles.h3}>

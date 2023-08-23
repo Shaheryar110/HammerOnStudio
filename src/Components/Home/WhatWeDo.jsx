@@ -107,6 +107,13 @@ function WhatWeDo() {
       left: "-25px",
       top: "-65px",
     },
+    artice: {
+      padding: "0px 25px 25px 25px",
+      position: "relative",
+      transition: "all 0.5s ease",
+      height: { md: "120px", sm: "130px", xs: "130px" },
+      marginTop: "-4rem",
+    },
   };
   const [hover, setHover] = useState(false);
   const onMouseEnter = () => {
@@ -156,9 +163,14 @@ function WhatWeDo() {
               </Typography>
             </Grid>
           </Grid>
-          <Grid container className={styles.card} columnSpacing={2}>
+          <Grid
+            container
+            className={styles.card}
+            columnSpacing={2}
+            justifyContent="center"
+          >
             <div className={styles.border}></div>
-            <Grid item lg={5} sm={12}>
+            <Grid item lg={5} md={6} sm={7} xs={12}>
               <Box className={styles.cardInfo}>
                 <figure className={styles.fig}>
                   <Image
@@ -182,7 +194,7 @@ function WhatWeDo() {
                   onMouseEnter={onMouseEnter1}
                   onMouseLeave={onMouseLeave1}
                 >
-                  <article className={styles.article}>
+                  <Box sx={style.artice}>
                     <Typography variant="h3" sx={style.hThree}>
                       Commercial Services
                     </Typography>
@@ -194,11 +206,11 @@ function WhatWeDo() {
                     <Button sx={style.btn}>
                       Read More <KeyboardDoubleArrowRightIcon sx={style.ic} />
                     </Button>
-                  </article>
+                  </Box>
                 </motion.div>
               </Box>
             </Grid>
-            <Grid item lg={5}>
+            <Grid item lg={5} md={6} sm={7} xs={12}>
               <Box className={styles.cardInfo}>
                 <figure className={styles.fig}>
                   <Image src={card2} fill={false} style={{ width: "100%" }} />
@@ -218,7 +230,7 @@ function WhatWeDo() {
                   onMouseEnter={onMouseEnter}
                   onMouseLeave={onMouseLeave}
                 >
-                  <article className={styles.article}>
+                  <Box sx={style.artice}>
                     <Typography variant="h3" sx={style.hThree}>
                       Residential Services
                     </Typography>
@@ -230,7 +242,7 @@ function WhatWeDo() {
                     <Button sx={style.btn}>
                       Read More <KeyboardDoubleArrowRightIcon sx={style.ic} />
                     </Button>
-                  </article>
+                  </Box>
                 </motion.div>
               </Box>
             </Grid>

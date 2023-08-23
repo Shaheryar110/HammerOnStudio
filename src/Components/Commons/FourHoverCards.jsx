@@ -9,7 +9,7 @@ const inter = Inter({
   weight: ["400", "500", "700", "900"],
 });
 
-function FourHoverCards() {
+function FourHoverCards({ background }) {
   const style = {
     readyCard: {
       paddingY: "6rem",
@@ -43,48 +43,55 @@ function FourHoverCards() {
     cardSectionTop: {
       marginY: "6rem",
     },
+    main: {
+      width: "100%",
+      height: "100%",
+      backgroundColor: background || "white",
+    },
   };
   return (
-    <Container className={responsive.container}>
-      <Box sx={style.cardSectionTop}>
-        <Grid
-          container
-          columnSpacing={3}
-          sx={{ justifyContent: "space-between", marginY: "2rem" }}
-        >
-          <Grid item lg={6}>
-            <Typography
-              variant="h3"
-              sx={style.cardHeading}
-              className={inter.className}
-            >
-              Leading Way In Roofing & Home Repair Construction!
-            </Typography>
-          </Grid>
-          <Grid item lg={6}>
-            <Typography sx={style.slogan} className={inter.className}>
-              At Hammer-On Studios, we specialize in delivering high-end
-              commercial and home renovation services in New York. We achieve
-              this by utilizing our skills to deliver you a professional
-              remodeling service that is focused on quality in every way.
-            </Typography>
-            <ul className={inter.className} style={{ paddingLeft: "2rem" }}>
-              <li
-                style={{
-                  color: "#393738",
-                  fontSize: "1rem",
-                  marginTop: "1rem",
-                  fontFamily: "inherit",
-                }}
+    <Box sx={style.main}>
+      <Container className={responsive.container}>
+        <Box sx={style.cardSectionTop}>
+          <Grid
+            container
+            columnSpacing={3}
+            sx={{ justifyContent: "space-between", marginY: "2rem" }}
+          >
+            <Grid item lg={6}>
+              <Typography
+                variant="h3"
+                sx={style.cardHeading}
+                className={inter.className}
               >
-                3000+ successfully completed projects
-              </li>
-            </ul>
+                Leading Way In Roofing & Home Repair Construction!
+              </Typography>
+            </Grid>
+            <Grid item lg={6}>
+              <Typography sx={style.slogan} className={inter.className}>
+                At Hammer-On Studios, we specialize in delivering high-end
+                commercial and home renovation services in New York. We achieve
+                this by utilizing our skills to deliver you a professional
+                remodeling service that is focused on quality in every way.
+              </Typography>
+              <ul className={inter.className} style={{ paddingLeft: "2rem" }}>
+                <li
+                  style={{
+                    color: "#393738",
+                    fontSize: "1rem",
+                    marginTop: "1rem",
+                    fontFamily: "inherit",
+                  }}
+                >
+                  3000+ successfully completed projects
+                </li>
+              </ul>
+            </Grid>
           </Grid>
-        </Grid>
-        <AnimatedCard />
-      </Box>
-    </Container>
+          <AnimatedCard />
+        </Box>
+      </Container>
+    </Box>
   );
 }
 

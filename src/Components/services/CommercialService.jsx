@@ -211,7 +211,7 @@ function CommercialService() {
         </Container>
         <Testimonials />
         <Grid container sx={{ justifyContent: "center", alignItems: "center" }}>
-          <Grid item lg={3}>
+          <Grid item lg={3} display={{ md: "block", xs: "none" }}>
             <Image src={new1} />
           </Grid>
           <Grid item lg={5}>

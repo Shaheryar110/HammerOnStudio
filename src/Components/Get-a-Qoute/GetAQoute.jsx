@@ -347,8 +347,11 @@ function GetAQoute() {
                     </TextField>
                   </Box>
                 </Grid>
-                <Grid item lg={6}>
-                  <FormControl variant="outlined" sx={{ width: "60%" }}>
+                <Grid item lg={6} sm={6} xs={12}>
+                  <FormControl
+                    variant="outlined"
+                    sx={{ width: { lg: "60%", xs: "100%" } }}
+                  >
                     <InputLabel>Select an Service</InputLabel>
                     <Select
                       value={selectedOption}

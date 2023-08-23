@@ -17,6 +17,7 @@ import Link from "next/link";
 import AppBar from "@mui/material/AppBar";
 import MenuIcon from "@mui/icons-material/Menu";
 import CancelIcon from "@mui/icons-material/Cancel";
+import { useRouter } from "next/router";
 
 function NavBAr() {
   const style = {
@@ -124,6 +125,10 @@ function NavBAr() {
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
   };
+  const router = useRouter();
+  const openServicePage = () => {
+    router.push("/services");
+  };
   return (
     <>
       <Box bgcolor="#2296E6" color="white">
@@ -145,6 +150,7 @@ function NavBAr() {
                   className={styles.lis}
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
+                  onClick={openServicePage}
                 >
                   <Typography sx={style.text} onClick={DropDownHandler}>
                     Services
@@ -222,7 +228,7 @@ function NavBAr() {
                                 <div>
                                   <Typography sx={style.item}>
                                     <Link
-                                      href="/commercial-service"
+                                      href="/commercial-services"
                                       style={{
                                         textDecoration: "none",
                                         listStyle: "none",
@@ -234,7 +240,7 @@ function NavBAr() {
                                   </Typography>
                                   <Typography sx={style.item}>
                                     <Link
-                                      href="/residential-service"
+                                      href="/residential-services"
                                       style={{
                                         textDecoration: "none",
                                         listStyle: "none",

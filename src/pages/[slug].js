@@ -37,7 +37,7 @@ function slug() {
       maxWidth: { xl: "1300px", lg: "1200px" },
     },
     cardIconBox: {
-      display: "flex",
+      display: { sm: "flex", xs: "block" },
       flexDirection: "row",
       gap: "1rem",
     },
@@ -183,7 +183,13 @@ function slug() {
           </Box>
           {/* <Box sx={style.buttonBox}> */}
           <Grid container justifyContent="center" marginBottom="2rem">
-            <Grid item lg={5} sx={{ border: ".5px solid #E4E4E4" }}>
+            <Grid
+              item
+              lg={5}
+              sm={6}
+              xs={12}
+              sx={{ border: ".5px solid #E4E4E4" }}
+            >
               <Box sx={style.prev}>
                 <Button
                   sx={{
@@ -212,7 +218,13 @@ function slug() {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item lg={5} sx={{ border: ".5px solid #E4E4E4" }}>
+            <Grid
+              item
+              lg={5}
+              sm={6}
+              xs={12}
+              sx={{ border: ".5px solid #E4E4E4" }}
+            >
               <Box sx={style.next}>
                 <Button sx={{ fontWeight: 700 }} onClick={nextBlog}>
                   Next Button <ArrowRightAltIcon />

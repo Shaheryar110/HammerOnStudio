@@ -47,7 +47,7 @@ function Testimonials() {
     },
     carBox1: {
       marginTop: "5rem",
-      marginLeft: "10rem",
+      marginLeft: { lg: "10rem", xs: "2rem" },
 
       zIndex: "99",
     },
