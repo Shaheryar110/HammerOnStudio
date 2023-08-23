@@ -125,7 +125,17 @@ function Blogs({ posts }) {
         <link rel="icon" href="/favicon.webp" />
         <title>Blogs</title>
       </Head>
-      {loader && <CircularProgress />}
+      {loader && (
+        <CircularProgress
+          sx={{
+            height: "100vh",
+            marginTop: "20vh",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        />
+      )}
       {!loader && (
         <Box>
           <StripSection heading="LATEST NEWS" />
