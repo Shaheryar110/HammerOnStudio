@@ -5,7 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
 import shape35 from "../../assets/images/shape35.webp";
-// import shape34 from "../../assets/images/shape34.webp";
+
 import shape36 from "../../assets/images/shape36.webp";
 import styles from "../../styles/style.module.css";
 
@@ -32,7 +32,7 @@ function Testimonials() {
     },
     content: {
       color: "grey",
-      fontSize: "1.1rem",
+      fontSize: { md: "1.1rem", xs: "0.7rem" },
       marginTop: "1rem",
     },
     iconAligns: {
@@ -113,6 +113,7 @@ function Testimonials() {
           <Grid item lg={6}>
             <Box sx={style.carBox}>
               <Carousel
+                swipeable={true}
                 autoPlay={true}
                 showArrows={false}
                 showIndicators={false}

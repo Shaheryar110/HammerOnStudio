@@ -116,6 +116,7 @@ function NavBAr() {
     { link: "/", text: "HOME" },
     { link: "/about", text: "ABOUT US" },
     { link: "/", text: "SERVICE" },
+    { link: "/", text: "MERCHANDISE" },
     { link: "/our-work", text: "OUR WORK" },
     { link: "/blogs", text: "BLOGS" },
     { link: "/contact", text: "CONTACT US" },
@@ -128,10 +129,10 @@ function NavBAr() {
   };
   const router = useRouter();
   const openServicePage = () => {
-    router.push("/services");
+    router.push("/myservices");
   };
   const handleDoubleClick = () => {
-    router.push("/services");
+    router.push("/myservices");
   };
   return (
     <>
@@ -162,7 +163,7 @@ function NavBAr() {
                         style={{ textDecoration: "none", color: "inherit" }}
                       >
                         <ListItemText
-                          primary="Commercial Service"
+                          primary="Commercial Services"
                           sx={{
                             ":hover": {
                               color: "black",
@@ -179,7 +180,7 @@ function NavBAr() {
                         style={{ textDecoration: "none", color: "inherit" }}
                       >
                         <ListItemText
-                          primary="Residential Service"
+                          primary="Residential Services"
                           className={styles.size}
                           sx={{
                             ":hover": {
@@ -193,8 +194,11 @@ function NavBAr() {
                   </Box>
                 </li>
                 <li className={styles.li}>
-                  <Link href="/merchandise" style={{ textDecoration: "none" }}>
-                    <Typography sx={style.text} id={styles.margin}>
+                  <Link href="/" style={{ textDecoration: "none" }}>
+                    <Typography
+                      sx={[style.text, { paddingLeft: 2 }]}
+                      id={styles.margin}
+                    >
                       Merchandise
                     </Typography>
                   </Link>
@@ -271,7 +275,7 @@ function NavBAr() {
                                         color: "white",
                                       }}
                                     >
-                                      COMMERCIAL SERVICE
+                                      COMMERCIAL SERVICES
                                     </Link>
                                   </Typography>
                                   <Typography sx={style.item}>
@@ -283,7 +287,7 @@ function NavBAr() {
                                         color: "white",
                                       }}
                                     >
-                                      RESIDENTIAL SERVICE
+                                      RESIDENTIAL SERVICES
                                     </Link>
                                   </Typography>
                                 </div>
@@ -332,7 +336,7 @@ function NavBAr() {
               style={{ textDecoration: "none", color: "inherit" }}
             >
               <ListItemText
-                primary="Commercial Service"
+                primary="Commercial Services"
                 sx={{
                   ":hover": { color: "black", transition: "all ease 0.5s" },
                 }}

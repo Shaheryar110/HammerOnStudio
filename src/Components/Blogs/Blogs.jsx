@@ -61,7 +61,6 @@ function Blogs({ posts }) {
     cardContent: {
       padding: "30px 30px 0px",
       backgroundColor: "white",
-      height: "240px",
     },
     readMore: {
       color: "#707173",
@@ -69,6 +68,13 @@ function Blogs({ posts }) {
       ":hover": {
         color: "#2871ae",
       },
+    },
+    cardBox: {
+      boxShadow: "0px 5px 59px 0px rgba(0, 0, 0, 0.31)",
+      borderRadius: "1rem",
+      overflow: "hidden",
+      width: { sm: "90%", xs: "100%" },
+      marginBottom: "3rem",
     },
   };
   const CardData = [
@@ -151,7 +157,7 @@ function Blogs({ posts }) {
               {pic?.map((data) => {
                 return (
                   <Grid item lg={4} md={6}>
-                    <Box className={styles.cardBox}>
+                    <Box sx={style.cardBox}>
                       <Box className={styles.cardImg}>
                         <Box>
                           <Image
