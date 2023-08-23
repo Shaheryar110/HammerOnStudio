@@ -47,7 +47,7 @@ function Testimonials() {
     },
     carBox1: {
       marginTop: "5rem",
-      marginLeft: "1rem",
+      marginLeft: "10rem",
 
       zIndex: "99",
     },
@@ -110,7 +110,7 @@ function Testimonials() {
         </Box>
 
         <Grid container>
-          <Grid item lg={7}>
+          <Grid item lg={6}>
             <Box sx={style.carBox}>
               <Carousel
                 autoPlay={true}
@@ -145,7 +145,7 @@ function Testimonials() {
               </Carousel>
             </Box>
           </Grid>
-          <Grid item lg={5}>
+          <Grid item lg={6}>
             <Box sx={style.carBox1}>
               <Typography variant="h4" sx={style.h4}>
                 OUR TESTIMONIAL

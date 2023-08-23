@@ -96,11 +96,11 @@ function CommercialService() {
       color: "white",
       paddingY: "0.5rem",
       fontSize: "1rem",
-      backgroundColor: "white",
+      backgroundColor: "#408ECD",
       color: "#393738",
       marginTop: "2rem",
       ":hover": {
-        backgroundColor: "white",
+        backgroundColor: "#408ECD",
       },
     },
     three: {
@@ -249,6 +249,7 @@ function CommercialService() {
                   transition={{ duration: 0.5 }}
                   onMouseEnter={enter}
                   onMouseOut={out}
+                  style={{ color: "white" }}
                 >
                   {" "}
                   SUBSCRIBE
@@ -266,6 +267,7 @@ function CommercialService() {
                       transition: "all ease 0.5s",
                       display: "flex",
                       alignSelf: "center",
+                      color: "white",
                     }}
                   />
                 </motion.div>

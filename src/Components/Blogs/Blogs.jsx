@@ -109,10 +109,13 @@ function Blogs({ posts }) {
     },
   ];
   const [pic, setPic] = useState([]);
+  const [loader, setLoader] = useState(true);
   useEffect(() => {
+    setLoader(true);
     axios.get(`https://${URI}:5001/api/blogs`).then((res) => {
       setPic(res.data);
       console.log(pic, "pic");
+      setLoader(false);
     });
   }, []);
   return (
@@ -121,68 +124,75 @@ function Blogs({ posts }) {
         <link rel="icon" href="/favicon.webp" />
         <title>Blogs</title>
       </Head>
-      <Box>
-        <StripSection heading="LATEST NEWS" />
-        <Container sx={style.container}>
-          <Box sx={style.marginHead}>
-            <HeadingH2 text="Latest News" align="center" />
-          </Box>
-          <Grid container>
-            {pic?.map((data) => {
-              return (
-                <Grid item lg={4} md={6}>
-                  <Box className={styles.cardBox}>
-                    <Box className={styles.cardImg}>
-                      <Box>
-                        <Image
-                          src={data?.image}
-                          width={420}
-                          height={300}
-                          alt={data.id}
-                          priority={true}
-                          className={blogCss.zoomableImage}
-                        />
+      {loader && <h1>loading.....</h1>}
+      {!loader && (
+        <Box>
+          <StripSection heading="LATEST NEWS" />
+          <Container sx={style.container}>
+            <Box sx={style.marginHead}>
+              <HeadingH2 text="Latest News" align="center" />
+            </Box>
+            <Grid container>
+              {pic?.map((data) => {
+                return (
+                  <Grid item lg={4} md={6}>
+                    <Box className={styles.cardBox}>
+                      <Box className={styles.cardImg}>
+                        <Box>
+                          <Image
+                            src={data?.image}
+                            width={420}
+                            height={300}
+                            alt={data.id}
+                            priority={true}
+                            className={blogCss.zoomableImage}
+                          />
+                        </Box>
+                        <Box className={styles.itemdate}>
+                          <CalendarMonthIcon />
+                          {data?.date}
+                        </Box>
                       </Box>
-                      <Box className={styles.itemdate}>
-                        <CalendarMonthIcon />
-                        {data?.date}
+                      <Box sx={style.cardContent}>
+                        <Typography variant="h3" sx={style.cardHeading}>
+                          {data?.heading}
+                        </Typography>
+                        <Box sx={style.cardIconBox}>
+                          <Box sx={style.flexOnIcon}>
+                            <PersonIcon sx={style.color} />
+                            <Typography>admin</Typography>
+                          </Box>
+                          <Box sx={style.flexOnIcon}>
+                            <ForumIcon sx={style.color} />
+                            <Typography>comments : 0</Typography>
+                          </Box>
+                        </Box>
+                        <Link
+                          style={{
+                            textDecoration: "none",
+                            listStyle: "none",
+                            color: "inherit",
+                          }}
+                          href={data?.slug}
+                        >
+                          <Box sx={style.cardIconBox1}>
+                            <Typography sx={style.readMore}>
+                              READ MORE
+                            </Typography>
+                            <ArrowCircleRightIcon
+                              className={styles.readMore1}
+                            />
+                          </Box>
+                        </Link>
                       </Box>
                     </Box>
-                    <Box sx={style.cardContent}>
-                      <Typography variant="h3" sx={style.cardHeading}>
-                        {data?.heading}
-                      </Typography>
-                      <Box sx={style.cardIconBox}>
-                        <Box sx={style.flexOnIcon}>
-                          <PersonIcon sx={style.color} />
-                          <Typography>admin</Typography>
-                        </Box>
-                        <Box sx={style.flexOnIcon}>
-                          <ForumIcon sx={style.color} />
-                          <Typography>comments : 0</Typography>
-                        </Box>
-                      </Box>
-                      <Link
-                        style={{
-                          textDecoration: "none",
-                          listStyle: "none",
-                          color: "inherit",
-                        }}
-                        href={data?.slug}
-                      >
-                        <Box sx={style.cardIconBox1}>
-                          <Typography sx={style.readMore}>READ MORE</Typography>
-                          <ArrowCircleRightIcon className={styles.readMore1} />
-                        </Box>
-                      </Link>
-                    </Box>
-                  </Box>
-                </Grid>
-              );
-            })}
-          </Grid>
-        </Container>
-      </Box>
+                  </Grid>
+                );
+              })}
+            </Grid>
+          </Container>
+        </Box>
+      )}
     </>
   );
 }

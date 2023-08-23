@@ -22,7 +22,7 @@ function NavBAr() {
   const style = {
     navBar: {
       width: "100%",
-      display: { xl: "flex", xs: "none" },
+      display: { lg: "flex", xs: "none" },
       flexBasis: "100%",
       flexDirection: "row",
       justifyContent: "space-between",
@@ -55,7 +55,7 @@ function NavBAr() {
       maxWidth: { lg: "1500px", md: "1000px" },
     },
     smallAppBar: {
-      display: { xl: "none", xs: "flex" },
+      display: { lg: "none", xs: "flex" },
     },
     appBars: {
       paddingY: "1rem",
@@ -112,7 +112,7 @@ function NavBAr() {
   };
   const smallApp = [
     { link: "/", text: "HOME" },
-    { link: "/about", text: "ABOUT" },
+    { link: "/about", text: "ABOUT US" },
     { link: "/", text: "SERVICE" },
     { link: "/our-work", text: "OUR WORK" },
     { link: "/blogs", text: "BLOGS" },
@@ -138,7 +138,7 @@ function NavBAr() {
                 </li>
                 <li className={styles.li}>
                   <Link href="/about" style={{ textDecoration: "none" }}>
-                    <Typography sx={style.text}>About</Typography>
+                    <Typography sx={style.text}>About Us</Typography>
                   </Link>
                 </li>
                 <li
