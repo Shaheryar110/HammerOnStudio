@@ -11,6 +11,8 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import postGetAqouteForm from "../../service/getAqouteService";
 import Head from "next/head";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function GetAQoute() {
   const style = {
@@ -214,6 +216,7 @@ function GetAQoute() {
         service: mergedServiceAndCheckBoxes,
       }).then((res) => {
         console.log(res.data);
+        toast.success("Form Submitted Successfully");
       });
       console.log(
         fullName,
@@ -233,6 +236,7 @@ function GetAQoute() {
         concatenatedValue,
         mergedServiceAndCheckBoxes
       );
+      toast.error("Invalid Feilds Occur");
     }
   };
 
@@ -427,6 +431,7 @@ function GetAQoute() {
             </Box>
           </Box>
         </Container>
+        <ToastContainer />
       </Box>
     </>
   );
