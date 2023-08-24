@@ -184,19 +184,12 @@ function NavBAr() {
                   </Box>
                 </li>
                 <li className={styles.li}>
-                  <Link
-                    // href="https://merchandise.hammeronstudios.com/"
-                    style={{ textDecoration: "none" }}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Typography
+                    sx={[style.text, { paddingLeft: 2 }]}
+                    id={styles.margin}
                   >
-                    <Typography
-                      sx={[style.text, { paddingLeft: 2 }]}
-                      id={styles.margin}
-                    >
-                      Merchandise
-                    </Typography>
-                  </Link>
+                    Merchandise
+                  </Typography>
                 </li>
               </Box>
               <li className={styles.liImage} id={styles.margin}>
