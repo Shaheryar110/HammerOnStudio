@@ -185,7 +185,7 @@ function NavBAr() {
                 </li>
                 <li className={styles.li}>
                   <Link
-                    href="https://merchandise.hammeronstudios.com/"
+                    // href="https://merchandise.hammeronstudios.com/"
                     style={{ textDecoration: "none" }}
                     target="_blank"
                     rel="noopener noreferrer"
