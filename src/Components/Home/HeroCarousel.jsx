@@ -148,7 +148,7 @@ function HeroCarousel() {
             style={{ width: "100%", height: "500px" }}
             width={1920}
             height={730}
-            loading={eager}
+            loading="eager"
           />
           <Container className={responsive.container}>
             <Box sx={style.overText}>
