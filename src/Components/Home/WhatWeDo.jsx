@@ -63,7 +63,7 @@ function WhatWeDo() {
       fontSize: "17px",
       fontWeight: 400,
       lineHeight: "1.7",
-      fontFamily: "Roboto, sans-serif",
+
       margin: "30px 0",
       color: "white",
     },
