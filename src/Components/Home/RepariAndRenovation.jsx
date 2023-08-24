@@ -1,6 +1,6 @@
 import { Container, Box, Typography, Stack, Grid } from "@mui/material";
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import responsive from "../../styles/responsive.module.css";
 import styles from "../../styles/style.module.css";
 import white from "../../assets/images/white.webp";
@@ -210,9 +210,9 @@ function RepariAndRenovation() {
               </Grid>
               <Grid item lg={5}>
                 <motion.div
-                  initial={{ y: 200, opacity: 0 }} // Initial position outside the left side of the screen with opacity 0
-                  animate={{ y: 0, opacity: 1 }} // Final position (its actual position) with opacity 1
-                  transition={{ duration: 2, type: "easeIn", delay: 1 }} // Animation duration, easing, and delay
+                  initial={{ y: 200, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 2, type: "easeIn", delay: 1 }}
                 >
                   <Box sx={style.figure}>
                     <Image

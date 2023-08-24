@@ -1,14 +1,12 @@
 import {
   Box,
   Container,
-  Grid,
   ListItemButton,
   ListItemText,
-  Stack,
   Typography,
 } from "@mui/material";
 import Image from "next/image";
-import responsive from "../../src/styles/responsive.module.css";
+
 import styles from "../../src/styles/style.module.css";
 import logo from "../../src/assets/images/logo.webp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -58,6 +56,7 @@ function NavBAr() {
     },
     smallAppBar: {
       display: { lg: "none", xs: "flex" },
+      paddingX: "1rem",
     },
     appBars: {
       paddingY: "1rem",
@@ -80,16 +79,7 @@ function NavBAr() {
   };
   const [active, setActive] = useState(false);
   const [isHoverDropdown, setIsHoverDropdown] = useState(false);
-  const handleMouseEnter = () => {
-    setActive(true);
-  };
 
-  const handleMouseLeave = () => {
-    setTimeout(() => {
-      if (!isHoverDropdown) setActive(false);
-      else setActive(true);
-    }, 1000);
-  };
   const DropDownHandler = () => {
     if (active) {
       setActive(false);

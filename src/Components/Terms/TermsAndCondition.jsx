@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
-import { Container, Box, Typography, Button, Grid } from "@mui/material";
+import React from "react";
+import { Container, Box, Typography } from "@mui/material";
 import BeforeHeadSmall from "../Commons/BeforeHeadSmall";
 import HeadingH2 from "../Commons/HeadingH2";
 import Layout from "../Layout";
 import StripSection from "../Commons/Stripe";
-import Link from "next/link";
 import Image from "next/image";
 import tag from "../../assets/images/tag01.webp";
 import Head from "next/head";

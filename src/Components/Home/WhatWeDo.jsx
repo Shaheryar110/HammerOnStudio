@@ -1,7 +1,6 @@
 import { Container, Box, Typography, Stack, Grid, Button } from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";
-import responsive from "../../styles/responsive.module.css";
 import styles from "../../styles/style.module.css";
 import sbg from "../../assets/images/sbg.webp";
 import services from "../../assets/images/services01.webp";

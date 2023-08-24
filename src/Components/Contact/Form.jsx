@@ -8,7 +8,6 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import WifiCalling3Icon from "@mui/icons-material/WifiCalling3";
 import styles from "../../styles/style.module.css";
 import { Poppins } from "next/font/google";
-import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
@@ -228,7 +227,7 @@ function Form() {
         service: service,
         message: message,
       }).then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         if (res.data == "Quote Form Added and Email Sent") {
           toast.success("Form Submitted Successfully");
         } else {
@@ -243,7 +242,7 @@ function Form() {
       setService("");
       setMessage("");
     } else {
-      console.log("Invalid  submission");
+      // console.log("Invalid  submission");
       toast.error("Invalid Feilds Occur");
     }
   };
@@ -361,8 +360,6 @@ function Form() {
                         }}
                       >
                         <Select
-                          // hidden={true}
-                          // defaultValue="Select"
                           displayEmpty={true}
                           renderValue={(e) => (e ? e : "State")}
                           sx={{

@@ -199,7 +199,6 @@ function GetAQoute() {
     concatenateFullName();
     slectedServiceAndCheckBoxes();
     if (
-      // isValidPhoneNumber
       fullName &&
       isValidEmail &&
       isValidPhoneNumber &&

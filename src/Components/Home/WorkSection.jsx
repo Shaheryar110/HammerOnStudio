@@ -63,9 +63,9 @@ function WorkSection() {
           >
             <Grid item lg={5}>
               <motion.div
-                initial={{ x: -200, opacity: 0 }} // Initial position outside the left side of the screen with opacity 0
-                animate={{ x: 0, opacity: 1 }} // Final position (its actual position) with opacity 1
-                transition={{ duration: 1, type: "easeIn", delay: 1 }} // Animation duration, easing, and delay
+                initial={{ x: -200, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1, type: "easeIn", delay: 1 }}
               >
                 <Box className={styles.workTag}>
                   <Image

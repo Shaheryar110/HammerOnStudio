@@ -1,14 +1,12 @@
 import { Container, Box, Typography, Button, Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
-
 import styles from "../../src/styles/style.module.css";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import PersonIcon from "@mui/icons-material/Person";
 import ForumIcon from "@mui/icons-material/Forum";
 import Image from "next/image";
 import Layout from "@/Components/Layout";
-import { Router, useRouter } from "next/router";
-import dril from "../../src/assets/images/dril.webp";
+import { useRouter } from "next/router";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import axios from "axios";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
