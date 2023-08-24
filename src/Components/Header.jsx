@@ -18,7 +18,8 @@ const HeaderTop = () => {
       paddingY: { lg: "0px", sm: "2rem" },
     },
     iconStyle: {
-      padding: "0.5rem",
+      width: "40px",
+      height: "40px",
       color: "#35A5F2",
       backgroundColor: "white",
       borderRadius: "50%",
@@ -27,13 +28,13 @@ const HeaderTop = () => {
       justifyContent: "center",
     },
     topText: {
-      fontSize: "15px",
+      fontSize: "13px",
       fontWeight: 600,
       lineHeight: "0.7em",
-      marginBottom: "0.7rem",
+      marginBottom: "0.5rem",
     },
     topSecondText: {
-      fontSize: "18px",
+      fontSize: "16px",
       fontWeight: 700,
       lineHeight: "0.7em",
     },
