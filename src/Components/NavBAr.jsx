@@ -1,14 +1,12 @@
 import {
   Box,
   Container,
-  Grid,
   ListItemButton,
   ListItemText,
-  Stack,
   Typography,
 } from "@mui/material";
 import Image from "next/image";
-import responsive from "../../src/styles/responsive.module.css";
+
 import styles from "../../src/styles/style.module.css";
 import logo from "../../src/assets/images/logo.webp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -17,12 +15,13 @@ import Link from "next/link";
 import AppBar from "@mui/material/AppBar";
 import MenuIcon from "@mui/icons-material/Menu";
 import CancelIcon from "@mui/icons-material/Cancel";
+import { useRouter } from "next/router";
 
 function NavBAr() {
   const style = {
     navBar: {
       width: "100%",
-      display: { xl: "flex", xs: "none" },
+      display: { lg: "flex", xs: "none" },
       flexBasis: "100%",
       flexDirection: "row",
       justifyContent: "space-between",
@@ -37,7 +36,8 @@ function NavBAr() {
       width: "200px",
       position: "absolute",
       zIndex: "99",
-      marginTop: "-3.2rem",
+      marginTop: "-2rem",
+      display: "none",
     },
     text: {
       color: "white",
@@ -56,7 +56,8 @@ function NavBAr() {
       maxWidth: { lg: "1500px", md: "1000px" },
     },
     smallAppBar: {
-      display: { xl: "none", xs: "flex" },
+      display: { lg: "none", xs: "flex" },
+      paddingX: "1rem",
     },
     appBars: {
       paddingY: "1rem",
@@ -79,16 +80,7 @@ function NavBAr() {
   };
   const [active, setActive] = useState(false);
   const [isHoverDropdown, setIsHoverDropdown] = useState(false);
-  const handleMouseEnter = () => {
-    setActive(true);
-  };
 
-  const handleMouseLeave = () => {
-    setTimeout(() => {
-      if (!isHoverDropdown) setActive(false);
-      else setActive(true);
-    }, 500);
-  };
   const DropDownHandler = () => {
     if (active) {
       setActive(false);
@@ -113,8 +105,9 @@ function NavBAr() {
   };
   const smallApp = [
     { link: "/", text: "HOME" },
-    { link: "/about", text: "ABOUT" },
+    { link: "/about", text: "ABOUT US" },
     { link: "/", text: "SERVICE" },
+    { link: "/", text: "MERCHANDISE" },
     { link: "/our-work", text: "OUR WORK" },
     { link: "/blogs", text: "BLOGS" },
     { link: "/contact", text: "CONTACT US" },
@@ -124,6 +117,13 @@ function NavBAr() {
 
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
+  };
+  const router = useRouter();
+  const openServicePage = () => {
+    router.push("/myservices");
+  };
+  const handleDoubleClick = () => {
+    router.push("/myservices");
   };
   return (
     <>
@@ -139,29 +139,58 @@ function NavBAr() {
                 </li>
                 <li className={styles.li}>
                   <Link href="/about" style={{ textDecoration: "none" }}>
-                    <Typography sx={style.text}>About</Typography>
+                    <Typography sx={style.text}>About Us</Typography>
                   </Link>
                 </li>
-                <li
-                  className={styles.lis}
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  <Typography
-                    sx={style.text}
-                    onClick={DropDownHandler}
-                    onMouseEnter={handleMouseEnter}
-                  >
+                <li className={styles.lis} onClick={openServicePage}>
+                  <Typography sx={style.text} onClick={DropDownHandler}>
                     Services
                   </Typography>
                   <KeyboardArrowDownIcon />
+                  <Box className={styles.dropDowmBox}>
+                    <ListItemButton className={styles.size}>
+                      <Link
+                        href="/commercial-services"
+                        style={{ textDecoration: "none", color: "inherit" }}
+                      >
+                        <ListItemText
+                          primary="Commercial Services"
+                          sx={{
+                            ":hover": {
+                              color: "black",
+                              transition: "all ease 0.5s",
+                            },
+                          }}
+                        />
+                      </Link>
+                    </ListItemButton>
+                    <hr />
+                    <ListItemButton>
+                      <Link
+                        href="/residential-services"
+                        style={{ textDecoration: "none", color: "inherit" }}
+                      >
+                        <ListItemText
+                          primary="Residential Services"
+                          className={styles.size}
+                          sx={{
+                            ":hover": {
+                              color: "black",
+                              transition: "all ease 0.5s",
+                            },
+                          }}
+                        />
+                      </Link>
+                    </ListItemButton>
+                  </Box>
                 </li>
                 <li className={styles.li}>
-                  <Link href="/merchandis" style={{ textDecoration: "none" }}>
-                    <Typography sx={style.text} id={styles.margin}>
-                      Merchandise
-                    </Typography>
-                  </Link>
+                  <Typography
+                    sx={[style.text, { paddingLeft: 2 }]}
+                    id={styles.margin}
+                  >
+                    Merchandise
+                  </Typography>
                 </li>
               </Box>
               <li className={styles.liImage} id={styles.margin}>
@@ -216,37 +245,38 @@ function NavBAr() {
                         {data.text === "SERVICE" ? (
                           <div>
                             <div>
-                              <Typography
-                                sx={style.item}
-                                onClick={toggleDropdown}
-                              >
-                                {data.text}
-                              </Typography>
-
+                              <div onDoubleClick={handleDoubleClick}>
+                                <Typography
+                                  sx={style.item}
+                                  onClick={toggleDropdown}
+                                >
+                                  {data.text}
+                                </Typography>
+                              </div>
                               {showDropdown && (
                                 <div>
                                   <Typography sx={style.item}>
                                     <Link
-                                      href="/commercial-service"
+                                      href="/commercial-services"
                                       style={{
                                         textDecoration: "none",
                                         listStyle: "none",
                                         color: "white",
                                       }}
                                     >
-                                      COMMERCIAL SERVICE
+                                      COMMERCIAL SERVICES
                                     </Link>
                                   </Typography>
                                   <Typography sx={style.item}>
                                     <Link
-                                      href="/residential-service"
+                                      href="/residential-services"
                                       style={{
                                         textDecoration: "none",
                                         listStyle: "none",
                                         color: "white",
                                       }}
                                     >
-                                      RESIDENTIAL SERVICE
+                                      RESIDENTIAL SERVICES
                                     </Link>
                                   </Typography>
                                 </div>
@@ -307,7 +337,7 @@ function NavBAr() {
               }}
             >
               <ListItemText
-                primary="Commercial Service"
+                primary="Commercial Services"
                 sx={{
                   ":hover": { color: "black", transition: "all ease 0.5s" },
                 }}

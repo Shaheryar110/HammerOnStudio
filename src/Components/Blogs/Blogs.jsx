@@ -13,8 +13,16 @@ import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import getAllBlogs from "@/service/getAllBlogs";
 import axios from "axios";
 import Link from "next/link";
+import { URI } from "../../uri";
+import Head from "next/head";
+import blogCss from "./blog.module.css";
+import CircularProgress from "@mui/material/CircularProgress";
+import Skeleton from "@mui/material/Skeleton";
 function Blogs({ posts }) {
   const style = {
+    container: {
+      maxWidth: { lg: "1450px", md: "1250px" },
+    },
     marginHead: {
       marginY: "3rem",
     },
@@ -53,7 +61,6 @@ function Blogs({ posts }) {
     cardContent: {
       padding: "30px 30px 0px",
       backgroundColor: "white",
-      height: "240px",
     },
     readMore: {
       color: "#707173",
@@ -61,6 +68,13 @@ function Blogs({ posts }) {
       ":hover": {
         color: "#2871ae",
       },
+    },
+    cardBox: {
+      boxShadow: "0px 5px 59px 0px rgba(0, 0, 0, 0.31)",
+      borderRadius: "1rem",
+      overflow: "hidden",
+      width: { sm: "90%", xs: "100%" },
+      marginBottom: "3rem",
     },
   };
   const CardData = [
@@ -103,83 +117,106 @@ function Blogs({ posts }) {
     },
   ];
   const [pic, setPic] = useState([]);
+  const [loader, setLoader] = useState(true);
   useEffect(() => {
-    axios.get("https://localhost:5001/api/blogs").then((res) => {
+    setLoader(true);
+    axios.get(`https://${URI}:5002/api/blogs`).then((res) => {
       setPic(res.data);
       console.log(pic, "pic");
+      setLoader(false);
     });
   }, []);
   return (
-    <Box>
-      <StripSection heading="LATEST NEWS" />
-      <Container className={responsive.container}>
-        <Box sx={style.marginHead}>
-          <HeadingH2 text="Latest News" align="center" />
+    <>
+      <Head>
+        <link rel="icon" href="/favicon.webp" />
+        <title>Blogs</title>
+      </Head>
+      {loader && (
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100%",
+            width: "100%",
+            marginY: "5rem",
+          }}
+        >
+          <CircularProgress />
         </Box>
-        <Grid container>
-          {pic?.map((data) => {
-            return (
-              <Grid item lg={4} md={6}>
-                <Box className={styles.cardBox}>
-                  <Box className={styles.cardImg}>
-                    <Box>
-                      <Image
-                        src={data?.image}
-                        width={420}
-                        height={300}
-                        alt={data.id}
-                        priority={true}
-                      />
-                    </Box>
-                    <Box className={styles.itemdate}>
-                      <CalendarMonthIcon />
-                      {data?.date}
-                    </Box>
-                  </Box>
-                  <Box sx={style.cardContent}>
-                    <Typography variant="h3" sx={style.cardHeading}>
-                      {data?.heading}
-                    </Typography>
-                    <Box sx={style.cardIconBox}>
-                      <Box sx={style.flexOnIcon}>
-                        <PersonIcon sx={style.color} />
-                        <Typography>admin</Typography>
+      )}
+      {!loader && (
+        <Box>
+          <StripSection heading="LATEST NEWS" />
+          <Container sx={style.container}>
+            <Box sx={style.marginHead}>
+              <HeadingH2 text="Latest News" align="center" />
+            </Box>
+            <Grid container justifyContent="center">
+              {pic?.map((data) => {
+                return (
+                  <Grid item lg={4} md={6}>
+                    <Box sx={style.cardBox}>
+                      <Box className={styles.cardImg}>
+                        <Box>
+                          <Image
+                            src={data?.image}
+                            style={{ width: "100%" }}
+                            width={420}
+                            height={300}
+                            alt={data.id}
+                            priority={true}
+                            className={blogCss.zoomableImage}
+                          />
+                        </Box>
+                        <Box className={styles.itemdate}>
+                          <CalendarMonthIcon />
+                          {data?.date}
+                        </Box>
                       </Box>
-                      <Box sx={style.flexOnIcon}>
-                        <ForumIcon sx={style.color} />
-                        <Typography>comments : 0</Typography>
+                      <Box sx={style.cardContent}>
+                        <Typography variant="h3" sx={style.cardHeading}>
+                          {data?.heading}
+                        </Typography>
+                        <Box sx={style.cardIconBox}>
+                          <Box sx={style.flexOnIcon}>
+                            <PersonIcon sx={style.color} />
+                            <Typography>admin</Typography>
+                          </Box>
+                          <Box sx={style.flexOnIcon}>
+                            <ForumIcon sx={style.color} />
+                            <Typography>comments : 0</Typography>
+                          </Box>
+                        </Box>
+                        <Link
+                          style={{
+                            textDecoration: "none",
+                            listStyle: "none",
+                            color: "inherit",
+                          }}
+                          href={data?.slug}
+                        >
+                          <Box sx={style.cardIconBox1}>
+                            <Typography sx={style.readMore}>
+                              READ MORE
+                            </Typography>
+                            <ArrowCircleRightIcon
+                              className={styles.readMore1}
+                            />
+                          </Box>
+                        </Link>
                       </Box>
                     </Box>
-                    <Link
-                      style={{
-                        textDecoration: "none",
-                        listStyle: "none",
-                        color: "inherit",
-                      }}
-                      href={data?.slug}
-                    >
-                      <Box sx={style.cardIconBox1}>
-                        <Typography sx={style.readMore}>READ MORE</Typography>
-                        <ArrowCircleRightIcon className={styles.readMore1} />
-                      </Box>
-                    </Link>
-                  </Box>
-                </Box>
-              </Grid>
-            );
-          })}
-        </Grid>
-      </Container>
-    </Box>
+                  </Grid>
+                );
+              })}
+            </Grid>
+          </Container>
+        </Box>
+      )}
+    </>
   );
 }
-// export async function getStaticProps() {
-//   // fetch the blog posts from the mock API
-//   const res = await axios.get("https://172.16.100.76:5001/api/blogs");
-//   const posts = await res.json();
-//   console.log(res, "json");
-//   return {
-//     props: { posts }, // props will be passed to the page
-//   };
-// }
+
 export default Blogs;

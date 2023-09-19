@@ -67,7 +67,7 @@ function Contact() {
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
-      alignItems: "start",
+      alignItems: { lg: "start", md: "center" },
     },
     tag1: {
       color: "white",
@@ -151,8 +151,11 @@ function Contact() {
     <>
       <Box sx={style.mainCont}>
         <Container className={responsive.container}>
-          <Grid container>
-            <Grid item lg={6}>
+          <Grid
+            container
+            justifyContent={{ lg: "space-between", xs: "center" }}
+          >
+            <Grid item lg={6} md={12}>
               <Box sx={style.bux}>
                 <Typography variant="h4" sx={style.tag}>
                   REVIEWS
@@ -178,7 +181,7 @@ function Contact() {
                 </ul>
               </Box>
             </Grid>
-            <Grid item lg={6}>
+            <Grid item lg={6} md={8}>
               <Box sx={style.contactForm}>
                 <Typography variant="h4" sx={style.tag1}>
                   CONTACT HAMMER-ON STUDIOS

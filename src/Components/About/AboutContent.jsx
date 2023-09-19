@@ -8,6 +8,7 @@ import labours from "../../assets/images/labours.webp";
 import Image from "next/image";
 import tag01 from "../../assets/images/tag01.webp";
 import FourHoverCards from "../Commons/FourHoverCards";
+import Head from "next/head";
 
 function AboutContent() {
   const style = {
@@ -40,6 +41,10 @@ function AboutContent() {
   };
   return (
     <>
+      <Head>
+        <link rel="icon" href="/favicon.webp" />
+        <title>About</title>
+      </Head>
       <Box sx={style.image}>
         <Container sx={style.container}>
           <Grid container sx={style.sapcing}>

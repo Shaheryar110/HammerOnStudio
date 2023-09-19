@@ -19,6 +19,7 @@ import postNewsLetterForm from "@/service/newLetterService";
 import { motion } from "framer-motion";
 import { Poppins } from "next/font/google";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
+import Head from "next/head";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
@@ -95,11 +96,11 @@ function CommercialService() {
       color: "white",
       paddingY: "0.5rem",
       fontSize: "1rem",
-      backgroundColor: "white",
+      backgroundColor: "#408ECD",
       color: "#393738",
       marginTop: "2rem",
       ":hover": {
-        backgroundColor: "white",
+        backgroundColor: "#408ECD",
       },
     },
     three: {
@@ -186,6 +187,10 @@ function CommercialService() {
   };
   return (
     <>
+      <Head>
+        <link rel="icon" href="/favicon.webp" />
+        <title>Commercial Services</title>
+      </Head>
       <Box sx={style.image}>
         <Stripe heading="COMMERCIAL SERVICE" />
         <Container className={responsive.container}>
@@ -206,7 +211,7 @@ function CommercialService() {
         </Container>
         <Testimonials />
         <Grid container sx={{ justifyContent: "center", alignItems: "center" }}>
-          <Grid item lg={3}>
+          <Grid item lg={3} display={{ md: "block", xs: "none" }}>
             <Image src={new1} />
           </Grid>
           <Grid item lg={5}>
@@ -244,6 +249,7 @@ function CommercialService() {
                   transition={{ duration: 0.5 }}
                   onMouseEnter={enter}
                   onMouseOut={out}
+                  style={{ color: "white" }}
                 >
                   {" "}
                   SUBSCRIBE
@@ -261,6 +267,7 @@ function CommercialService() {
                       transition: "all ease 0.5s",
                       display: "flex",
                       alignSelf: "center",
+                      color: "white",
                     }}
                   />
                 </motion.div>

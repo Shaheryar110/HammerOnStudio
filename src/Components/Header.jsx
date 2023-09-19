@@ -1,10 +1,8 @@
-import { Box, Container, Grid, Stack, Typography } from "@mui/material";
+import { Box, Container, Stack, Typography } from "@mui/material";
 import PhoneIcon from "@mui/icons-material/Phone";
 import MailIcon from "@mui/icons-material/Mail";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import PinterestIcon from "@mui/icons-material/Pinterest";
-import responsive from "../../src/styles/responsive.module.css";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTiktok } from "@fortawesome/free-brands-svg-icons";
@@ -18,7 +16,8 @@ const HeaderTop = () => {
       paddingY: { lg: "0px", sm: "2rem" },
     },
     iconStyle: {
-      padding: "0.5rem",
+      width: "40px",
+      height: "40px",
       color: "#35A5F2",
       backgroundColor: "white",
       borderRadius: "50%",
@@ -27,13 +26,13 @@ const HeaderTop = () => {
       justifyContent: "center",
     },
     topText: {
-      fontSize: "15px",
+      fontSize: "13px",
       fontWeight: 600,
       lineHeight: "0.7em",
-      marginBottom: "0.7rem",
+      marginBottom: "0.5rem",
     },
     topSecondText: {
-      fontSize: "18px",
+      fontSize: "16px",
       fontWeight: 700,
       lineHeight: "0.7em",
     },

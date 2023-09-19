@@ -30,6 +30,7 @@ import styles from "../../styles/style.module.css";
 import postNewsLetterForm from "@/service/newLetterService";
 import { motion } from "framer-motion";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
+import Head from "next/head";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
@@ -283,6 +284,10 @@ function CommercialService() {
   };
   return (
     <>
+      <Head>
+        <link rel="icon" href="/favicon.webp" />
+        <title>Residential Services</title>
+      </Head>
       <Box sx={style.image}>
         <Stripe heading="RESIDENTIAL SERVICE" />
         <Container className={responsive.container}>

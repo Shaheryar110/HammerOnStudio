@@ -1,11 +1,11 @@
 import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import shape34 from "../../assets/images/shape.webp";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
 import shape35 from "../../assets/images/shape35.webp";
-// import shape34 from "../../assets/images/shape34.webp";
+
 import shape36 from "../../assets/images/shape36.webp";
 import styles from "../../styles/style.module.css";
 
@@ -32,7 +32,7 @@ function Testimonials() {
     },
     content: {
       color: "grey",
-      fontSize: "1.1rem",
+      fontSize: { md: "1.1rem", xs: "0.7rem" },
       marginTop: "1rem",
     },
     iconAligns: {
@@ -47,7 +47,7 @@ function Testimonials() {
     },
     carBox1: {
       marginTop: "5rem",
-      marginLeft: "1rem",
+      marginLeft: { lg: "10rem", xs: "2rem" },
 
       zIndex: "99",
     },
@@ -110,9 +110,10 @@ function Testimonials() {
         </Box>
 
         <Grid container>
-          <Grid item lg={7}>
+          <Grid item lg={6}>
             <Box sx={style.carBox}>
               <Carousel
+                swipeable={true}
                 autoPlay={true}
                 showArrows={false}
                 showIndicators={false}
@@ -145,7 +146,7 @@ function Testimonials() {
               </Carousel>
             </Box>
           </Grid>
-          <Grid item lg={5}>
+          <Grid item lg={6}>
             <Box sx={style.carBox1}>
               <Typography variant="h4" sx={style.h4}>
                 OUR TESTIMONIAL

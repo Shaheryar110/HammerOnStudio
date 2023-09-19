@@ -6,6 +6,7 @@ import responsive from "../styles/responsive.module.css";
 import Gallery from "@/Components/Home/Gallery";
 import Testimonials from "@/Components/Home/Testimonials";
 import { Inter } from "next/font/google";
+import Head from "next/head";
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "700", "900"],
@@ -38,26 +39,32 @@ function work() {
     },
   };
   return (
-    <Layout>
-      <StripSection heading="OUR WORK" />
-      <Container className={responsive.container}>
-        <Box sx={style.spaces}>
-          <Typography sx={style.tophead} className={inter.className}>
-            If It’s Broken, We Can Fix It!
-          </Typography>
-          <Typography sx={style.mainhead} className={inter.className}>
-            Explore Our Latest Projects
-          </Typography>
-          <Typography sx={style.mainhead} className={inter.className}>
-            And Recent Works
-          </Typography>
-          <Box sx={style.margiins}>
-            <Gallery border={true} />
+    <>
+      <Head>
+        <link rel="icon" href="/favicon.webp" />
+        <title>Our Work</title>
+      </Head>
+      <Layout>
+        <StripSection heading="OUR WORK" />
+        <Container className={responsive.container}>
+          <Box sx={style.spaces}>
+            <Typography sx={style.tophead} className={inter.className}>
+              If It’s Broken, We Can Fix It!
+            </Typography>
+            <Typography sx={style.mainhead} className={inter.className}>
+              Explore Our Latest Projects
+            </Typography>
+            <Typography sx={style.mainhead} className={inter.className}>
+              And Recent Works
+            </Typography>
+            <Box sx={style.margiins}>
+              <Gallery border={true} />
+            </Box>
           </Box>
-        </Box>
-      </Container>
-      <Testimonials />
-    </Layout>
+        </Container>
+        <Testimonials />
+      </Layout>
+    </>
   );
 }
 
