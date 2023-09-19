@@ -37,7 +37,7 @@ function NavBAr() {
       width: "200px",
       position: "absolute",
       zIndex: "99",
-      marginTop: "-2rem",
+      marginTop: "-3.2rem",
     },
     text: {
       color: "white",
@@ -50,6 +50,7 @@ function NavBAr() {
         textDecoration: "underline",
         transition: "ease all 0.8s",
       },
+      cursor: "pointer",
     },
     container: {
       maxWidth: { lg: "1500px", md: "1000px" },
@@ -86,7 +87,7 @@ function NavBAr() {
     setTimeout(() => {
       if (!isHoverDropdown) setActive(false);
       else setActive(true);
-    }, 1000);
+    }, 500);
   };
   const DropDownHandler = () => {
     if (active) {
@@ -146,7 +147,11 @@ function NavBAr() {
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <Typography sx={style.text} onClick={DropDownHandler}>
+                  <Typography
+                    sx={style.text}
+                    onClick={DropDownHandler}
+                    onMouseEnter={handleMouseEnter}
+                  >
                     Services
                   </Typography>
                   <KeyboardArrowDownIcon />
@@ -281,24 +286,47 @@ function NavBAr() {
           onMouseEnter={() => setIsHoverDropdown(true)}
           onMouseLeave={() => {
             setIsHoverDropdown(false);
-            setActive(false);
+            setActive(true);
           }}
         >
-          <ListItemButton className={styles.size}>
+          <ListItemButton
+            className={styles.size}
+            onMouseEnter={() => setIsHoverDropdown(true)}
+            onMouseLeave={() => {
+              setIsHoverDropdown(false);
+              setActive(true);
+            }}
+          >
             <Link
               href="/commercial-services"
               style={{ textDecoration: "none", color: "inherit" }}
+              onMouseEnter={() => setIsHoverDropdown(true)}
+              onMouseLeave={() => {
+                setIsHoverDropdown(false);
+                setActive(true);
+              }}
             >
               <ListItemText
                 primary="Commercial Service"
                 sx={{
                   ":hover": { color: "black", transition: "all ease 0.5s" },
                 }}
+                onMouseEnter={() => setIsHoverDropdown(true)}
+                onMouseLeave={() => {
+                  setIsHoverDropdown(false);
+                  setActive(true);
+                }}
               />
             </Link>
           </ListItemButton>
           <hr />
-          <ListItemButton>
+          <ListItemButton
+            onMouseEnter={() => setIsHoverDropdown(true)}
+            onMouseLeave={() => {
+              setIsHoverDropdown(false);
+              setActive(true);
+            }}
+          >
             <Link
               href="/residential-services"
               style={{ textDecoration: "none", color: "inherit" }}
