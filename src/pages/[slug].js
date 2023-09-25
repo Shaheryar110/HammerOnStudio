@@ -86,7 +86,7 @@ function slug() {
   const [detailBlog, setDetailBlogs] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://${URI}:5002/api/blogsDetails?slug=${parameter}`)
+      .get(`https://${URI}:5000/api/blogsDetails?slug=${parameter}`)
       .then((res) => {
         console.log(res, "res");
         setDetailBlogs(res.data);

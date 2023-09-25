@@ -120,7 +120,7 @@ function Blogs({ posts }) {
   const [loader, setLoader] = useState(true);
   useEffect(() => {
     setLoader(true);
-    axios.get(`https://${URI}:5002/api/blogs`).then((res) => {
+    axios.get(`https://${URI}:5000/api/blogs`).then((res) => {
       setPic(res.data);
       console.log(pic, "pic");
       setLoader(false);
