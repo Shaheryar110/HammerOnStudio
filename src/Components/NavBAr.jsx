@@ -50,6 +50,7 @@ function NavBAr() {
         textDecoration: "underline",
         transition: "ease all 0.8s",
       },
+      cursor: "pointer",
     },
     container: {
       maxWidth: { lg: "1500px", md: "1000px" },
@@ -315,24 +316,47 @@ function NavBAr() {
           onMouseEnter={() => setIsHoverDropdown(true)}
           onMouseLeave={() => {
             setIsHoverDropdown(false);
-            setActive(false);
+            setActive(true);
           }}
         >
-          <ListItemButton className={styles.size}>
+          <ListItemButton
+            className={styles.size}
+            onMouseEnter={() => setIsHoverDropdown(true)}
+            onMouseLeave={() => {
+              setIsHoverDropdown(false);
+              setActive(true);
+            }}
+          >
             <Link
               href="/commercial-services"
               style={{ textDecoration: "none", color: "inherit" }}
+              onMouseEnter={() => setIsHoverDropdown(true)}
+              onMouseLeave={() => {
+                setIsHoverDropdown(false);
+                setActive(true);
+              }}
             >
               <ListItemText
                 primary="Commercial Services"
                 sx={{
                   ":hover": { color: "black", transition: "all ease 0.5s" },
                 }}
+                onMouseEnter={() => setIsHoverDropdown(true)}
+                onMouseLeave={() => {
+                  setIsHoverDropdown(false);
+                  setActive(true);
+                }}
               />
             </Link>
           </ListItemButton>
           <hr />
-          <ListItemButton>
+          <ListItemButton
+            onMouseEnter={() => setIsHoverDropdown(true)}
+            onMouseLeave={() => {
+              setIsHoverDropdown(false);
+              setActive(true);
+            }}
+          >
             <Link
               href="/residential-services"
               style={{ textDecoration: "none", color: "inherit" }}
