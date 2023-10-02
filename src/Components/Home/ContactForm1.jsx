@@ -95,10 +95,12 @@ function ContactForm1() {
       await postNewsLetterForm({
         name: name,
         email: email,
+      }).then((data) => {
+        console.log("data sent");
       });
       setName("");
       setEmail("");
-      console.log("data sent");
+
       toast.success("Form Submitted Successfully");
     } else {
       console.log("Invalid  submission");

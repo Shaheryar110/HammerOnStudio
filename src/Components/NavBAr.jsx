@@ -184,14 +184,6 @@ function NavBAr() {
                     </ListItemButton>
                   </Box>
                 </li>
-                <li className={styles.li}>
-                  <Typography
-                    sx={[style.text, { paddingLeft: 2 }]}
-                    id={styles.margin}
-                  >
-                    Merchandise
-                  </Typography>
-                </li>
               </Box>
               <li className={styles.liImage} id={styles.margin}>
                 <Image
