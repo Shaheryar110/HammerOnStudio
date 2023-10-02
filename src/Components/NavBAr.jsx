@@ -87,6 +87,7 @@ function NavBAr() {
     } else {
       setActive(true);
     }
+    router.push("/myservices");
   };
   const text = {
     color: "white",
@@ -142,7 +143,7 @@ function NavBAr() {
                     <Typography sx={style.text}>About Us</Typography>
                   </Link>
                 </li>
-                <li className={styles.lis} onClick={openServicePage}>
+                <li className={styles.lis}>
                   <Typography sx={style.text} onClick={DropDownHandler}>
                     Services
                   </Typography>

@@ -10,6 +10,7 @@ import cardSvg1 from "../../assets/images/cardsvg1.webp";
 import cardSvg2 from "../../assets/images/cardsvg2.webp";
 import card2 from "../../assets/images/card2.webp";
 import { motion } from "framer-motion";
+import Link from "next/link";
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
@@ -170,84 +171,94 @@ function WhatWeDo() {
           >
             <div className={styles.border}></div>
             <Grid item lg={5} md={6} sm={7} xs={12}>
-              <Box
-                className={styles.cardInfo}
-                onMouseEnter={onMouseEnter1}
-                onMouseLeave={onMouseLeave1}
+              <Link
+                href="/commercial-services"
+                style={{ textDecoration: "none", color: "inherit" }}
               >
-                <figure className={styles.fig}>
-                  <Image
-                    src={services}
-                    fill={false}
-                    style={{ width: "100%" }}
-                  />
-                </figure>
-                <Box sx={{ position: "relative" }}>
-                  <Box sx={style.svg}>
-                    <Image
-                      src={cardSvg1}
-                      fill={false}
-                      style={{ width: "100%", height: "100%" }}
-                    />
-                  </Box>
-                </Box>
-                <motion.div
-                  animate={{ y: hover1 ? -40 : 0 }}
-                  transition={{ duration: 0.5 }}
+                <Box
+                  className={styles.cardInfo}
+                  onMouseEnter={onMouseEnter1}
+                  onMouseLeave={onMouseLeave1}
                 >
-                  <Box sx={style.artice}>
-                    <Typography variant="h3" sx={style.hThree}>
-                      Commercial Services
-                    </Typography>
-                    <Typography sx={style.paragraph}>
-                      Hammer-On Studios supports commercial locations with
-                      top-quality renovation services tailored to our clients’
-                      eclectic needs. From breweries and restaurants to…
-                    </Typography>
-                    <Button sx={style.btn}>
-                      Read More <KeyboardDoubleArrowRightIcon sx={style.ic} />
-                    </Button>
+                  <figure className={styles.fig}>
+                    <Image
+                      src={services}
+                      fill={false}
+                      style={{ width: "100%" }}
+                    />
+                  </figure>
+                  <Box sx={{ position: "relative" }}>
+                    <Box sx={style.svg}>
+                      <Image
+                        src={cardSvg1}
+                        fill={false}
+                        style={{ width: "100%", height: "100%" }}
+                      />
+                    </Box>
                   </Box>
-                </motion.div>
-              </Box>
+                  <motion.div
+                    animate={{ y: hover1 ? -40 : 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Box sx={style.artice}>
+                      <Typography variant="h3" sx={style.hThree}>
+                        Commercial Services
+                      </Typography>
+                      <Typography sx={style.paragraph}>
+                        Hammer-On Studios supports commercial locations with
+                        top-quality renovation services tailored to our clients’
+                        eclectic needs. From breweries and restaurants to…
+                      </Typography>
+                      <Button sx={style.btn}>
+                        Read More <KeyboardDoubleArrowRightIcon sx={style.ic} />
+                      </Button>
+                    </Box>
+                  </motion.div>
+                </Box>
+              </Link>
             </Grid>
             <Grid item lg={5} md={6} sm={7} xs={12}>
-              <Box
-                className={styles.cardInfo}
-                onMouseEnter={onMouseEnter}
-                onMouseLeave={onMouseLeave}
+              <Link
+                href="/residential-services"
+                style={{ textDecoration: "none", color: "inherit" }}
               >
-                <figure className={styles.fig}>
-                  <Image src={card2} fill={false} style={{ width: "100%" }} />
-                </figure>
-                <Box sx={{ position: "relative" }}>
-                  <Box sx={style.svg}>
-                    <Image
-                      src={cardSvg2}
-                      fill={false}
-                      style={{ width: "100%", height: "100%" }}
-                    />
-                  </Box>
-                </Box>
-                <motion.div
-                  animate={{ y: hover ? -40 : 0 }}
-                  transition={{ duration: 0.5 }}
+                <Box
+                  className={styles.cardInfo}
+                  onMouseEnter={onMouseEnter}
+                  onMouseLeave={onMouseLeave}
                 >
-                  <Box sx={style.artice}>
-                    <Typography variant="h3" sx={style.hThree}>
-                      Residential Services
-                    </Typography>
-                    <Typography sx={style.paragraph}>
-                      Hammer-On Studios supports commercial locations with
-                      top-quality renovation services tailored to our clients’
-                      eclectic needs. From breweries and restaurants to…
-                    </Typography>
-                    <Button sx={style.btn}>
-                      Read More <KeyboardDoubleArrowRightIcon sx={style.ic} />
-                    </Button>
+                  <figure className={styles.fig}>
+                    <Image src={card2} fill={false} style={{ width: "100%" }} />
+                  </figure>
+                  <Box sx={{ position: "relative" }}>
+                    <Box sx={style.svg}>
+                      <Image
+                        src={cardSvg2}
+                        fill={false}
+                        style={{ width: "100%", height: "100%" }}
+                      />
+                    </Box>
                   </Box>
-                </motion.div>
-              </Box>
+                  <motion.div
+                    animate={{ y: hover ? -40 : 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Box sx={style.artice}>
+                      <Typography variant="h3" sx={style.hThree}>
+                        Residential Services
+                      </Typography>
+                      <Typography sx={style.paragraph}>
+                        Hammer-On Studios supports commercial locations with
+                        top-quality renovation services tailored to our clients’
+                        eclectic needs. From breweries and restaurants to…
+                      </Typography>
+                      <Button sx={style.btn}>
+                        Read More <KeyboardDoubleArrowRightIcon sx={style.ic} />
+                      </Button>
+                    </Box>
+                  </motion.div>
+                </Box>
+              </Link>
             </Grid>
           </Grid>
         </Container>
