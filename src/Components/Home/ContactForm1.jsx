@@ -90,9 +90,9 @@ function ContactForm1() {
     setEmail(inputValue);
     setIsValidEmail(validateEmail(inputValue));
   };
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (name && isValidEmail) {
-      postNewsLetterForm({
+      await postNewsLetterForm({
         name: name,
         email: email,
       });

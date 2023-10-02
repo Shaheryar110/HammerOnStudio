@@ -77,45 +77,7 @@ function Blogs({ posts }) {
       marginBottom: "3rem",
     },
   };
-  const CardData = [
-    {
-      title: "Revitalizing Workspaces and Ensuring Flat Roof Repair",
-    },
-    {
-      title:
-        "Quality Kitchen and Bath Remodels by Home Renovation Contractors in NYC",
-    },
-    {
-      title:
-        "Expert Solutions for Flat Roof Repair in NYC and Office Renovation Contractors in New York",
-    },
-    {
-      title:
-        "Log Home Repair and Restoration: Preserving the Beauty of Your Abode",
-    },
-    {
-      title:
-        "Elevating Spaces: Commercial Bathroom and Building Remodeling Contractors in New York",
-    },
-    {
-      title: "Essential Tips for Flat Roof Repair in NYC",
-    },
-    {
-      title:
-        "Importance of Quality Kitchen and Bath Remodels and Flat Roof Repair",
-    },
-
-    {
-      title: "Flat Roof Repair in NYC and Basement Remodeling Contractors",
-    },
-    {
-      title: "Repairing and Renovating Your Home: A Guide",
-    },
-    {
-      title:
-        "Top Commercial and Home Renovation Contractors in New York – Monroe and NYC",
-    },
-  ];
+  
   const [pic, setPic] = useState([]);
   const [loader, setLoader] = useState(true);
   useEffect(() => {

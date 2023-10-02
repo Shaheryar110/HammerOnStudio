@@ -81,9 +81,9 @@ function HeroCarousel() {
           <div style={{ position: "relative" }}>
             <Image
               src={slider1}
+              style={{ width: "100%" }}
               width={1920}
               height={730}
-              style={{ width: "1920px", height: "730px" }}
             />
             <Container className={responsive.container}>
               <Box sx={style.overText}>

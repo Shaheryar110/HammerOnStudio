@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "../../styles/style.module.css";
 import responsive from "../../styles/responsive.module.css";
 import { Container, Box, Typography, Stack, Grid } from "@mui/material";
 import AnimatedCard from "../Home/AnimatedCard";

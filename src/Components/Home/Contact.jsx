@@ -205,6 +205,7 @@ function Contact() {
             </Grid>
           </Grid>
         </Container>
+  
       </Box>
     </>
   );

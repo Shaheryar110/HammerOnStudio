@@ -8,6 +8,18 @@ export default function Document() {
           src="https://cdn.userway.org/widget.js"
           data-account="MDH5wuVUUW"
         ></script>
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-4XF3Y3MXGZ"
+        ></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          {function gtag() {
+            dataLayer.push(arguments);
+          }}
+          gtag('js', new Date()); gtag('config', 'G-4XF3Y3MXGZ');
+        </script>
       </Head>
 
       <body>

@@ -181,10 +181,11 @@ function Footer() {
                     onMouseEnter={() => handleMouseEnter(2)}
                     onMouseLeave={() => handleMouseLeave(2)}
                   >
-                    <FontAwesomeIcon
-                      icon={faTiktok}
-                      fontSize={"sm"}
-                      color={isMouseInside[2] ? "#2296E6" : "white"}
+                    <Image
+                      src={"/tik-tok.png"}
+                      width={16}
+                      height={16}
+                      alt="oops"
                     />
                   </Box>
                 </Link>

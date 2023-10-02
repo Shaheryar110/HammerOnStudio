@@ -110,7 +110,7 @@ function WhatWeDo() {
       padding: "0px 25px 25px 25px",
       position: "relative",
       transition: "all 0.5s ease",
-      height: { md: "120px", sm: "130px", xs: "130px" },
+      height: { md: "120px", sm: "130px", xs: "170px" },
       marginTop: "-4rem",
     },
   };
@@ -170,7 +170,11 @@ function WhatWeDo() {
           >
             <div className={styles.border}></div>
             <Grid item lg={5} md={6} sm={7} xs={12}>
-              <Box className={styles.cardInfo}>
+              <Box
+                className={styles.cardInfo}
+                onMouseEnter={onMouseEnter1}
+                onMouseLeave={onMouseLeave1}
+              >
                 <figure className={styles.fig}>
                   <Image
                     src={services}
@@ -190,8 +194,6 @@ function WhatWeDo() {
                 <motion.div
                   animate={{ y: hover1 ? -40 : 0 }}
                   transition={{ duration: 0.5 }}
-                  onMouseEnter={onMouseEnter1}
-                  onMouseLeave={onMouseLeave1}
                 >
                   <Box sx={style.artice}>
                     <Typography variant="h3" sx={style.hThree}>
@@ -210,7 +212,11 @@ function WhatWeDo() {
               </Box>
             </Grid>
             <Grid item lg={5} md={6} sm={7} xs={12}>
-              <Box className={styles.cardInfo}>
+              <Box
+                className={styles.cardInfo}
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+              >
                 <figure className={styles.fig}>
                   <Image src={card2} fill={false} style={{ width: "100%" }} />
                 </figure>
@@ -226,8 +232,6 @@ function WhatWeDo() {
                 <motion.div
                   animate={{ y: hover ? -40 : 0 }}
                   transition={{ duration: 0.5 }}
-                  onMouseEnter={onMouseEnter}
-                  onMouseLeave={onMouseLeave}
                 >
                   <Box sx={style.artice}>
                     <Typography variant="h3" sx={style.hThree}>

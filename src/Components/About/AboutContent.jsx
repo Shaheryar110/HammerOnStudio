@@ -1,6 +1,5 @@
 import { Container, Box, Typography, Stack, Grid } from "@mui/material";
 import React from "react";
-import responsive from "../../styles/responsive.module.css";
 import styles from "../../styles/style.module.css";
 import BeforeHeadSmall from "../Commons/BeforeHeadSmall";
 import HeadingH2 from "../Commons/HeadingH2";

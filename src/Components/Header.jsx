@@ -6,6 +6,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTiktok } from "@fortawesome/free-brands-svg-icons";
+import Image from "next/image";
 const HeaderTop = () => {
   const style = {
     topHeader: {
@@ -110,12 +111,7 @@ const HeaderTop = () => {
             </Link>
             <Link href="https://www.tiktok.com/@hammer.on.studios">
               <Box sx={[style.icon, { padding: "10px" }]}>
-                <FontAwesomeIcon
-                  icon={faTiktok}
-                  fontSize={20}
-                  size={"lg"}
-                  color="white"
-                />
+                <Image src={"/tik-tok.png"} width={24} height={24} alt="oops" />
               </Box>
             </Link>
           </Box>
