@@ -65,9 +65,12 @@ const HeaderTop = () => {
     container: {
       maxWidth: { lg: "1450px", md: "1000px" },
     },
+    paddings: {
+      paddingBottom: { md: 0, sm: 2, xs: 1 },
+    },
   };
   return (
-    <Box bgcolor="#1F588C" color="primary.contrastText">
+    <Box bgcolor="#1F588C" color="primary.contrastText" sx={style.paddings}>
       <Container sx={style.container}>
         <Stack sx={style.topHeader}>
           <Box sx={style.Left}>
