@@ -20,6 +20,7 @@ import { motion } from "framer-motion";
 import { Poppins } from "next/font/google";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import Head from "next/head";
+import ContactForm1 from "../Home/ContactForm1";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
@@ -210,7 +211,8 @@ function CommercialService() {
           </Box>
         </Container>
         <Testimonials />
-        <Grid container sx={{ justifyContent: "center", alignItems: "center" }}>
+        <ContactForm1 />
+        {/* <Grid container sx={{ justifyContent: "center", alignItems: "center" }}>
           <Grid item lg={3} display={{ md: "block", xs: "none" }}>
             <Image src={new1} />
           </Grid>
@@ -277,7 +279,7 @@ function CommercialService() {
           <Grid item lg={3}>
             <Image src={house} fill={false} />
           </Grid>
-        </Grid>
+        </Grid> */}
       </Box>
     </>
   );

@@ -11,6 +11,7 @@ function StripSection({ heading }) {
     heading: {
       color: "white",
       fontWeight: 800,
+      fontSize: { md: "3rem", xs: "2rem" },
     },
     box: {
       textAlign: "center",

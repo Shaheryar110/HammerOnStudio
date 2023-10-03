@@ -61,6 +61,8 @@ function NavBAr() {
     },
     appBars: {
       paddingY: "1rem",
+      backgroundColor: "#2296E6 !important",
+      boxShadow: 0,
     },
     appStyle: {
       display: "flex",
@@ -108,7 +110,6 @@ function NavBAr() {
     { link: "/", text: "HOME" },
     { link: "/about", text: "ABOUT US" },
     { link: "/", text: "SERVICE" },
-    { link: "/", text: "MERCHANDISE" },
     { link: "/our-work", text: "OUR WORK" },
     { link: "/blogs", text: "BLOGS" },
     { link: "/contact", text: "CONTACT US" },

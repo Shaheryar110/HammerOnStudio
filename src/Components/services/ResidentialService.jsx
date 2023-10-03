@@ -31,6 +31,7 @@ import postNewsLetterForm from "@/service/newLetterService";
 import { motion } from "framer-motion";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import Head from "next/head";
+import ContactForm1 from "../Home/ContactForm1";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
@@ -307,7 +308,8 @@ function CommercialService() {
           </Box>
         </Container>
         <Testimonials />
-        <Grid container sx={{ justifyContent: "center", alignItems: "center" }}>
+        <ContactForm1 />
+        {/* <Grid container sx={{ justifyContent: "center", alignItems: "center" }}>
           <Grid item lg={3}>
             <Image src={new1} />
           </Grid>
@@ -372,7 +374,7 @@ function CommercialService() {
           <Grid item lg={3}>
             <Image src={house} />
           </Grid>
-        </Grid>
+        </Grid> */}
       </Box>
     </>
   );
