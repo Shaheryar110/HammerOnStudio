@@ -77,7 +77,7 @@ function Blogs({ posts }) {
       marginBottom: "3rem",
     },
   };
-  
+
   const [pic, setPic] = useState([]);
   const [loader, setLoader] = useState(true);
   useEffect(() => {
@@ -157,7 +157,7 @@ function Blogs({ posts }) {
                             listStyle: "none",
                             color: "inherit",
                           }}
-                          href={data?.slug}
+                          href={`/blogs/${data?.slug}`}
                         >
                           <Box sx={style.cardIconBox1}>
                             <Typography sx={style.readMore}>

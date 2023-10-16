@@ -5,11 +5,6 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <script
-          src="https://cdn.userway.org/widget.js"
-          data-account="MDH5wuVUUW"
-        ></script>
-
-        <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-4XF3Y3MXGZ"
         ></script>
@@ -20,6 +15,10 @@ export default function Document() {
           }}
           gtag('js', new Date()); gtag('config', 'G-4XF3Y3MXGZ');
         </script>
+        <script
+          src="https://cdn.userway.org/widget.js"
+          data-account="MDH5wuVUUW"
+        ></script>
       </Head>
 
       <body>
