@@ -36,7 +36,9 @@ function Content({ smallHeading, mainHeading, para1, para2, src, order }) {
                 src={src}
                 fill={false}
                 style={{ width: "100%", height: "100%" }}
-                className={styles.imgs}
+                className="imgs"
+                alt="oops"
+                priority
               />
             </Box>
           </Grid>

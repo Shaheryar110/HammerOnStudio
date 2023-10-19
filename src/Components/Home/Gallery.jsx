@@ -102,14 +102,18 @@ function Gallery({ border }) {
                 <ul className={styles.navTab}>
                   <li
                     onClick={() => onChangeHandler("All Project")}
-                    className={activeStatus == "All Project" && styles.active}
+                    className={
+                      activeStatus == "All Project" ? styles.active : ""
+                    }
                   >
                     <Typography sx={style.navItem}>All Project</Typography>
                   </li>
                   <li onClick={() => onChangeHandler("Factory")}>
                     {" "}
                     <Typography
-                      className={activeStatus === "Factory" && styles.active}
+                      className={
+                        activeStatus === "Factory" ? styles.active : ""
+                      }
                       sx={style.navItem}
                     >
                       Factory
@@ -118,7 +122,7 @@ function Gallery({ border }) {
                   <li onClick={() => onChangeHandler("Residential")}>
                     <Typography
                       className={
-                        activeStatus === "Residential" && styles.active
+                        activeStatus === "Residential" ? styles.active : ""
                       }
                       sx={style.navItem}
                     >
@@ -127,7 +131,9 @@ function Gallery({ border }) {
                   </li>
                   <li onClick={() => onChangeHandler("Commercial")}>
                     <Typography
-                      className={activeStatus == "Commercial" && styles.active}
+                      className={
+                        activeStatus == "Commercial" ? styles.active : ""
+                      }
                       sx={style.navItem}
                     >
                       Commercial
@@ -135,7 +141,9 @@ function Gallery({ border }) {
                   </li>
                   <li onClick={() => onChangeHandler("Interior")}>
                     <Typography
-                      className={activeStatus == "Interior" && styles.active}
+                      className={
+                        activeStatus == "Interior" ? styles.active : ""
+                      }
                       sx={style.navItem}
                     >
                       Interior
@@ -178,6 +186,7 @@ function Gallery({ border }) {
                   <Grid item lg={12}>
                     <GalleryBox
                       src={roof3}
+                      priority={true}
                       category="Factory,Residential"
                       service="Modern Roofing"
                     />
@@ -244,6 +253,7 @@ function Gallery({ border }) {
                   <Grid item lg={6}>
                     <GalleryBox
                       src={roof3}
+                      priority={true}
                       service="Modern Roofing"
                       category="Factory,Residential"
                     />
@@ -291,6 +301,7 @@ function Gallery({ border }) {
                   <Grid item lg={8}>
                     <GalleryBox
                       src={roof3}
+                      priority={true}
                       service="Modern Roofing"
                       category="Factory,Residential"
                     />

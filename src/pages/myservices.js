@@ -5,22 +5,23 @@ import FourHoverCards from "../Components/Commons/FourHoverCards";
 import WhatWeDo from "../Components/Home/WhatWeDo";
 import Testimonials from "../Components/Home/Testimonials";
 import Head from "next/head";
+import Script from "next/script";
 
 function myservices() {
   return (
     <>
       <Head>
-        <script
+        <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-4XF3Y3MXGZ"
-        ></script>
-        <script>
+        ></Script>
+        <Script>
           window.dataLayer = window.dataLayer || [];
           {function gtag() {
             dataLayer.push(arguments);
           }}
           gtag('js', new Date()); gtag('config', 'G-4XF3Y3MXGZ');
-        </script>
+        </Script>
         <link rel="icon" href="/favicon.webp" />
         <title>Services</title>
       </Head>

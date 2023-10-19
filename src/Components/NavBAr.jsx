@@ -191,9 +191,10 @@ function NavBAr() {
                 <Image
                   src={logo}
                   alt="logo"
-                  className={styles.image}
+                  className="image"
                   loading="eager"
                   fill={false}
+                  priority={true}
                 />
               </li>
               <Box className={styles.boxStyle}>
@@ -223,7 +224,13 @@ function NavBAr() {
           <Box sx={style.smallAppBar}>
             <AppBar position="static" sx={style.appBars} bgcolor="#2296E6">
               <Box sx={style.appStyle}>
-                <Image src={logo} width={100} height={100} />
+                <Image
+                  src={logo}
+                  width={100}
+                  height={100}
+                  alt="logo"
+                  priority={true}
+                />
                 {!open && (
                   <MenuIcon sx={{ fontSize: "2rem" }} onClick={openMenu} />
                 )}

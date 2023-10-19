@@ -15,8 +15,6 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTiktok } from "@fortawesome/free-brands-svg-icons";
 
 function Footer() {
   const [isMouseInside, setIsMouseInside] = useState([false, false, false]);
@@ -116,7 +114,7 @@ function Footer() {
   return (
     <>
       <Stack className={styles.footer}>
-        <Container sx={responsive.container}>
+        <Container className={responsive.container}>
           <Grid container sx={style.footerAlign}>
             <Grid item lg={2}>
               <Box>
@@ -125,6 +123,7 @@ function Footer() {
                   width={212}
                   height={144}
                   style={{ width: "212px", height: "144px" }}
+                  alt="oops"
                 />
               </Box>
             </Grid>
@@ -200,7 +199,7 @@ function Footer() {
             marginY: "1rem",
           }}
         />
-        <Container sx={responsive.container}>
+        <Container className={responsive.container}>
           <Box sx={style.copright}>
             <Typography sx={{ color: "grey" }}>
               © Copyright Hammer-On Studios 2022. All Right Reserved.

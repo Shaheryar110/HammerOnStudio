@@ -42,7 +42,6 @@ function AboutContent() {
     <>
       <Head>
         <link rel="icon" href="/favicon.webp" />
-        <title>About</title>
       </Head>
       <Box sx={style.image}>
         <Container sx={style.container}>
@@ -72,6 +71,7 @@ function AboutContent() {
                   fill={false}
                   style={{ width: "100%", height: "100%" }}
                   className={styles.imgs}
+                  alt="oops"
                 />
               </Box>
             </Grid>

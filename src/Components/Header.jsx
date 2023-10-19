@@ -83,7 +83,12 @@ const HeaderTop = () => {
                   Need Any Roofing Help?
                 </Typography>
                 <Typography sx={style.topSecondText}>
-                  CALL US : (845) 837-2616
+                  <Link
+                    href={"(845) 837-2616"}
+                    style={{ color: "inherit", textDecoration: "none" }}
+                  >
+                    CALL US : (845) 837-2616
+                  </Link>
                 </Typography>
               </Box>
             </Box>
@@ -96,7 +101,12 @@ const HeaderTop = () => {
                   Email Us:
                 </Typography>
                 <Typography sx={style.topSecondText}>
-                  info@hammeronstudios.com
+                  <Link
+                    href={"info@hammeronstudios.com"}
+                    style={{ color: "inherit", textDecoration: "none" }}
+                  >
+                    info@hammeronstudios.com
+                  </Link>
                 </Typography>
               </Box>
             </Box>

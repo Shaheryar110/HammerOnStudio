@@ -15,6 +15,7 @@ import { Roboto } from "next/font/google";
 import { URI } from "../../../src/uri";
 import Head from "next/head";
 import blogCss from "../../Components/Blogs/blog.module.css";
+import Script from "next/script";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -104,17 +105,17 @@ function slug() {
   return (
     <>
       <Head>
-        <script
+        <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-4XF3Y3MXGZ"
-        ></script>
-        <script>
+        ></Script>
+        <Script>
           window.dataLayer = window.dataLayer || [];
           {function gtag() {
             dataLayer.push(arguments);
           }}
           gtag('js', new Date()); gtag('config', 'G-4XF3Y3MXGZ');
-        </script>
+        </Script>
         <link rel="icon" href="/favicon.webp" />
         <title>{parameter}</title>
       </Head>
@@ -140,6 +141,7 @@ function slug() {
                       style={{ width: "100%", height: "100%" }}
                       width={900}
                       height={600}
+                      alt="oops"
                       className={blogCss.zoomableDesc}
                     />
                     <div className={blogCss.overlay}></div>

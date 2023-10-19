@@ -81,9 +81,10 @@ function HeroCarousel() {
           <div style={{ position: "relative" }}>
             <Image
               src={slider1}
-              style={{ width: "100%" }}
+              style={{ width: "auto" }}
               width={1920}
               height={730}
+              alt="oops"
             />
             <Container className={responsive.container}>
               <Box sx={style.overText}>
@@ -115,7 +116,7 @@ function HeroCarousel() {
             </Container>
           </div>
           <div>
-            <Image src={slider2} width={1920} height={730} />
+            <Image src={slider2} width={1920} height={730} alt="oops" />
             <Container className={responsive.container}>
               <Box sx={style.overText}>
                 <Box sx={style.subBox}>
@@ -149,6 +150,7 @@ function HeroCarousel() {
             width={1920}
             height={730}
             loading="eager"
+            alt="ops"
           />
           <Container className={responsive.container}>
             <Box sx={style.overText}>

@@ -47,7 +47,11 @@ function PrivacyPolicy() {
         <StripSection heading="PRIVACY POLICY" />
         <Box sx={style.margins}>
           <Box sx={style.overlay}>
-            <Image src={tag} style={{ width: "100%", height: "100%" }} />
+            <Image
+              src={tag}
+              alt="oops"
+              style={{ width: "100%", height: "100%" }}
+            />
           </Box>
           <Container sx={style.container}>
             <BeforeHeadSmall text="PRIVACY POLICY" />

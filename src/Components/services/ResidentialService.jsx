@@ -287,13 +287,12 @@ function CommercialService() {
     <>
       <Head>
         <link rel="icon" href="/favicon.webp" />
-        <title>Residential Services</title>
       </Head>
       <Box sx={style.image}>
         <Stripe heading="RESIDENTIAL SERVICE" />
         <Container className={responsive.container}>
           <Box sx={style.margins}>
-            {data.map((data) => {
+            {data.map((data, index) => {
               return (
                 <ServiceGridSection
                   smallHeading={data.smallHeading}
@@ -302,6 +301,7 @@ function CommercialService() {
                   para2={data.para2}
                   order={data.order}
                   src={data.src}
+                  key={index}
                 />
               );
             })}
@@ -309,72 +309,6 @@ function CommercialService() {
         </Container>
         <Testimonials />
         <ContactForm1 />
-        {/* <Grid container sx={{ justifyContent: "center", alignItems: "center" }}>
-          <Grid item lg={3}>
-            <Image src={new1} />
-          </Grid>
-          <Grid item lg={5}>
-            <Box sx={style.boxSetting}>
-              <Typography variant="h4" sx={style.h4}>
-                CONTACT FORM
-              </Typography>
-              <Typography variant="h3" sx={style.h3}>
-                Need Any Home Repair Help?
-              </Typography>
-              <Box sx={style.three}>
-                <input
-                  className={styles.feild}
-                  placeholder="Name"
-                  value={name}
-                  onChange={nameHandler}
-                />
-                <input
-                  className={styles.feild1}
-                  placeholder="Email"
-                  onChange={handleInputChangeEmail}
-                  value={email}
-                />
-              </Box>
-              <Button
-                onClick={handleSubmit}
-                sx={style.buton}
-                className={poppins.className}
-                onMouseEnter={enter}
-                onMouseOut={out}
-              >
-                <motion.div
-                  initial={{ x: 0, opacity: 0 }}
-                  whileInView={{ opacity: 1, x: active ? -5 : 10 }}
-                  transition={{ duration: 0.5 }}
-                  onMouseEnter={enter}
-                  onMouseOut={out}
-                >
-                  {" "}
-                  SUBSCRIBE
-                </motion.div>
-
-                <motion.div
-                  initial={{ x: -10, opacity: 0 }}
-                  whileInView={{ opacity: active ? 1 : 0, x: -5 }}
-                  transition={{ duration: 0.5 }}
-                  onMouseEnter={enter}
-                  onMouseOut={out}
-                >
-                  <KeyboardDoubleArrowRightIcon
-                    sx={{
-                      transition: "all ease 0.5s",
-                      display: "flex",
-                      alignSelf: "center",
-                    }}
-                  />
-                </motion.div>
-              </Button>
-            </Box>
-          </Grid>
-          <Grid item lg={3}>
-            <Image src={house} />
-          </Grid>
-        </Grid> */}
       </Box>
     </>
   );

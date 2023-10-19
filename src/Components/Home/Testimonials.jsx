@@ -24,7 +24,7 @@ function Testimonials() {
     sliderCard: {
       padding: "1.5rem",
       width: "90%",
-      height: "300px",
+      height: { xl: "315px", lg: "345px", xs: "315px" },
       boxShadow: "2px 4px 13px 3px rgba(0,0,0,0.3)",
       backgroundColor: "white",
       marginX: "2rem",
@@ -106,6 +106,8 @@ function Testimonials() {
             src={shape34}
             fill={false}
             style={{ width: "100%", height: "100%" }}
+            alt="oops"
+            priority={true}
           />
         </Box>
 
@@ -132,12 +134,14 @@ function Testimonials() {
                       width={100}
                       height={100}
                       style={{ width: "60px", height: "60px" }}
+                      alt="oops"
                     />
                     <Image
                       src={shape36}
                       width={100}
                       height={100}
                       style={{ width: "60px", height: "60px" }}
+                      alt="oops"
                     />
 
                     <Typography sx={style.content}>{data}</Typography>
@@ -180,12 +184,14 @@ function Testimonials() {
                 width={100}
                 height={100}
                 style={{ width: "60px", height: "60px" }}
+                alt="oops"
               />
               <Image
                 src={shape36}
                 width={100}
                 height={100}
                 style={{ width: "60px", height: "60px" }}
+                alt="oops"
               />
 
               <Typography sx={style.content}>{data}</Typography>

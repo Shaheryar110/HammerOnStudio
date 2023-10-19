@@ -137,7 +137,7 @@ function ReadyToGetCard() {
               <Box sx={style.artic}>
                 <Box sx={style.mediass}>
                   <Box sx={style.span1}>
-                    <Image src={chat} fill={false} />
+                    <Image src={chat} fill={false} alt="oops" />
                   </Box>
                   <div className={styles.mediaBod}>
                     <Typography variant="h4" sx={style.cardText}>
@@ -153,7 +153,7 @@ function ReadyToGetCard() {
               <Box sx={style.smallCard}>
                 <Box sx={style.mediass1}>
                   <Box sx={style.span1}>
-                    <Image src={chat} fill={false} />
+                    <Image src={chat} fill={false} alt="oops" />
                   </Box>
                   <div className={styles.mediaBod}>
                     <Typography variant="h4" className={styles.cardText}>

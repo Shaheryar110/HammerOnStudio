@@ -184,7 +184,8 @@ function WhatWeDo() {
                     <Image
                       src={services}
                       fill={false}
-                      style={{ width: "100%" }}
+                      style={{ width: "auto", height: "auto" }}
+                      alt="oops"
                     />
                   </figure>
                   <Box sx={{ position: "relative" }}>
@@ -192,6 +193,7 @@ function WhatWeDo() {
                       <Image
                         src={cardSvg1}
                         fill={false}
+                        alt="oops"
                         style={{ width: "100%", height: "100%" }}
                       />
                     </Box>
@@ -228,13 +230,19 @@ function WhatWeDo() {
                   onMouseLeave={onMouseLeave}
                 >
                   <figure className={styles.fig}>
-                    <Image src={card2} fill={false} style={{ width: "100%" }} />
+                    <Image
+                      src={card2}
+                      fill={false}
+                      alt="oops"
+                      style={{ width: "auto", height: "auto" }}
+                    />
                   </figure>
                   <Box sx={{ position: "relative" }}>
                     <Box sx={style.svg}>
                       <Image
                         src={cardSvg2}
                         fill={false}
+                        alt="oops"
                         style={{ width: "100%", height: "100%" }}
                       />
                     </Box>

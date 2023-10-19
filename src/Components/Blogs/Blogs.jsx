@@ -84,7 +84,6 @@ function Blogs({ posts }) {
     setLoader(true);
     axios.get(`https://${URI}:5000/api/blogs`).then((res) => {
       setPic(res.data);
-      console.log(pic, "pic");
       setLoader(false);
     });
   }, []);
@@ -92,7 +91,6 @@ function Blogs({ posts }) {
     <>
       <Head>
         <link rel="icon" href="/favicon.webp" />
-        <title>Blogs</title>
       </Head>
       {loader && (
         <Box
@@ -116,19 +114,20 @@ function Blogs({ posts }) {
               <HeadingH2 text="Latest News" align="center" />
             </Box>
             <Grid container justifyContent="center">
-              {pic?.map((data) => {
+              {pic?.map((data, index) => {
                 return (
-                  <Grid item lg={4} md={6}>
+                  <Grid item lg={4} md={6} key={index}>
                     <Box sx={style.cardBox}>
                       <Box className={styles.cardImg}>
                         <Box>
                           <Image
                             src={data?.image}
-                            style={{ width: "100%" }}
+                            style={{ width: "100%", height: "auto" }}
                             width={420}
                             height={300}
                             alt={data.id}
                             priority={true}
+                            // alt="oops"
                             className={blogCss.zoomableImage}
                           />
                         </Box>

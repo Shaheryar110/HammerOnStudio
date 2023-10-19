@@ -3,7 +3,7 @@ import { Container, Box, Typography, Stack, Grid } from "@mui/material";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-function GalleryBox({ src, category, service }) {
+function GalleryBox({ src, category, service, priority }) {
   const style = {
     center: {
       justifyContent: "center",
@@ -70,7 +70,9 @@ function GalleryBox({ src, category, service }) {
           src={src}
           height={300}
           width={300}
-          style={{ width: "100%", height: "300px" }}
+          style={{ width: "100%", height: "auto" }}
+          alt="ops"
+          priority={priority ? priority : false}
         />
         <Box sx={style.galleryOverlay}>
           <Box>

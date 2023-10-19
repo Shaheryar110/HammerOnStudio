@@ -372,8 +372,12 @@ function Form() {
                           label="State"
                           onChange={handleChange}
                         >
-                          {cityData.map((name) => {
-                            return <MenuItem value={name}>{name}</MenuItem>;
+                          {cityData.map((name, index) => {
+                            return (
+                              <MenuItem key={index} value={name}>
+                                {name}
+                              </MenuItem>
+                            );
                           })}
                         </Select>
                       </FormControl>
@@ -400,9 +404,11 @@ function Form() {
                           value={service}
                           onChange={handleChangeService}
                         >
-                          {serviceData.map((service) => {
+                          {serviceData.map((service, index) => {
                             return (
-                              <MenuItem value={service}>{service}</MenuItem>
+                              <MenuItem key={index} value={service}>
+                                {service}
+                              </MenuItem>
                             );
                           })}
                         </Select>
@@ -420,7 +426,7 @@ function Form() {
                     />
                   </Grid>
                 </Grid>
-                <Box clasName={poppins.className}>
+                <Box className={poppins.className}>
                   <Button sx={style.btn} onClick={handleSubmit}>
                     SUBMIT
                   </Button>

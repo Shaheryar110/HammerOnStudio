@@ -54,7 +54,7 @@ function WorkSection() {
   return (
     <>
       <Stack sx={style.workSec}>
-        <Container sx={responsive.container}>
+        <Container className={responsive.container}>
           <Grid
             container
             columnSpacing={4}

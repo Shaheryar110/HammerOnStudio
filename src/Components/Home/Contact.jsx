@@ -423,8 +423,12 @@ function Contact() {
                           label="State"
                           onChange={handleChange}
                         >
-                          {cityData.map((name) => {
-                            return <MenuItem value={name}>{name}</MenuItem>;
+                          {cityData.map((name, index) => {
+                            return (
+                              <MenuItem key={index} value={name}>
+                                {name}
+                              </MenuItem>
+                            );
                           })}
                         </Select>
                       </FormControl>
@@ -451,9 +455,11 @@ function Contact() {
                           value={service}
                           onChange={handleChangeService}
                         >
-                          {serviceData.map((service) => {
+                          {serviceData.map((service, index) => {
                             return (
-                              <MenuItem value={service}>{service}</MenuItem>
+                              <MenuItem key={index} value={service}>
+                                {service}
+                              </MenuItem>
                             );
                           })}
                         </Select>
@@ -472,7 +478,7 @@ function Contact() {
                   </Grid>
 
                   <Button
-                    clasName={poppins.className}
+                    className={poppins.className}
                     sx={style.buton}
                     onClick={handleSubmit}
                   >

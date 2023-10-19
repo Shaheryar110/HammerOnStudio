@@ -19,7 +19,7 @@ function ContactForm1() {
   const style = {
     main: {
       backgroundColor: "#3FBDF9",
-      marginTop: "3rem",
+      marginTop: { lg: "16rem", xs: "3rem" },
       position: "relative",
       height: "100%",
     },
@@ -124,7 +124,7 @@ function ContactForm1() {
             justifyContent={{ lg: "start", xs: "center" }}
           >
             <Box sx={style.helpering}>
-              <Image src={new1} />
+              <Image src={new1} alt="oops" />
             </Box>
             <Grid item xl={5} lg={5}></Grid>
             <Grid item lg={7} xs={12}>
