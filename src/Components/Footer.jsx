@@ -205,10 +205,20 @@ function Footer() {
               © Copyright Hammer-On Studios 2022. All Right Reserved.
             </Typography>
             <Box sx={style.footerPage}>
-              <Link href="/privacy-policy-2" style={{ textDecoration: "none" }}>
+              <Link
+                href="/privacy-policy-2"
+                style={{ textDecoration: "none", color: "white" }}
+              >
                 <Typography sx={style.page1}>Privacy Policy</Typography>
               </Link>
-              <Link href="/terms-conditions" style={{ textDecoration: "none" }}>
+              <Link
+                href="/terms-conditions"
+                style={{
+                  textDecoration: "none",
+                  color: "white",
+                  listStyle: "none",
+                }}
+              >
                 <Typography sx={style.page}>Terms & Condition</Typography>
               </Link>
             </Box>

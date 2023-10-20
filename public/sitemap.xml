@@ -1,0 +1,50 @@
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+
+<url>
+  <loc>https://hammeronstudios.com/</loc>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://hammeronstudios.com/about/</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hammeronstudios.com/commercial-services/</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hammeronstudios.com/residential-services/</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hammeronstudios.com/our-work/</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hammeronstudios.com/blogs/</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hammeronstudios.com/contact/</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hammeronstudios.com/get-a-quote/</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hammeronstudios.com/privacy-policy-2/</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hammeronstudios.com/terms-conditions/</loc>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
