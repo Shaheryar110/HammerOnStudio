@@ -18,7 +18,8 @@ import Head from "next/head";
 import blogCss from "./blog.module.css";
 import CircularProgress from "@mui/material/CircularProgress";
 import Skeleton from "@mui/material/Skeleton";
-function Blogs({ posts }) {
+
+function Blogs() {
   const style = {
     container: {
       maxWidth: { lg: "1450px", md: "1250px" },
@@ -79,13 +80,26 @@ function Blogs({ posts }) {
   };
 
   const [pic, setPic] = useState([]);
+  // const [pic, setPic] = useState(blogs);
+
   const [loader, setLoader] = useState(true);
-  useEffect(() => {
+  // useEffect(() => {
+  //
+  //   axios.get(`https://${URI}:5000/api/blogs`).then((res) => {
+  //     setPic(res.data);
+  //     setLoader(false);
+  //   });
+  // }, []);
+  const blogsFunc = async () => {
     setLoader(true);
-    axios.get(`https://${URI}:5000/api/blogs`).then((res) => {
-      setPic(res.data);
-      setLoader(false);
-    });
+    const res = await fetch(`https://${URI}:5000/api/blogs`);
+
+    const result = await res.json();
+    setPic(result);
+    setLoader(false);
+  };
+  useEffect(() => {
+    blogsFunc();
   }, []);
   return (
     <>

@@ -1,5 +1,6 @@
 import Blogs from "@/Components/Blogs/Blogs";
 import Layout from "@/Components/Layout";
+import { URI } from "@/uri";
 import Head from "next/head";
 import Script from "next/script";
 import React from "react";

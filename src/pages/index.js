@@ -12,7 +12,7 @@ import Head from "next/head";
 import Script from "next/script";
 import { webSchema } from "@/Schema/WebsiteSchema";
 import { orgSchema } from "@/Schema/OrgSchema";
-import { BissunessSchema } from "@/Schema/OrgSchema";
+import { BissunessSchema } from "../Schema/LocalBissunessSchema";
 
 export default function Home() {
   return (
@@ -72,4 +72,11 @@ export default function Home() {
       </main>
     </>
   );
+}
+export async function getServerSideProps() {
+  const about = "about";
+
+  return {
+    props: { about },
+  };
 }

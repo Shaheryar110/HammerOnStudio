@@ -28,3 +28,10 @@ function getaqoute() {
 }
 
 export default getaqoute;
+export async function getServerSideProps() {
+  const about = "about";
+
+  return {
+    props: { about },
+  };
+}

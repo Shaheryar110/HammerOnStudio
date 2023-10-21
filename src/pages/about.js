@@ -46,3 +46,10 @@ function about() {
 }
 
 export default about;
+export async function getServerSideProps() {
+  const about = "about";
+
+  return {
+    props: { about },
+  };
+}
