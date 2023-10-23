@@ -70,7 +70,7 @@ function WorkSection() {
                 <Box className={styles.workTag}>
                   <Image
                     src={worker}
-                    alt="oops"
+                    alt="Orange County Office Renovation Contractor"
                     fill={false}
                     style={{ height: "100%", width: "100%" }}
                   />

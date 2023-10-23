@@ -45,14 +45,17 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.webp" />
         <Script
+          id="schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webSchema) }}
         />
         <Script
+          id="schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
         />
         <Script
+          id="schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(BissunessSchema) }}
         />

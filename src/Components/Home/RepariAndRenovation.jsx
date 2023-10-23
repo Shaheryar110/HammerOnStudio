@@ -217,20 +217,20 @@ function RepariAndRenovation() {
                   <Box sx={style.figure}>
                     <Image
                       src={white}
-                      alt="white"
+                      alt="custom commercial office remodeling in NYC"
                       className={styles.img1}
                       fill={false}
                       style={{ height: "330px", width: "60%" }}
                     />
                     <Image
                       src={yellw}
-                      alt="white"
+                      alt="commercial bathroom remodeling contractors in New York"
                       className={styles.img2}
                       fill={false}
                     />
                     <Image
                       src={dril}
-                      alt="white"
+                      alt="roof repair"
                       className={styles.img3}
                       fill={false}
                     />

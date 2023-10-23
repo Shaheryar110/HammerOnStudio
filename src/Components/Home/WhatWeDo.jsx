@@ -185,7 +185,7 @@ function WhatWeDo() {
                       src={services}
                       fill={false}
                       style={{ width: "auto", height: "auto" }}
-                      alt="oops"
+                      alt="home repair"
                     />
                   </figure>
                   <Box sx={{ position: "relative" }}>
@@ -233,7 +233,7 @@ function WhatWeDo() {
                     <Image
                       src={card2}
                       fill={false}
-                      alt="oops"
+                      alt="commercial property remodeling"
                       style={{ width: "auto", height: "auto" }}
                     />
                   </figure>

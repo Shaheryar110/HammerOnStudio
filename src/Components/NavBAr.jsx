@@ -190,7 +190,7 @@ function NavBAr() {
               <li className={styles.liImage} id={styles.margin}>
                 <Image
                   src={logo}
-                  alt="logo"
+                  alt="Logo"
                   className="image"
                   loading="eager"
                   fill={false}
@@ -228,7 +228,7 @@ function NavBAr() {
                   src={logo}
                   width={100}
                   height={100}
-                  alt="logo"
+                  alt="Logo"
                   priority={true}
                 />
                 {!open && (

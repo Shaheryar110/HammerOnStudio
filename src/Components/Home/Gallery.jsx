@@ -161,6 +161,7 @@ function Gallery({ border }) {
                   <Grid item lg={6}>
                     <GalleryBox
                       src={roof1}
+                      alt="Flat Roof Repair Services in Dutchess County"
                       category="Factory,Residential"
                       service="Roof Construction"
                     />
@@ -170,12 +171,14 @@ function Gallery({ border }) {
                       src={roof2}
                       category="Factory,Residential"
                       service="Roof Construction"
+                      alt=" Flat Roof Repair NYC"
                     />
                   </Grid>
                   <Grid item lg={12}>
                     <GalleryBox
                       src={roof6}
                       category="Factory,Residential"
+                      alt="Roof Repair Services in Orange County"
                       service="Renovation Roof"
                     />
                   </Grid>
@@ -189,6 +192,7 @@ function Gallery({ border }) {
                       priority={true}
                       category="Factory,Residential"
                       service="Modern Roofing"
+                      alt="Roofing Solutions in Ulster County"
                     />
                   </Grid>
                   <Grid item lg={6}>
@@ -196,6 +200,7 @@ function Gallery({ border }) {
                       src={roof4}
                       service="Classic Roofing"
                       category="Factory,Residential"
+                      alt="Home Renovation Contractors NYC"
                     />
                   </Grid>
                   <Grid item lg={6}>
@@ -203,6 +208,7 @@ function Gallery({ border }) {
                       src={roof5}
                       service="Repair Roof"
                       category="Factory,Residential"
+                      alt="Roofing Solutions in Ulster County"
                     />
                   </Grid>
                 </Grid>
@@ -215,6 +221,7 @@ function Gallery({ border }) {
                 <Grid container>
                   <Grid item lg={6}>
                     <GalleryBox
+                      alt="Flat Roof Repair Services in Dutchess County"
                       src={roof1}
                       service="Roof Construction"
                       category="Factory,Residential"
@@ -225,6 +232,7 @@ function Gallery({ border }) {
                       src={roof2}
                       service="Roof Construction"
                       category="Factory,Residential"
+                      alt=" Flat Roof Repair NYC"
                     />
                   </Grid>
                 </Grid>
@@ -234,6 +242,7 @@ function Gallery({ border }) {
                 <GalleryBox
                   src={roof6}
                   service="Renovation Roof"
+                  alt="Roof Repair Services in Orange County"
                   category="Factory,Residential"
                 />
               </Grid>
@@ -246,6 +255,7 @@ function Gallery({ border }) {
                   <Grid item lg={3}>
                     <GalleryBox
                       src={roof1}
+                      alt="Flat Roof Repair Services in Dutchess County"
                       service="Roof Construction"
                       category="Factory,Residential"
                     />
@@ -256,6 +266,7 @@ function Gallery({ border }) {
                       priority={true}
                       service="Modern Roofing"
                       category="Factory,Residential"
+                      alt="Roofing Solutions in Ulster County"
                     />
                   </Grid>
                   <Grid item lg={3}>
@@ -263,6 +274,7 @@ function Gallery({ border }) {
                       src={roof4}
                       service="Roof Construction"
                       category="Factory,Residential"
+                      alt="Home Renovation Contractors NYC"
                     />
                   </Grid>
                 </Grid>
@@ -273,6 +285,7 @@ function Gallery({ border }) {
                     <GalleryBox
                       src={roof6}
                       service="Renovation Roof"
+                      alt="Roof Repair Services in Orange County"
                       category="Factory,Residential"
                     />
                   </Grid>
@@ -281,6 +294,7 @@ function Gallery({ border }) {
                       src={roof5}
                       service="Repair Roof"
                       category="Factory,Residential"
+                      alt="Roofing Solutions in Ulster County"
                     />
                   </Grid>
                 </Grid>
@@ -294,6 +308,7 @@ function Gallery({ border }) {
                   <Grid item lg={4}>
                     <GalleryBox
                       src={roof1}
+                      alt="Flat Roof Repair Services in Dutchess County"
                       service="Roof Construction"
                       category="Factory,Residential"
                     />
@@ -301,6 +316,7 @@ function Gallery({ border }) {
                   <Grid item lg={8}>
                     <GalleryBox
                       src={roof3}
+                      alt="Roofing Solutions in Ulster County"
                       priority={true}
                       service="Modern Roofing"
                       category="Factory,Residential"
@@ -312,6 +328,7 @@ function Gallery({ border }) {
                 <GalleryBox
                   src={roof6}
                   service="Renovation Roof"
+                  alt="Roof Repair Services in Orange County"
                   category="Factory,Residential"
                 />
               </Grid>
@@ -324,6 +341,7 @@ function Gallery({ border }) {
                   <Grid item lg={6}>
                     <GalleryBox
                       src={roof4}
+                      alt="Home Renovation Contractors NYC"
                       service="Classic Roofing"
                       category="Factory,Residential"
                     />
@@ -331,6 +349,7 @@ function Gallery({ border }) {
                   <Grid item lg={6}>
                     <GalleryBox
                       src={roof5}
+                      alt="Roofing Solutions in Ulster County"
                       category="Factory,Residential"
                       service="Repair Roof"
                     />

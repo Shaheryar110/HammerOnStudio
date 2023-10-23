@@ -84,7 +84,7 @@ function HeroCarousel() {
               style={{ width: "auto" }}
               width={1920}
               height={730}
-              alt="oops"
+              alt="log home repair and restoration"
             />
             <Container className={responsive.container}>
               <Box sx={style.overText}>
@@ -116,7 +116,12 @@ function HeroCarousel() {
             </Container>
           </div>
           <div>
-            <Image src={slider2} width={1920} height={730} alt="oops" />
+            <Image
+              src={slider2}
+              width={1920}
+              height={730}
+              alt="office renovation contractor"
+            />
             <Container className={responsive.container}>
               <Box sx={style.overText}>
                 <Box sx={style.subBox}>

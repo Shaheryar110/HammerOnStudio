@@ -92,15 +92,15 @@ function slug() {
         console.log(res, "res");
         setDetailBlogs(res.data);
       });
-  }, [parameter]);
+  }, [parameter, router]);
   useEffect(() => {
     console.log(detailBlog, "curent");
   }, [detailBlog]);
   const nextBlog = () => {
-    router.push(`/${detailBlog?.nextBlog?.slug}`);
+    router.push(`/blogs/${detailBlog?.nextBlog?.slug}`);
   };
   const PrevBlog = () => {
-    router.push(`/${detailBlog?.previousBlog?.slug}`);
+    router.push(`/blogs/${detailBlog?.previousBlog?.slug}`);
   };
   return (
     <>
