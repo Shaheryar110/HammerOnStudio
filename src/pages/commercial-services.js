@@ -42,10 +42,3 @@ function commercialService() {
 }
 
 export default commercialService;
-export async function getServerSideProps() {
-  const about = "about";
-
-  return {
-    props: { about },
-  };
-}

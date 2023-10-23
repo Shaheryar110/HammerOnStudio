@@ -88,10 +88,3 @@ export default function Home() {
     </>
   );
 }
-export async function getServerSideProps() {
-  const about = "about";
-
-  return {
-    props: { about },
-  };
-}

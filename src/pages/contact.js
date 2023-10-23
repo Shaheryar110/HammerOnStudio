@@ -32,10 +32,3 @@ function contact() {
 }
 
 export default contact;
-export async function getServerSideProps() {
-  const about = "about";
-
-  return {
-    props: { about },
-  };
-}
