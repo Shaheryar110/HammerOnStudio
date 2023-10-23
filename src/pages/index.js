@@ -47,7 +47,19 @@ export default function Home() {
         <Script
           id="schema"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org/",
+              "@type": "WebSite",
+              name: "Hammer On Studios",
+              url: "https://hammeronstudios.com/",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: "https://hammeronstudios.com/{search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
         />
         <Script
           id="schema"
