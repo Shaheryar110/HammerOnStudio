@@ -83,24 +83,23 @@ function Blogs() {
   // const [pic, setPic] = useState(blogs);
 
   const [loader, setLoader] = useState(true);
-  // useEffect(() => {
-  //
-  //   axios.get(`https://${URI}:5000/api/blogs`).then((res) => {
-  //     setPic(res.data);
-  //     setLoader(false);
-  //   });
-  // }, []);
-  const blogsFunc = async () => {
-    setLoader(true);
-    const res = await fetch(`https://${URI}:5000/api/blogs`);
-
-    const result = await res.json();
-    setPic(result);
-    setLoader(false);
-  };
   useEffect(() => {
-    blogsFunc();
+    axios.get(`https://${URI}:3000/api/blogs`).then((res) => {
+      setPic(res.data);
+      setLoader(false);
+    });
   }, []);
+  // const blogsFunc = async () => {
+  //   setLoader(true);
+  //   const res = await fetch(`https://${URI}:5001/api/blogs`);
+
+  //   const result = await res.json();
+  //   setPic(result);
+  //   setLoader(false);
+  // };
+  // useEffect(() => {
+  //   blogsFunc();
+  // }, []);
   return (
     <>
       <Head>
@@ -126,6 +125,42 @@ function Blogs() {
           <Container sx={style.container}>
             <Box sx={style.marginHead}>
               <HeadingH2 text="Latest News" align="center" />
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  width: "100%",
+                }}
+              >
+                <Typography
+                  sx={{
+                    paddingY: "12px",
+                    maxWidth: "700px",
+                    textAlign: "center",
+                  }}
+                >
+                  Read our blogs on topics like{" "}
+                  <span style={{ fontWeight: 600 }}>
+                    ‘What is green basement remodeling'?{" "}
+                  </span>
+                  And{" "}
+                  <span style={{ fontWeight: 600 }}>
+                    'How to find the best office renovation contractor?'
+                  </span>
+                </Typography>
+                <Typography
+                  sx={{
+                    paddingY: "12px",
+                    maxWidth: "700px",
+                    textAlign: "center",
+                  }}
+                >
+                  Moreover, weekly blogs include exploring Quality Kitchen and
+                  Bath Remodels in Rockland County and Quality Kitchen and Bath
+                  Remodels in Putnam County.{" "}
+                </Typography>
+              </Box>
             </Box>
             <Grid container justifyContent="center">
               {pic?.map((data, index) => {
