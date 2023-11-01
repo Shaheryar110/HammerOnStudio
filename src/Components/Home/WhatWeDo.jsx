@@ -151,11 +151,15 @@ function WhatWeDo() {
             </Grid>
             <Grid item lg={6}>
               <Typography sx={style.par}>
+                Our expertise lies in flat roof repair and log home repair and
+                restoration!
+              </Typography>
+              {/* <Typography sx={style.par}>
                 We provide facility renovation services that are designed to
                 utilize your location in the best possible way, helping you
                 improve the aesthetics, functionality, and value of your
                 property.
-              </Typography>
+              </Typography> */}
               <Typography sx={style.par}>
                 From simple remodeling to adding an extension, Hammer-On Studios
                 has adequate skills and knowledge to deliver all your projects

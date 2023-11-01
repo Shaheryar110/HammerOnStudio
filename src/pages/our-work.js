@@ -38,6 +38,18 @@ function work() {
     spaces: {
       marginY: "5rem",
     },
+    newText: {
+      paddingY: "12px",
+      opacity: 0.8,
+      textAlign: "center",
+      maxWidth: "500px",
+    },
+    newTxtBox: {
+      width: "100%",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    },
   };
   return (
     <>
@@ -81,6 +93,12 @@ function work() {
             <Typography sx={style.mainhead} className={inter.className}>
               And Recent Works
             </Typography>
+            <Box sx={style.newTxtBox}>
+              <Typography className={inter.className} sx={style.newText}>
+                Our successful projects include roof repair and flat roof repair
+                in NYC. We also offer roof Repair Services in Orange County.
+              </Typography>
+            </Box>
             <Box sx={style.margiins}>
               <Gallery border={true} />
             </Box>

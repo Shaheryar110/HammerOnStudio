@@ -68,10 +68,13 @@ function FourHoverCards({ background }) {
             </Grid>
             <Grid item lg={6}>
               <Typography sx={style.slogan} className={inter.className}>
-                At Hammer-On Studios, we specialize in delivering high-end
+                Whether you want home repair services in Rockland County or
+                leakage repair experts in Putnam County, we are just a call
+                away.
+                {/* At Hammer-On Studios, we specialize in delivering high-end
                 commercial and home renovation services in New York. We achieve
                 this by utilizing our skills to deliver you a professional
-                remodeling service that is focused on quality in every way.
+                remodeling service that is focused on quality in every way. */}
               </Typography>
               <ul className={inter.className} style={{ paddingLeft: "2rem" }}>
                 <li

@@ -44,7 +44,7 @@ export default function Home() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.webp" />
-        <Script
+        <script
           id="schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -60,17 +60,30 @@ export default function Home() {
               },
             }),
           }}
-        />
-        <Script
+        ></script>
+        <script
           id="schema"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
-        />
-        <Script
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Hammer On Studios",
+              alternateName: "Hammer On Studios",
+              url: "https://hammeronstudios.com/",
+              logo: "https://hammeronstudios.com/_next/static/media/logo.395bb741.webp",
+              sameAs: [
+                "https://www.facebook.com/HammerOnStudios",
+                "https://www.instagram.com/hammeronstudiosllc/",
+              ],
+            }),
+          }}
+        ></script>
+        <script
           id="schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(BissunessSchema) }}
-        />
+        ></script>
       </Head>
       <main>
         <Layout>

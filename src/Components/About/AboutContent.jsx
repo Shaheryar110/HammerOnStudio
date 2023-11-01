@@ -50,11 +50,13 @@ function AboutContent() {
               <BeforeHeadSmall text="About Us" />
               <HeadingH2 text="About Hammer-On Studios" />
               <Typography sx={style.para1}>
-                With more than two decades of experience, Hammer-On Studios is a
+                The most reliable home renovation contractors in NYC who are
+                also offering custom commercial office remodeling in NYC!
+                {/* With more than two decades of experience, Hammer-On Studios is a
                 commercial and residential firm that specializes in building
                 roofs, floors, siding, retaining walls, painting, kitchen and
                 bathroom renovations, basement remodeling, decks, crown
-                moulding, and much more.
+                moulding, and much more. */}
               </Typography>
               <Typography sx={style.para1}>
                 Our team of professionals is dedicated to making your facility

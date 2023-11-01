@@ -41,8 +41,8 @@ function CommercialService() {
     {
       smallHeading: "SHORT INTRO ABOUT",
       mainHeading: "Roofs",
-      para1:
-        "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
+      para1: "Specialists of Flat Roof Repair Services in Dutchess County!",
+      // "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
       src: res01,
     },
     {
@@ -83,8 +83,8 @@ function CommercialService() {
       smallHeading: "SHORT INTRO ABOUT",
       mainHeading: "Kitchen and Bathroom Renovations",
       para1:
-        "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
-
+        // "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
+        "Providing quality kitchen and bath remodels to our customers!",
       src: res06,
       order: true,
     },
@@ -92,7 +92,8 @@ function CommercialService() {
       smallHeading: "SHORT INTRO ABOUT",
       mainHeading: "Basement Remodeling",
       para1:
-        "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
+        "Offering Log Home Repair and Restoration in Orange County at unbelievably low prices!",
+      // "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
       src: res07,
     },
     {

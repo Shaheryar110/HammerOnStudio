@@ -31,7 +31,8 @@ function CommercialService() {
       smallHeading: "SHORT INTRO ABOUT",
       mainHeading: "Office renovation and expansion",
       para1:
-        "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
+        "We take pride in being the most experienced office renovation contractor in New York, as well as Orange County Office Renovation Contractors.  Our services include custom commercial office remodeling in NYC and more!",
+      // "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
       para2:
         "Our experienced and knowledgeable team of contractors can alter, renovate, and expand any business space to meet our client’s operational needs. Even if you operate in an awkwardly-shaped office, we can turn it functional and visually appealing with our state-of-the-art services. We use top-tier products and futuristic equipment to finish all our clients’ renovation projects on time.",
       src: fourMen,
@@ -50,7 +51,8 @@ function CommercialService() {
       smallHeading: "SHORT INTRO ABOUT",
       mainHeading: "Commercial Remodeling",
       para1:
-        "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
+        "From Green Basement Remodeling in Ulster County to Commercial Bathroom Remodeling Contractors in New York, our team at Hammer-On Studious does it all!",
+      // "If you’re not happy with your current business space or planning to expand your facility, it’s time to contact Hammer-On Studios. We specialize in offering end-to-end office renovation and expansion solutions optimized to solve your core problems. Thus, making us the optimal choice for your workplace renovation as the most effective office renovation contractor throughout New York.",
       para2:
         "Our experienced and knowledgeable team of contractors can alter, renovate, and expand any business space to meet our client’s operational needs. Even if you operate in an awkwardly-shaped office, we can turn it functional and visually appealing with our state-of-the-art services. We use top-tier products and futuristic equipment to finish all our clients’ renovation projects on time.",
       src: fourMen2,

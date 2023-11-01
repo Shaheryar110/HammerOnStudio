@@ -190,12 +190,15 @@ function RepariAndRenovation() {
                     Expert!
                   </Typography>
                   <Typography sx={style.para}>
+                    From Green basement remodeling to home repair, we do it all!
+                  </Typography>
+                  {/* <Typography sx={style.para}>
                     Hammer-on Studios is an experienced general contractor
                     specializing in offering commercial and residential
                     remodeling and renovation services. All our remodeling
                     process is creative, collaborative, and tailored to match
                     your core business goals.
-                  </Typography>
+                  </Typography> */}
                   <Typography sx={style.para}>
                     At Hammer-On Studios, we have solidified ourselves as the
                     leading office & home renovation contractor based in New

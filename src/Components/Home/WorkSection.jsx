@@ -87,13 +87,15 @@ function WorkSection() {
                   Why Choose Hammer-On Studios
                 </Typography>
                 <Typography sx={style.p}>
-                  We cater to all your renovation and remodeling needs, but if
+                  We offer kitchen and bathroom renovation packages according to
+                  the budget of our clients!
+                  {/* We cater to all your renovation and remodeling needs, but if
                   you are looking for competent basement remodeling contractors?
                   Hammer-On Studios is the right choice for your next facility
                   repair and renovation project. Whether you require residential
                   renovation or commercial remodeling, our industry experience
                   and expertise make us our clients’ perfect partners to help
-                  turn their vision into an enticing reality and success.
+                  turn their vision into an enticing reality and success. */}
                 </Typography>
                 <Typography
                   variant="h3"
@@ -148,13 +150,14 @@ function WorkSection() {
                   Workmanship Guarantee
                 </Typography>
                 <Typography sx={style.p}>
-                  Not only do we apply stringent attention to detail with our
+                  An office renovation contractor you can rely on!
+                  {/* Not only do we apply stringent attention to detail with our
                   building work, but to all projects. Hammer-On Studios
                   dedication to detail extends not only to our building work but
                   to all of our projects. As a part of our internal processes,
                   we conduct regular quality checks at each stage of the
                   project, so you can be assured the work is being done
-                  according to high quality and regulatory standards
+                  according to high quality and regulatory standards */}
                 </Typography>
               </Box>
             </Grid>
