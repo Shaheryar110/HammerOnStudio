@@ -80,7 +80,6 @@ function Blogs() {
   };
 
   const [pic, setPic] = useState([]);
-  // const [pic, setPic] = useState(blogs);
 
   const [loader, setLoader] = useState(true);
   useEffect(() => {
@@ -89,17 +88,7 @@ function Blogs() {
       setLoader(false);
     });
   }, []);
-  // const blogsFunc = async () => {
-  //   setLoader(true);
-  //   const res = await fetch(`https://${URI}:5001/api/blogs`);
 
-  //   const result = await res.json();
-  //   setPic(result);
-  //   setLoader(false);
-  // };
-  // useEffect(() => {
-  //   blogsFunc();
-  // }, []);
   return (
     <>
       <Head>
@@ -205,7 +194,7 @@ function Blogs() {
                             listStyle: "none",
                             color: "inherit",
                           }}
-                          href={`/blogs/${data?.slug}`}
+                          href={`/${data?.slug}`}
                         >
                           <Box sx={style.cardIconBox1}>
                             <Typography sx={style.readMore}>

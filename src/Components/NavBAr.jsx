@@ -115,6 +115,92 @@ function NavBAr() {
     { link: "/contact", text: "CONTACT US" },
     { link: "/get-a-quote", text: "GET A QOUTE" },
   ];
+  const linkAndPages = [
+    {
+      name: "Roof Installation and Repair",
+      link: "Installation",
+    },
+    {
+      name: "Kiryas Joel NY Bathroom Renovations ",
+      link: "Renovations",
+    },
+    {
+      name: "Cornwall NY Construction Company",
+      link: "Construction",
+    },
+    {
+      name: "Stony Point NY Roofing Services ",
+      link: "Roofing",
+    },
+    {
+      name: "West Haverstraw NY Deck Construction ",
+      link: "Haverstraw",
+    },
+    {
+      name: "Peekskill, NY Painting Contractors ",
+      link: "Painting",
+    },
+    {
+      name: "Home Improvement Specialists",
+      link: "Improvement",
+    },
+    {
+      name: "Retaining Walls in Haverstraw",
+      link: "Retaining",
+    },
+    {
+      name: "Suffern NY Kitchen Renovations ",
+      link: "Kitchen",
+    },
+    {
+      name: "NY Roof Repair  ",
+      link: "Repair",
+    },
+    {
+      name: "Superior Performance",
+      link: "Performance",
+    },
+    {
+      name: "Commercial Property Remodeling ",
+      link: "Commercial",
+    },
+    {
+      name: "Experienced Renovators",
+      link: "Renovators",
+    },
+    {
+      name: "Bath Remodeling Experts",
+      link: "Bath",
+    },
+    {
+      name: "Beacon NY Deck Builders ",
+      link: "Beacon",
+    },
+    {
+      name: "Roof Installation and Repair  ",
+      link: "Roof-Installation",
+    },
+    {
+      name: "Orange County",
+      link: "orange-county",
+    },
+    {
+      name: "Experienced Renovators ",
+      link: "Renovators",
+    },
+    {
+      name: "Ulster County",
+      link: "Ulster",
+    },
+    {
+      name: "Dutchess County ",
+      link: "Dutchess",
+    },
+    {
+      name: "Putnam County",
+      link: "Putnam",
+    },
+  ];
   const [showDropdown, setShowDropdown] = useState(false);
 
   const toggleDropdown = () => {
@@ -184,6 +270,40 @@ function NavBAr() {
                         />
                       </Link>
                     </ListItemButton>
+                  </Box>
+                </li>
+                <li className={styles.lis}>
+                  <Typography sx={style.text} onClick={DropDownHandler}>
+                    Locations
+                  </Typography>
+                  <KeyboardArrowDownIcon />
+                  <Box className={styles.dropDowmBox1}>
+                    {linkAndPages.map((data, index) => {
+                      return (
+                        <>
+                          <ListItemButton className={styles.size} key={index}>
+                            <Link
+                              href={`/location/${data.link}`}
+                              style={{
+                                textDecoration: "none",
+                                color: "inherit",
+                              }}
+                            >
+                              <ListItemText
+                                primary={data.name}
+                                sx={{
+                                  ":hover": {
+                                    color: "black",
+                                    transition: "all ease 0.5s",
+                                  },
+                                }}
+                              />
+                            </Link>
+                          </ListItemButton>
+                          <hr />
+                        </>
+                      );
+                    })}
                   </Box>
                 </li>
               </Box>

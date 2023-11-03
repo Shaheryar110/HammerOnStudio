@@ -1,6 +1,6 @@
 import { Container, Box, Typography, Button, Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import styles from "../../../src/styles/style.module.css";
+import styles from "../../src/styles/style.module.css";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import PersonIcon from "@mui/icons-material/Person";
 import ForumIcon from "@mui/icons-material/Forum";
@@ -12,16 +12,16 @@ import axios from "axios";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import { Roboto } from "next/font/google";
-import { URI } from "../../../src/uri";
+import { URI } from "../../src/uri";
 import Head from "next/head";
-import blogCss from "../../Components/Blogs/blog.module.css";
+import blogCss from "../Components/Blogs/blog.module.css";
 import Script from "next/script";
 
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400"],
 });
-function slug() {
+function evitalizingWorkspacesAndEnsuringFlatRoofRepair() {
   const router = useRouter();
   const parameter = router.query.slug;
   console.log(parameter, "parameter");
@@ -87,7 +87,9 @@ function slug() {
   const [detailBlog, setDetailBlogs] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://${URI}:3000/api/blogsDetails?slug=${parameter}`)
+      .get(
+        `https://${URI}:3000/api/blogsDetails?slug=evitalizing-workspaces-and-ensuring-flat-roof-repair`
+      )
       .then((res) => {
         console.log(res, "res");
         setDetailBlogs(res.data);
@@ -97,10 +99,10 @@ function slug() {
     console.log(detailBlog, "curent");
   }, [detailBlog]);
   const nextBlog = () => {
-    router.push(`/blogs/${detailBlog?.nextBlog?.slug}`);
+    router.push(`/${detailBlog?.nextBlog?.slug}`);
   };
   const PrevBlog = () => {
-    router.push(`/blogs/${detailBlog?.previousBlog?.slug}`);
+    router.push(`/${detailBlog?.previousBlog?.slug}`);
   };
   return (
     <>
@@ -191,7 +193,6 @@ function slug() {
               </Box>
             </Box>
           </Box>
-          {/* <Box sx={style.buttonBox}> */}
           <Grid container justifyContent="center" marginBottom="2rem">
             <Grid
               item
@@ -256,12 +257,10 @@ function slug() {
               </Box>
             </Grid>
           </Grid>
-
-          {/* </Box> */}
         </Container>
       </Layout>
     </>
   );
 }
 
-export default slug;
+export default evitalizingWorkspacesAndEnsuringFlatRoofRepair;
