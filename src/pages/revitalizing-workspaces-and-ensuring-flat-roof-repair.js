@@ -88,7 +88,7 @@ function evitalizingWorkspacesAndEnsuringFlatRoofRepair() {
   useEffect(() => {
     axios
       .get(
-        `https://${URI}:3000/api/blogsDetails?slug=evitalizing-workspaces-and-ensuring-flat-roof-repair`
+        `https://${URI}:3000/api/blogsDetails?slug=revitalizing-workspaces-and-ensuring-flat-roof-repair`
       )
       .then((res) => {
         console.log(res, "res");
