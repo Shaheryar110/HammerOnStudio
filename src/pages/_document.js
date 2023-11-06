@@ -20,6 +20,7 @@ export default function Document() {
           src="https://cdn.userway.org/widget.js"
           data-account="MDH5wuVUUW"
         ></Script>
+        <link rel="icon" type="image/x-icon" href="/favicon.webp" />
       </Head>
 
       <body>
