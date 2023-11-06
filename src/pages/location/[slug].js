@@ -47,7 +47,6 @@ export function getStaticProps(context) {
 }
 
 export function getStaticPaths() {
-  // const posts = await getAllPosts();
   const paths = servicesArray.map((post) => ({
     params: { slug: post.slug },
   }));
