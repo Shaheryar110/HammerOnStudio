@@ -11,21 +11,21 @@ import {
   fourthObject,
   fifthObject,
 } from "@/utils/locationData";
-const conditionFunc = (repo) => {
-  if (repo === "Installation") {
-    setData(Installation);
-  } else if (repo === "Renovations") {
-    setData(secondObject);
-  } else if (repo === "Construction") {
-    setData(thirdObject);
-  } else if (repo === "Roofing") {
-    setData(fourthObject);
-  } else if (repo === "Haverstraw") {
-    setData(fifthObject);
-  }
-};
+// const conditionFunc = (repo) => {
+//   if (repo === "Installation") {
+//     setData(Installation);
+//   } else if (repo === "Renovations") {
+//     setData(secondObject);
+//   } else if (repo === "Construction") {
+//     setData(thirdObject);
+//   } else if (repo === "Roofing") {
+//     setData(fourthObject);
+//   } else if (repo === "Haverstraw") {
+//     setData(fifthObject);
+//   }
+// };
 export default function Locations({ props }) {
-  console.log(props, "props");
+  // console.log(props, "props");
   // const router = useRouter();
 
   // const [data, setData] = useState();
@@ -59,35 +59,35 @@ export default function Locations({ props }) {
     </>
   );
 }
-export async function getStaticPaths() {
-  return {
-    paths: [
-      "Installation",
-      "Renovations",
-      "Construction",
-      "Roofing",
-      "Haverstraw",
-    ],
-    fallback: true,
-  };
-}
-export async function getStaticProps(context) {
-  let setData = {};
-  const { params } = context;
-  const repo = params.slug;
-  if (repo === "Installation") {
-    setData = Installation;
-  } else if (repo === "Renovations") {
-    setData = secondObject;
-  } else if (repo === "Construction") {
-    setData = thirdObject;
-  } else if (repo === "Roofing") {
-    setData = fourthObject;
-  } else if (repo === "Haverstraw") {
-    setData = fifthObject;
-  }
-  return { props: setData };
-}
+// export async function getStaticPaths() {
+//   return {
+//     paths: [
+//       "Installation",
+//       "Renovations",
+//       "Construction",
+//       "Roofing",
+//       "Haverstraw",
+//     ],
+//     fallback: true,
+//   };
+// }
+// export async function getStaticProps(context) {
+//   let setData = {};
+//   const { params } = context;
+//   const repo = params.slug;
+//   if (repo === "Installation") {
+//     setData = Installation;
+//   } else if (repo === "Renovations") {
+//     setData = secondObject;
+//   } else if (repo === "Construction") {
+//     setData = thirdObject;
+//   } else if (repo === "Roofing") {
+//     setData = fourthObject;
+//   } else if (repo === "Haverstraw") {
+//     setData = fifthObject;
+//   }
+//   return { props: setData };
+// }
 const style = {
   mainBox: {
     width: "100%",
