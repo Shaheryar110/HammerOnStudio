@@ -7,6 +7,7 @@ import slider2 from "../../assets/images/slid.webp";
 import { Box, Button, Container, Typography } from "@mui/material";
 import responsive from "../../styles/responsive.module.css";
 import { motion } from "framer-motion";
+import { Reveal } from "@/utils/Reveal";
 
 function HeroCarousel() {
   const style = {
@@ -92,15 +93,11 @@ function HeroCarousel() {
                   <Typography variant="h5" sx={style.welcome}>
                     Welcome To
                   </Typography>
-                  <motion.div
-                    initial={{ x: -200, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 1, type: "easeIn", delay: 1 }}
-                  >
+                  <Reveal>
                     <Typography variant="h3" sx={style.ComName}>
                       Hammer-On Studios!
                     </Typography>
-                  </motion.div>
+                  </Reveal>
                 </Box>
                 <Typography sx={style.para}>
                   Your Ultimate Hub For Intricate Repairs, Exquisite
@@ -128,9 +125,11 @@ function HeroCarousel() {
                   <Typography variant="h5" sx={style.welcome}>
                     Welcome To
                   </Typography>
-                  <Typography variant="h3" sx={style.ComName}>
-                    Hammer-On Studios!
-                  </Typography>
+                  <Reveal>
+                    <Typography variant="h3" sx={style.ComName}>
+                      Hammer-On Studios!
+                    </Typography>
+                  </Reveal>
                 </Box>
                 <Typography sx={style.para}>
                   Your Ultimate Hub For Intricate Repairs, Exquisite

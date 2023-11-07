@@ -1,6 +1,6 @@
 import StripSection from "@/Components/Commons/Stripe";
 import Layout from "@/Components/Layout";
-import React from "react";
+import React, { useRef } from "react";
 import { Container, Box, Typography, Button, Grid } from "@mui/material";
 import responsive from "../styles/responsive.module.css";
 import Gallery from "@/Components/Home/Gallery";
@@ -51,6 +51,7 @@ function work() {
       alignItems: "center",
     },
   };
+
   return (
     <>
       <Head>

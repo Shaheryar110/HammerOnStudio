@@ -21,7 +21,7 @@ const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400"],
 });
-function qualitykitchenandbathremodelsbyhomerenovationcontractorsinnyc() {
+function repairingandrenovatingyourhomeaguide() {
   const router = useRouter();
   const parameter = router.query.slug;
   const style = {
@@ -262,4 +262,4 @@ function qualitykitchenandbathremodelsbyhomerenovationcontractorsinnyc() {
   );
 }
 
-export default qualitykitchenandbathremodelsbyhomerenovationcontractorsinnyc;
+export default repairingandrenovatingyourhomeaguide;

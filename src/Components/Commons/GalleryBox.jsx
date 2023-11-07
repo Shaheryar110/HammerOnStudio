@@ -61,9 +61,9 @@ function GalleryBox({ src, category, service, priority, alt }) {
   };
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
+      initial={{ opacity: 0, transform: "scale(0.8)" }}
+      animate={{ opacity: 1, transform: "scale(1)" }}
+      transition={{ duration: 0.5 }}
     >
       <Box sx={style.gridIamge}>
         <Image

@@ -1,11 +1,11 @@
 import { Container, Box, Typography, Stack, Grid } from "@mui/material";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 import responsive from "../../styles/responsive.module.css";
 import styles from "../../styles/style.module.css";
 import sbg2 from "../../assets/images/sbg2.png";
 import worker from "../../assets/images/worker01.webp";
-import { motion, easeIn } from "framer-motion";
+import { motion, easeIn, useInView } from "framer-motion";
 import { Inter } from "next/font/google";
 const inter = Inter({
   subsets: ["latin"],
@@ -51,6 +51,8 @@ function WorkSection() {
       color: " #7A7A7A",
     },
   };
+  const ref = useRef(null);
+  const inView = useInView(ref);
   return (
     <>
       <Stack sx={style.workSec}>
@@ -61,11 +63,11 @@ function WorkSection() {
             my={5}
             sx={{ justifyContent: "space-between" }}
           >
-            <Grid item lg={5}>
+            <Grid item lg={5} ref={ref}>
               <motion.div
-                initial={{ x: -200, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1, type: "easeIn", delay: 1 }}
+                initial={{ y: inView ? 200 : 0, opacity: inView ? 0 : 1 }}
+                animate={{ y: inView ? 0 : 200, opacity: inView ? 1 : 0 }}
+                transition={{ duration: 1, type: "easeIn" }}
               >
                 <Box className={styles.workTag}>
                   <Image
@@ -79,40 +81,58 @@ function WorkSection() {
             </Grid>
             <Grid item lg={6}>
               <Box sx={style.article}>
-                <Typography
-                  variant="h3"
-                  sx={style.head1}
-                  className={inter.className}
+                <motion.div
+                  initial={{ y: inView ? 100 : 0, opacity: inView ? 0 : 1 }}
+                  animate={{ y: inView ? 0 : 100, opacity: inView ? 1 : 0 }}
+                  transition={{ duration: 1, type: "easeIn" }}
                 >
-                  Why Choose Hammer-On Studios
-                </Typography>
-                <Typography sx={style.p}>
-                  We offer kitchen and bathroom renovation packages according to
-                  the budget of our clients!
-                  {/* We cater to all your renovation and remodeling needs, but if
-                  you are looking for competent basement remodeling contractors?
-                  Hammer-On Studios is the right choice for your next facility
-                  repair and renovation project. Whether you require residential
-                  renovation or commercial remodeling, our industry experience
-                  and expertise make us our clients’ perfect partners to help
-                  turn their vision into an enticing reality and success. */}
-                </Typography>
-                <Typography
-                  variant="h3"
-                  sx={style.head}
-                  className={inter.className}
+                  <Typography
+                    variant="h3"
+                    sx={style.head1}
+                    className={inter.className}
+                  >
+                    Why Choose Hammer-On Studios
+                  </Typography>
+                </motion.div>
+                <motion.div
+                  initial={{ y: inView ? 100 : 0, opacity: inView ? 0 : 1 }}
+                  animate={{ y: inView ? 0 : 100, opacity: inView ? 1 : 0 }}
+                  transition={{ duration: 1, type: "easeIn", delay: 0.2 }}
                 >
-                  Our Attention To Detail
-                </Typography>
-                <Typography sx={style.p}>
-                  We cater to all your renovation and remodeling needs, but if
-                  you are looking for competent basement remodeling contractors?
-                  Hammer-On Studios is the right choice for your next facility
-                  repair and renovation project. Whether you require residential
-                  renovation or commercial remodeling, our industry experience
-                  and expertise make us our clients’ perfect partners to help
-                  turn their vision into an enticing reality and success.
-                </Typography>
+                  <Typography sx={style.p}>
+                    We offer kitchen and bathroom renovation packages according
+                    to the budget of our clients!
+                  </Typography>
+                </motion.div>
+                <motion.div
+                  initial={{ y: inView ? 100 : 0, opacity: inView ? 0 : 1 }}
+                  animate={{ y: inView ? 0 : 100, opacity: inView ? 1 : 0 }}
+                  transition={{ duration: 1, type: "easeIn", delay: 0.3 }}
+                >
+                  <Typography
+                    variant="h3"
+                    sx={style.head}
+                    className={inter.className}
+                  >
+                    Our Attention To Detail
+                  </Typography>
+                </motion.div>
+                <motion.div
+                  initial={{ y: inView ? 100 : 0, opacity: inView ? 0 : 1 }}
+                  animate={{ y: inView ? 0 : 100, opacity: inView ? 1 : 0 }}
+                  transition={{ duration: 1, type: "easeIn", delay: 0.4 }}
+                >
+                  <Typography sx={style.p}>
+                    We cater to all your renovation and remodeling needs, but if
+                    you are looking for competent basement remodeling
+                    contractors? Hammer-On Studios is the right choice for your
+                    next facility repair and renovation project. Whether you
+                    require residential renovation or commercial remodeling, our
+                    industry experience and expertise make us our clients’
+                    perfect partners to help turn their vision into an enticing
+                    reality and success.
+                  </Typography>
+                </motion.div>
               </Box>
             </Grid>
           </Grid>
@@ -123,42 +143,66 @@ function WorkSection() {
           >
             <Grid item lg={6}>
               <Box sx={style.article}>
-                <Typography
-                  variant="h3"
-                  sx={style.head}
-                  className={inter.className}
+                <motion.div
+                  initial={{ y: inView ? 100 : 0, opacity: inView ? 0 : 1 }}
+                  animate={{ y: inView ? 0 : 100, opacity: inView ? 1 : 0 }}
+                  transition={{ duration: 1, type: "easeIn", delay: 0.4 }}
                 >
-                  Dedicated Renovation Process
-                </Typography>
-                <Typography sx={style.p}>
-                  Using our Design-Plan-Construct process, the Hammer-On Studios
-                  team ensures that the final look is everything the homeowner
-                  has envisioned and that the process of getting there is as
-                  easy as possible. Using our DPC process, Hammer-On Studios
-                  streamlines the entire renovation project and maximizes the
-                  investment of our clients
-                </Typography>
+                  <Typography
+                    variant="h3"
+                    sx={style.head}
+                    className={inter.className}
+                  >
+                    Dedicated Renovation Process
+                  </Typography>
+                </motion.div>
+                <motion.div
+                  initial={{ y: inView ? 100 : 0, opacity: inView ? 0 : 1 }}
+                  animate={{ y: inView ? 0 : 100, opacity: inView ? 1 : 0 }}
+                  transition={{ duration: 1, type: "easeIn", delay: 0.5 }}
+                >
+                  <Typography sx={style.p}>
+                    Using our Design-Plan-Construct process, the Hammer-On
+                    Studios team ensures that the final look is everything the
+                    homeowner has envisioned and that the process of getting
+                    there is as easy as possible. Using our DPC process,
+                    Hammer-On Studios streamlines the entire renovation project
+                    and maximizes the investment of our clients
+                  </Typography>
+                </motion.div>
               </Box>
             </Grid>
             <Grid item lg={6}>
               <Box sx={style.article}>
-                <Typography
-                  variant="h3"
-                  sx={style.head}
-                  className={inter.className}
+                <motion.div
+                  initial={{ y: inView ? 100 : 0, opacity: inView ? 0 : 1 }}
+                  animate={{ y: inView ? 0 : 100, opacity: inView ? 1 : 0 }}
+                  transition={{ duration: 1, type: "easeIn", delay: 0.4 }}
                 >
-                  Workmanship Guarantee
-                </Typography>
-                <Typography sx={style.p}>
-                  An office renovation contractor you can rely on!
-                  {/* Not only do we apply stringent attention to detail with our
+                  <Typography
+                    variant="h3"
+                    sx={style.head}
+                    className={inter.className}
+                  >
+                    Workmanship Guarantee
+                  </Typography>
+                </motion.div>
+                <motion.div
+                  initial={{ y: inView ? 100 : 0, opacity: inView ? 0 : 1 }}
+                  animate={{ y: inView ? 0 : 100, opacity: inView ? 1 : 0 }}
+                  transition={{ duration: 1, type: "easeIn", delay: 0.5 }}
+                >
+                  <Typography sx={style.p}>
+                    An office renovation contractor you can rely on!
+                    {/* Not only do we apply stringent attention to detail with our
                   building work, but to all projects. Hammer-On Studios
                   dedication to detail extends not only to our building work but
                   to all of our projects. As a part of our internal processes,
                   we conduct regular quality checks at each stage of the
                   project, so you can be assured the work is being done
                   according to high quality and regulatory standards */}
-                </Typography>
+                  </Typography>
+                </motion.div>
               </Box>
             </Grid>
           </Grid>

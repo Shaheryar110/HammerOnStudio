@@ -8,7 +8,7 @@ import {
   Select,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import responsive from "../../styles/responsive.module.css";
 import styles from "../../styles/style.module.css";
 import img021 from "../../assets/images/img012.webp";
@@ -22,6 +22,7 @@ const poppins = Poppins({
   weight: ["400", "500", "700", "900"],
 });
 import { Inter } from "next/font/google";
+import { useInView, motion } from "framer-motion";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -323,32 +324,52 @@ function Contact() {
       toast.error("Invalid Feilds Occur");
     }
   };
+  const ref = useRef(null);
+  const inView = useInView(ref);
   return (
     <>
       <Box sx={style.mainCont}>
-        <Container className={responsive.container}>
+        <Container className={responsive.container} ref={ref}>
           <Grid
             container
             justifyContent={{ lg: "space-between", xs: "center" }}
           >
             <Grid item lg={6} md={12}>
               <Box sx={style.bux}>
-                <Typography variant="h4" sx={style.tag}>
-                  REVIEWS
-                </Typography>
-                <Typography
-                  variant="h3"
-                  sx={style.h3}
-                  className={inter.className}
+                <motion.div
+                  initial={{ y: inView ? -50 : 0, opacity: inView ? 0 : 1 }}
+                  animate={{ y: inView ? 0 : 50, opacity: inView ? 1 : 0 }}
+                  transition={{ duration: 1, type: "easeIn" }}
                 >
-                  Our professional services are just one call away!
-                </Typography>
-                <Typography sx={style.par}>
-                  Want to know more about our home and building renovation
-                  services? Connect with us today by writing us a message or
-                  calling us today. Our representatives will reach out within 24
-                  hours.
-                </Typography>
+                  <Typography variant="h4" sx={style.tag}>
+                    REVIEWS
+                  </Typography>
+                </motion.div>
+                <motion.div
+                  initial={{ y: inView ? -50 : 0, opacity: inView ? 0 : 1 }}
+                  animate={{ y: inView ? 0 : 50, opacity: inView ? 1 : 0 }}
+                  transition={{ duration: 1, type: "easeIn", delay: 0.3 }}
+                >
+                  <Typography
+                    variant="h3"
+                    sx={style.h3}
+                    className={inter.className}
+                  >
+                    Our professional services are just one call away!
+                  </Typography>
+                </motion.div>
+                <motion.div
+                  initial={{ y: inView ? -50 : 0, opacity: inView ? 0 : 1 }}
+                  animate={{ y: inView ? 0 : 50, opacity: inView ? 1 : 0 }}
+                  transition={{ duration: 1, type: "easeIn", delay: 0.4 }}
+                >
+                  <Typography sx={style.par}>
+                    Want to know more about our home and building renovation
+                    services? Connect with us today by writing us a message or
+                    calling us today. Our representatives will reach out within
+                    24 hours.
+                  </Typography>
+                </motion.div>
                 <ul className={styles.unOrderList}>
                   <li id={styles.changeColor} className={inter.className}>
                     info@hammeronstudios.com

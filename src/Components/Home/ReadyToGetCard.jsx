@@ -1,5 +1,5 @@
 import { Container, Box, Typography, Stack, Grid } from "@mui/material";
-import React from "react";
+import React, { useRef } from "react";
 import responsive from "../../styles/responsive.module.css";
 import styles from "../../styles/style.module.css";
 import img01 from "../../assets/images/img01.webp";
@@ -8,6 +8,8 @@ import { Inter } from "next/font/google";
 import AnimatedCard from "./AnimatedCard";
 import Image from "next/image";
 import chat from "../../../public/chat.webp";
+import { motion, useInView } from "framer-motion";
+
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "700", "900"],
@@ -128,6 +130,8 @@ function ReadyToGetCard() {
       fontSize: { lg: "30px", md: "25px", xs: "1rem" },
     },
   };
+  const ref = useRef(null);
+  const inView = useInView(ref);
   return (
     <>
       <Stack sx={style.readyCard}>
@@ -168,56 +172,74 @@ function ReadyToGetCard() {
               </Box>
             </Grid>
           </Grid>
-          <Box sx={style.static}>
-            <Typography
-              variant="h3"
-              sx={style.textHead}
-              className={inter.className}
+          <Box sx={style.static} ref={ref}>
+            <motion.div
+              initial={{ y: inView ? 50 : 0, opacity: inView ? 0 : 1 }}
+              animate={{ y: inView ? 0 : 50, opacity: inView ? 1 : 0 }}
+              transition={{ duration: 1, type: "easeIn" }}
             >
-              If It’s Broken, We Can Fix It!
-            </Typography>
-            <Typography sx={style.slogan}>
-              Check out the glimpses of our completed residential and commercial
-              renovation and remodeling projects!
-            </Typography>
+              <Typography
+                variant="h3"
+                sx={style.textHead}
+                className={inter.className}
+              >
+                If It’s Broken, We Can Fix It!
+              </Typography>
+            </motion.div>
+            <motion.div
+              initial={{ y: inView ? 50 : 0, opacity: inView ? 0 : 1 }}
+              animate={{ y: inView ? 0 : 50, opacity: inView ? 1 : 0 }}
+              transition={{ duration: 1, type: "easeIn", delay: 0.3 }}
+            >
+              <Typography sx={style.slogan}>
+                Check out the glimpses of our completed residential and
+                commercial renovation and remodeling projects!
+              </Typography>
+            </motion.div>
           </Box>
           <Box sx={style.cardSectionTop}>
-            <Grid
-              container
-              columnSpacing={3}
-              sx={{ justifyContent: "space-between" }}
+            <motion.div
+              initial={{ y: inView ? 50 : 0, opacity: inView ? 0 : 1 }}
+              animate={{ y: inView ? 0 : 50, opacity: inView ? 1 : 0 }}
+              transition={{ duration: 1, type: "easeIn", delay: 0.1 }}
             >
-              <Grid item lg={6}>
-                <Typography
-                  variant="h4"
-                  sx={style.cardHeading}
-                  className={inter.className}
-                >
-                  Leading Way In Roofing & Home Repair Construction!
-                </Typography>
-              </Grid>
-              <Grid item lg={6}>
-                <Typography sx={style.slogan}>
-                  At Hammer-On Studios, we specialize in delivering high-end
-                  commercial and home renovation services in New York. We
-                  achieve this by utilizing our skills to deliver you a
-                  professional remodeling service that is focused on quality in
-                  every way.
-                </Typography>
-                <ul style={{ paddingLeft: "2rem", marginTop: "1.5rem" }}>
-                  <li
-                    style={{
-                      color: "#393738",
-                      fontSize: "1rem",
-                      marginTop: "1rem",
-                    }}
+              <Grid
+                container
+                columnSpacing={3}
+                sx={{ justifyContent: "space-between" }}
+              >
+                <Grid item lg={6}>
+                  <Typography
+                    variant="h4"
+                    sx={style.cardHeading}
                     className={inter.className}
                   >
-                    3000+ successfully completed projects
-                  </li>
-                </ul>
+                    Leading Way In Roofing & Home Repair Construction!
+                  </Typography>
+                </Grid>
+                <Grid item lg={6}>
+                  <Typography sx={style.slogan}>
+                    At Hammer-On Studios, we specialize in delivering high-end
+                    commercial and home renovation services in New York. We
+                    achieve this by utilizing our skills to deliver you a
+                    professional remodeling service that is focused on quality
+                    in every way.
+                  </Typography>
+                  <ul style={{ paddingLeft: "2rem", marginTop: "1.5rem" }}>
+                    <li
+                      style={{
+                        color: "#393738",
+                        fontSize: "1rem",
+                        marginTop: "1rem",
+                      }}
+                      className={inter.className}
+                    >
+                      3000+ successfully completed projects
+                    </li>
+                  </ul>
+                </Grid>
               </Grid>
-            </Grid>
+            </motion.div>
             <AnimatedCard />
           </Box>
         </Container>

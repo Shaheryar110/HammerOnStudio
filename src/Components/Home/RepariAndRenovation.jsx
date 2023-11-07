@@ -1,12 +1,12 @@
 import { Container, Box, Typography, Stack, Grid } from "@mui/material";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 import responsive from "../../styles/responsive.module.css";
 import styles from "../../styles/style.module.css";
 import white from "../../assets/images/white.webp";
 import yellw from "../../assets/images/yellw.webp";
 import dril from "../../assets/images/dril.webp";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import IconCard from "../Commons/IconCard";
 import { Inter } from "next/font/google";
 import joist from "../../../public/joist.webp";
@@ -16,6 +16,7 @@ import checkWhite from "../../../public/checkWhite.webp";
 import user from "../../../public/user.webp";
 import userWhite from "../../../public/userWhite.webp";
 import banner from "../../assets/images/banner.webp";
+import { fadeLeft } from "../../utils/Reveal";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -176,46 +177,71 @@ function RepariAndRenovation() {
       customized solutions.`,
     },
   ];
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  const ref1 = useRef(null);
+  const isInView1 = useInView(ref1);
 
   return (
     <>
       <Stack sx={style.main}>
         <Container className={responsive.container}>
-          <Box sx={style.contentBox}>
+          <Box sx={style.contentBox} ref={ref}>
             <Grid container sx={style.center}>
               <Grid item lg={5}>
-                <Box>
-                  <Typography sx={style.weight} className={inter.className}>
-                    We are your Commercial and Residential Repair and Renovation
-                    Expert!
-                  </Typography>
-                  <Typography sx={style.para}>
-                    From Green basement remodeling to home repair, we do it all!
-                  </Typography>
-                  {/* <Typography sx={style.para}>
-                    Hammer-on Studios is an experienced general contractor
-                    specializing in offering commercial and residential
-                    remodeling and renovation services. All our remodeling
-                    process is creative, collaborative, and tailored to match
-                    your core business goals.
-                  </Typography> */}
-                  <Typography sx={style.para}>
-                    At Hammer-On Studios, we have solidified ourselves as the
-                    leading office & home renovation contractor based in New
-                    York. Thus, our experienced team of professionals has
-                    delivered top-quality, experienced renovation services to
-                    business owners, homeowners, and property owners throughout
-                    New York. No matter how big or small your project is, we
-                    take pride in completing your space redesign needs with
-                    excellence.
-                  </Typography>
-                </Box>
+                <motion.div
+                  variants={{
+                    hidden: {
+                      x: isInView ? -200 : 0,
+                      opacity: isInView ? 0 : 1,
+                    },
+                    visible: {
+                      x: isInView ? 0 : -200,
+                      opacity: isInView ? 1 : 0,
+                    },
+                  }}
+                  initial={"hidden"}
+                  animate={"visible"}
+                  transition={{ duration: 1, type: "easeIn" }}
+                >
+                  <Box>
+                    <Typography sx={style.weight} className={inter.className}>
+                      We are your Commercial and Residential Repair and
+                      Renovation Expert!
+                    </Typography>
+                    <Typography sx={style.para}>
+                      From Green basement remodeling to home repair, we do it
+                      all!
+                    </Typography>
+
+                    <Typography sx={style.para}>
+                      At Hammer-On Studios, we have solidified ourselves as the
+                      leading office & home renovation contractor based in New
+                      York. Thus, our experienced team of professionals has
+                      delivered top-quality, experienced renovation services to
+                      business owners, homeowners, and property owners
+                      throughout New York. No matter how big or small your
+                      project is, we take pride in completing your space
+                      redesign needs with excellence.
+                    </Typography>
+                  </Box>
+                </motion.div>
               </Grid>
               <Grid item lg={5}>
                 <motion.div
-                  initial={{ y: 200, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 2, type: "easeIn", delay: 1 }}
+                  variants={{
+                    hidden: {
+                      x: isInView ? 200 : 0,
+                      opacity: isInView ? 0 : 1,
+                    },
+                    visible: {
+                      x: isInView ? 0 : 200,
+                      opacity: isInView ? 1 : 0,
+                    },
+                  }}
+                  initial={"hidden"}
+                  animate={"visible"}
+                  transition={{ duration: 1, type: "easeIn" }}
                 >
                   <Box sx={style.figure}>
                     <Image
@@ -243,18 +269,38 @@ function RepariAndRenovation() {
             </Grid>
           </Box>
         </Container>
-        <Stack sx={style.submain}>
+        <Stack sx={style.submain} ref={ref1}>
           <Container sx={style.container}>
             <Grid container>
               {data.map((data, index) => {
                 return (
                   <Grid item lg={4} key={index}>
-                    <IconCard
-                      icon={data.icon}
-                      heading={data.heading}
-                      para={data.para}
-                      hoverIcon={data.hover}
-                    />
+                    <motion.div
+                      variants={{
+                        hidden: {
+                          x: isInView1 ? 200 : 0,
+                          opacity: isInView1 ? 0 : 1,
+                        },
+                        visible: {
+                          x: isInView1 ? 0 : 200,
+                          opacity: isInView1 ? 1 : 0,
+                        },
+                      }}
+                      initial={"hidden"}
+                      animate={"visible"}
+                      transition={{
+                        duration: 1,
+                        type: "easeIn",
+                        delay: isInView1 ? index * 0.5 : 0,
+                      }}
+                    >
+                      <IconCard
+                        icon={data.icon}
+                        heading={data.heading}
+                        para={data.para}
+                        hoverIcon={data.hover}
+                      />
+                    </motion.div>
                   </Grid>
                 );
               })}

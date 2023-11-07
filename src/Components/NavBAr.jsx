@@ -283,7 +283,7 @@ function NavBAr() {
                         <>
                           <ListItemButton className={styles.size} key={index}>
                             <Link
-                              href={`/location/${data.link}`}
+                              href={`/${data.link}`}
                               style={{
                                 textDecoration: "none",
                                 color: "inherit",
