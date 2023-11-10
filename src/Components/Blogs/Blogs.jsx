@@ -76,6 +76,7 @@ function Blogs() {
       overflow: "hidden",
       width: { sm: "90%", xs: "100%" },
       marginBottom: "3rem",
+      height: "500px",
     },
   };
 
@@ -160,7 +161,7 @@ function Blogs() {
                         <Box>
                           <Image
                             src={data?.image}
-                            style={{ width: "100%", height: "auto" }}
+                            style={{ width: "100%" }}
                             width={420}
                             height={300}
                             alt={data.id}

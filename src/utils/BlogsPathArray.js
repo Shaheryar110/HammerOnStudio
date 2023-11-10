@@ -1,0 +1,29 @@
+export const blogsArray = [
+    {
+        slug:"revitalizing-workspaces-and-ensuring-flat-roof-repair"
+    },
+    {
+        slug:"quality-kitchen-and-bath-remodels-by-home-renovation-contractors-in-nyc"
+    },
+    {
+        slug:"expert-solutions-for-flat-roof-repair-in-nyc-and-office-renovation-contractors-in-new-york"
+    },
+    {
+        slug:"log-home-repair-and-restoration-preserving-the-beauty-of-your-abode"
+    },
+    {
+        slug:"elevating-spaces-commercial-bathroom-and-building-remodeling-contractors-in-new-york"
+    },
+    {
+        slug:"essential-tips-for-flat-roof-repair-in-nyc"
+    },
+    {
+        slug:"revitalizing-workspaces-and-ensuring-flat-roof-repair"
+    },
+    {
+        slug:"revitalizing-workspaces-and-ensuring-flat-roof-repair"
+    },
+    {
+        slug:"revitalizing-workspaces-and-ensuring-flat-roof-repair"
+    },
+]

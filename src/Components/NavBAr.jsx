@@ -10,7 +10,7 @@ import Image from "next/image";
 import styles from "../../src/styles/style.module.css";
 import logo from "../../src/assets/images/logo.webp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import AppBar from "@mui/material/AppBar";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -280,10 +280,10 @@ function NavBAr() {
                   <Box className={styles.dropDowmBox1}>
                     {linkAndPages.map((data, index) => {
                       return (
-                        <>
-                          <ListItemButton className={styles.size} key={index}>
+                        <React.Fragment key={index}>
+                          <ListItemButton className={styles.size}>
                             <Link
-                              href={`/${data.link}`}
+                              href={`/location/${data.link}`}
                               style={{
                                 textDecoration: "none",
                                 color: "inherit",
@@ -301,7 +301,7 @@ function NavBAr() {
                             </Link>
                           </ListItemButton>
                           <hr />
-                        </>
+                        </React.Fragment>
                       );
                     })}
                   </Box>
