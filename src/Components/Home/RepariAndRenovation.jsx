@@ -189,7 +189,7 @@ function RepariAndRenovation() {
           <Box sx={style.contentBox} ref={ref}>
             <Grid container sx={style.center}>
               <Grid item lg={5}>
-                <motion.div
+                {/* <motion.div
                   variants={{
                     hidden: {
                       x: isInView ? -200 : 0,
@@ -203,32 +203,31 @@ function RepariAndRenovation() {
                   initial={"hidden"}
                   animate={"visible"}
                   transition={{ duration: 1, type: "easeIn" }}
-                >
-                  <Box>
-                    <Typography sx={style.weight} className={inter.className}>
-                      We are your Commercial and Residential Repair and
-                      Renovation Expert!
-                    </Typography>
-                    <Typography sx={style.para}>
-                      From Green basement remodeling to home repair, we do it
-                      all!
-                    </Typography>
+                > */}
+                <Box>
+                  <Typography sx={style.weight} className={inter.className}>
+                    We are your Commercial and Residential Repair and Renovation
+                    Expert!
+                  </Typography>
+                  <Typography sx={style.para}>
+                    From Green basement remodeling to home repair, we do it all!
+                  </Typography>
 
-                    <Typography sx={style.para}>
-                      At Hammer-On Studios, we have solidified ourselves as the
-                      leading office & home renovation contractor based in New
-                      York. Thus, our experienced team of professionals has
-                      delivered top-quality, experienced renovation services to
-                      business owners, homeowners, and property owners
-                      throughout New York. No matter how big or small your
-                      project is, we take pride in completing your space
-                      redesign needs with excellence.
-                    </Typography>
-                  </Box>
-                </motion.div>
+                  <Typography sx={style.para}>
+                    At Hammer-On Studios, we have solidified ourselves as the
+                    leading office & home renovation contractor based in New
+                    York. Thus, our experienced team of professionals has
+                    delivered top-quality, experienced renovation services to
+                    business owners, homeowners, and property owners throughout
+                    New York. No matter how big or small your project is, we
+                    take pride in completing your space redesign needs with
+                    excellence.
+                  </Typography>
+                </Box>
+                {/* </motion.div> */}
               </Grid>
               <Grid item lg={5}>
-                <motion.div
+                {/* <motion.div
                   variants={{
                     hidden: {
                       x: isInView ? 200 : 0,
@@ -242,29 +241,29 @@ function RepariAndRenovation() {
                   initial={"hidden"}
                   animate={"visible"}
                   transition={{ duration: 1, type: "easeIn" }}
-                >
-                  <Box sx={style.figure}>
-                    <Image
-                      src={white}
-                      alt="custom commercial office remodeling in NYC"
-                      className={styles.img1}
-                      fill={false}
-                      style={{ height: "330px", width: "60%" }}
-                    />
-                    <Image
-                      src={yellw}
-                      alt="commercial bathroom remodeling contractors in New York"
-                      className={styles.img2}
-                      fill={false}
-                    />
-                    <Image
-                      src={dril}
-                      alt="roof repair"
-                      className={styles.img3}
-                      fill={false}
-                    />
-                  </Box>
-                </motion.div>
+                > */}
+                <Box sx={style.figure}>
+                  <Image
+                    src={white}
+                    alt="custom commercial office remodeling in NYC"
+                    className={styles.img1}
+                    fill={false}
+                    style={{ height: "330px", width: "60%" }}
+                  />
+                  <Image
+                    src={yellw}
+                    alt="commercial bathroom remodeling contractors in New York"
+                    className={styles.img2}
+                    fill={false}
+                  />
+                  <Image
+                    src={dril}
+                    alt="roof repair"
+                    className={styles.img3}
+                    fill={false}
+                  />
+                </Box>
+                {/* </motion.div> */}
               </Grid>
             </Grid>
           </Box>
@@ -275,7 +274,7 @@ function RepariAndRenovation() {
               {data.map((data, index) => {
                 return (
                   <Grid item lg={4} key={index}>
-                    <motion.div
+                    {/* <motion.div
                       variants={{
                         hidden: {
                           x: isInView1 ? 200 : 0,
@@ -293,14 +292,14 @@ function RepariAndRenovation() {
                         type: "easeIn",
                         delay: isInView1 ? index * 0.5 : 0,
                       }}
-                    >
-                      <IconCard
-                        icon={data.icon}
-                        heading={data.heading}
-                        para={data.para}
-                        hoverIcon={data.hover}
-                      />
-                    </motion.div>
+                    > */}
+                    <IconCard
+                      icon={data.icon}
+                      heading={data.heading}
+                      para={data.para}
+                      hoverIcon={data.hover}
+                    />
+                    {/* </motion.div> */}
                   </Grid>
                 );
               })}
