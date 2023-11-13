@@ -18,17 +18,17 @@ export default function Home() {
   return (
     <>
       <Head>
-        <Script
+        <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-4XF3Y3MXGZ"
-        ></Script>
-        <Script>
+        ></script>
+        <script>
           window.dataLayer = window.dataLayer || [];
           {function gtag() {
             dataLayer.push(arguments);
           }}
           gtag('js', new Date()); gtag('config', 'G-4XF3Y3MXGZ');
-        </Script>
+        </script>
         <title>
           Office Renovation Contractor | Flat Roof Repair Nyc | Hammer On
           Studios
