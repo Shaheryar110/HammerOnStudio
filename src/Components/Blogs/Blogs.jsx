@@ -76,7 +76,7 @@ function Blogs() {
       overflow: "hidden",
       width: { sm: "90%", xs: "100%" },
       marginBottom: "3rem",
-      height: "500px",
+      height: { sm: "500px", xs: "650px" },
     },
   };
 
