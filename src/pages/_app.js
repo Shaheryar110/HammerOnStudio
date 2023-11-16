@@ -1,5 +1,11 @@
 import "@/styles/globals.css";
 import NextTopLoader from "nextjs-toploader";
+import axios from "axios";
+import https from "https";
+
+axios.defaults.httpsAgent = new https.Agent({
+  rejectUnauthorized: false,
+});
 export default function App({ Component, pageProps }) {
   return (
     <>

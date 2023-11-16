@@ -1,5 +1,6 @@
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
+
   images: {
     unoptimized: true,
     formats: ["image/webp", "image/avif"],
