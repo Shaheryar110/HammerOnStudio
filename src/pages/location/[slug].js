@@ -20,6 +20,17 @@ function PostDetailPage(props) {
   return (
     <>
       <Head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-6ZHJ2LJG7C"
+        ></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          {function gtag() {
+            dataLayer.push(arguments);
+          }}
+          gtag('js', new Date()); gtag('config', 'G-6ZHJ2LJG7C');
+        </script>
         <title>{post.metaTitle}</title>
         <meta property="og:title" content={post.metaTitle} key="title" />
         <meta name="description" content={post.metaDesc} />

@@ -11,17 +11,17 @@ function myservices() {
   return (
     <>
       <Head>
-        <Script
+        <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-4XF3Y3MXGZ"
-        ></Script>
-        <Script>
+          src="https://www.googletagmanager.com/gtag/js?id=G-6ZHJ2LJG7C"
+        ></script>
+        <script>
           window.dataLayer = window.dataLayer || [];
           {function gtag() {
             dataLayer.push(arguments);
           }}
-          gtag('js', new Date()); gtag('config', 'G-4XF3Y3MXGZ');
-        </Script>
+          gtag('js', new Date()); gtag('config', 'G-6ZHJ2LJG7C');
+        </script>
         <link rel="icon" href="/favicon.webp" />
         <title>Services</title>
       </Head>

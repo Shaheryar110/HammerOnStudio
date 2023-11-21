@@ -273,9 +273,7 @@ function NavBAr() {
                   </Box>
                 </li>
                 <li className={styles.lis}>
-                  <Typography sx={style.text} onClick={DropDownHandler}>
-                    Locations
-                  </Typography>
+                  <Typography sx={style.text}>Locations</Typography>
                   <KeyboardArrowDownIcon />
                   <Box className={styles.dropDowmBox1}>
                     {linkAndPages.map((data, index) => {

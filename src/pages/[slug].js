@@ -36,14 +36,14 @@ export default function DetailBlogs(props) {
         <Head>
           <script
             async
-            src="https://www.googletagmanager.com/gtag/js?id=G-4XF3Y3MXGZ"
+            src="https://www.googletagmanager.com/gtag/js?id=G-6ZHJ2LJG7C"
           ></script>
           <script>
             window.dataLayer = window.dataLayer || [];
             {function gtag() {
               dataLayer.push(arguments);
             }}
-            gtag('js', new Date()); gtag('config', 'G-4XF3Y3MXGZ');
+            gtag('js', new Date()); gtag('config', 'G-6ZHJ2LJG7C');
           </script>
           <link rel="icon" href="/favicon.webp" />
           <title>{props.post?.currentBlog?.heading}</title>
