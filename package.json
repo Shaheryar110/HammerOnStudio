@@ -28,6 +28,7 @@
     "framer-motion": "^10.15.1",
     "https": "^1.0.0",
     "next": "13.4.12",
+    "next-runtime-dotenv": "^1.5.1",
     "nextjs-toploader": "^1.4.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",

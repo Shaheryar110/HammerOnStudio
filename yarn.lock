@@ -1064,6 +1064,11 @@ dom-helpers@^5.0.1:
     "@babel/runtime" "^7.8.7"
     csstype "^3.0.2"
 
+dotenv@^16.0.0:
+  version "16.3.1"
+  resolved "https://registry.npmjs.org/dotenv/-/dotenv-16.3.1.tgz"
+  integrity sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==
+
 electron-to-chromium@^1.4.431:
   version "1.4.471"
   resolved "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.471.tgz"
@@ -1368,7 +1373,14 @@ neo-async@^2.6.2:
   resolved "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
-"next@>= 6.0.0", next@13.4.12:
+next-runtime-dotenv@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.npmjs.org/next-runtime-dotenv/-/next-runtime-dotenv-1.5.1.tgz"
+  integrity sha512-G1NWW06geegqev1U3E90lfYYMV+xvVIwyQv2KbQCRp03jSdUbRANcEm/QQnNoJqEGQUXoEgYDdSV6jB0yv/xAQ==
+  dependencies:
+    dotenv "^16.0.0"
+
+"next@>= 5.1.0", "next@>= 6.0.0", next@13.4.12:
   version "13.4.12"
   resolved "https://registry.npmjs.org/next/-/next-13.4.12.tgz"
   integrity sha512-eHfnru9x6NRmTMcjQp6Nz0J4XH9OubmzOa7CkWL+AUrUxpibub3vWwttjduu9No16dug1kq04hiUUpo7J3m3Xw==
