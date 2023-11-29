@@ -73,19 +73,25 @@ export default function Home() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(BissunessSchema) }}
         ></script>
-      </Head>
-      <div>
-        <Script
+         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-6ZHJ2LJG7C"
-        ></Script>
-        <Script>
-          window.dataLayer = window.dataLayer || [];
-          {function gtag() {
-            dataLayer.push(arguments);
+        ></script>
+       
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            {function gtag() {
+              dataLayer.push(arguments);
+            }}
+            gtag('js', new Date()); gtag('config', 'G-6ZHJ2LJG7C');
+          `,
           }}
-          gtag('js', new Date()); gtag('config', 'G-6ZHJ2LJG7C');
-        </Script>
+        />
+      </Head>
+      <div>
+       
       </div>
       <main>
         <Layout>

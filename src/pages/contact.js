@@ -10,17 +10,22 @@ function contact() {
   return (
     <>
       <Head>
-        <script
+      <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-6ZHJ2LJG7C"
         ></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          {function gtag() {
-            dataLayer.push(arguments);
+       
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            {function gtag() {
+              dataLayer.push(arguments);
+            }}
+            gtag('js', new Date()); gtag('config', 'G-6ZHJ2LJG7C');
+          `,
           }}
-          gtag('js', new Date()); gtag('config', 'G-6ZHJ2LJG7C');
-        </script>
+        />
       </Head>
       <Layout>
         <StripSection heading="CONTACT US" />
