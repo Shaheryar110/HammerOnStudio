@@ -73,11 +73,11 @@ export default function Home() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(BissunessSchema) }}
         ></script>
-         <script
+        <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-6ZHJ2LJG7C"
         ></script>
-       
+
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -89,11 +89,33 @@ export default function Home() {
           `,
           }}
         />
-        <script type='text/javascript' src='//pl21780114.toprevenuegate.com/d7/87/78/d787785326d86c48232cd590cd299353.js'></script>
+        {/* <script
+  dangerouslySetInnerHTML={{
+    __html: `
+    atOptions = {
+		'key' : '074273455c22f04fef746f0a6062e112',
+		'format' : 'iframe',
+		'height' : 60,
+		'width' : 468,
+		'params' : {}
+	};
+	document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/074273455c22f04fef746f0a6062e112/invoke.js"></scr' + 'ipt>');
+`,
+  }}
+/> */}
+        {/* <script type='text/javascript' src='//pl21780114.toprevenuegate.com/d7/87/78/d787785326d86c48232cd590cd299353.js'></script> */}
+        {/* <script type="text/javascript">
+	atOptions = {
+		'key' : '074273455c22f04fef746f0a6062e112',
+		'format' : 'iframe',
+		'height' : 60,
+		'width' : 468,
+		'params' : {}
+	};
+	document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/074273455c22f04fef746f0a6062e112/invoke.js"></scr' + 'ipt>');
+</script> */}
       </Head>
-      <div>
-       
-      </div>
+      <div></div>
       <main>
         <Layout>
           <HeroCarousel />

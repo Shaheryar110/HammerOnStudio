@@ -21,15 +21,15 @@ export default function Document() {
           `,
           }}
         />
-        <script
+        {/* <script
           src="https://cdn.userway.org/widget.js"
           data-account="MDH5wuVUUW"
-        ></script>
+        ></script> */}
         <link rel="icon" type="image/x-icon" href="/favicon.webp" />
-        <script
+        {/* <script
           type="text/javascript"
           src="//pl21780114.toprevenuegate.com/d7/87/78/d787785326d86c48232cd590cd299353.js"
-        ></script>
+        ></script> */}
       </Head>
 
       <body>
