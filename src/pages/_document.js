@@ -21,10 +21,10 @@ export default function Document() {
           `,
           }}
         />
-        {/* <script
+        <script
           src="https://cdn.userway.org/widget.js"
           data-account="MDH5wuVUUW"
-        ></script> */}
+        ></script>
         <link rel="icon" type="image/x-icon" href="/favicon.webp" />
         {/* <script
           type="text/javascript"
