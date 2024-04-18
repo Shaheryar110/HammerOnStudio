@@ -8,11 +8,11 @@ function custome() {
   return (
     <>
       <Head>
-      <script
+        <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-6ZHJ2LJG7C"
         ></script>
-       
+
         <script
           dangerouslySetInnerHTML={{
             __html: `
